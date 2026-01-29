@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import OptionCard from './OptionCard';
 import './style.scss';
@@ -26,8 +26,19 @@ export default function ContactWizard() {
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSuccess, setIsSuccess] = useState(false);
+	const wizardRef = useRef<HTMLDivElement>(null);
 
 	const totalSteps = 4;
+
+	// Scroll vers le wizard à chaque changement d'étape
+	useEffect(() => {
+		if (wizardRef.current && window.innerWidth <= 768) {
+			wizardRef.current.scrollIntoView({ 
+				behavior: 'smooth', 
+				block: 'start' 
+			});
+		}
+	}, [step]);
 
 	const handleOptionSelect = (field: keyof FormData, value: string) => {
 		setFormData({ ...formData, [field]: value });
@@ -83,7 +94,7 @@ export default function ContactWizard() {
 	}
 
 	return (
-		<div className="contact-wizard">
+		<div className="contact-wizard" ref={wizardRef}>
 			{/* Progress bar */}
 			<div className="wizard-progress">
 				<div className="wizard-progress__bar">
