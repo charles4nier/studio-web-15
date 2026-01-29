@@ -1,5 +1,4 @@
 import './style.scss';
-import Link from 'next/link';
 
 interface PricingCardProps {
 	name: string;
@@ -9,6 +8,7 @@ interface PricingCardProps {
 	recommended?: boolean;
 	unit?: string;
 	clientCost?: string;
+	onSelect?: () => void;
 }
 
 export default function PricingCard({
@@ -18,7 +18,8 @@ export default function PricingCard({
 	features,
 	recommended = false,
 	unit = '€',
-	clientCost
+	clientCost,
+	onSelect
 }: PricingCardProps) {
 	return (
 		<div className={`pricing-card ${recommended ? 'pricing-card--recommended' : ''}`}>
@@ -63,15 +64,18 @@ export default function PricingCard({
 				))}
 			</ul>
 
-			{clientCost && (
-				<div className="pricing-card__client-cost">
-					<small>+ {clientCost}</small>
-				</div>
-			)}
+		{clientCost && (
+			<div className="pricing-card__client-cost">
+				<small>+ {clientCost}</small>
+			</div>
+		)}
 
-			<Link href="/contact" className={recommended ? 'button-primary' : 'button-secondary'}>
-				{price === 'Sur devis' ? 'Nous contacter' : 'Choisir ce pack'}
-			</Link>
-		</div>
+		<button 
+			onClick={onSelect}
+			className={recommended ? 'button-primary' : 'button-secondary'}
+		>
+			{price === 'Sur devis' ? 'Nous contacter' : 'Choisir ce pack'}
+		</button>
+	</div>
 	);
 }

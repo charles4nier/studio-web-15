@@ -122,8 +122,10 @@
 	.button-primary,
 	.button-secondary {
 		width: 100%;
-		text-align: center;
 		margin-top: auto;
+		border: none;
+		text-align: center;
+		cursor: pointer;
 	}
 
 	@media (max-width: $breakpoint-sm) {

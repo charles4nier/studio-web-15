@@ -1,11 +1,21 @@
 'use client';
 
+import { useState } from 'react';
 import './style.scss';
 import PricingCard from './PricingCard';
+import PricingModal from './PricingModal';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function Tarifs() {
+	const [modalOpen, setModalOpen] = useState(false);
+	const [selectedPackage, setSelectedPackage] = useState({ name: '', price: '', category: '' });
+
+	const handleSelectPackage = (name: string, price: string, category: string) => {
+		setSelectedPackage({ name, price, category });
+		setModalOpen(true);
+	};
+
 	const heroVariants = {
 		hidden: {},
 		visible: {
@@ -263,7 +273,11 @@ export default function Tarifs() {
 					</div>
 					<div className="pricing-grid">
 						{vitrinePackages.map((pkg, index) => (
-							<PricingCard key={index} {...pkg} />
+							<PricingCard 
+								key={index} 
+								{...pkg} 
+								onSelect={() => handleSelectPackage(pkg.name, pkg.price === 'Sur devis' ? 'Sur devis' : pkg.price + '€', 'Site vitrine')}
+							/>
 						))}
 					</div>
 				</div>
@@ -296,7 +310,11 @@ export default function Tarifs() {
 					</div>
 					<div className="pricing-grid">
 						{ecommercePackages.map((pkg, index) => (
-							<PricingCard key={index} {...pkg} />
+							<PricingCard 
+								key={index} 
+								{...pkg} 
+								onSelect={() => handleSelectPackage(pkg.name, pkg.price === 'Sur devis' ? 'Sur devis' : pkg.price + '€', 'E-commerce')}
+							/>
 						))}
 					</div>
 				</div>
@@ -319,7 +337,11 @@ export default function Tarifs() {
 					</div>
 					<div className="pricing-grid pricing-grid--maintenance">
 						{maintenancePackages.map((pkg, index) => (
-							<PricingCard key={index} {...pkg} />
+							<PricingCard 
+								key={index} 
+								{...pkg} 
+								onSelect={() => handleSelectPackage(pkg.name, pkg.price + (pkg.unit || '€'), 'Maintenance')}
+							/>
 						))}
 					</div>
 				</div>
@@ -343,6 +365,15 @@ export default function Tarifs() {
 					</Link>
 				</div>
 			</motion.section>
+
+			{/* Modale express */}
+			<PricingModal
+				isOpen={modalOpen}
+				onClose={() => setModalOpen(false)}
+				packageName={selectedPackage.name}
+				packagePrice={selectedPackage.price}
+				packageCategory={selectedPackage.category}
+			/>
 		</div>
 	);
 }
