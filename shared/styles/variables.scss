@@ -1,0 +1,78 @@
+/* =========================
+   🎨 Palette Studio Web 15
+   ========================= */
+
+/* --- Couleurs principales --- */
+$black: #1a1a1a;
+$black-primary: #2d2926;
+$black-secondary: #5b554f;
+
+$white: #ffffff;
+$white-secondary: #f3f1ed;
+$white-tertiary: #faf8f6;
+
+// Couleurs vibrantes
+$accent-blue: #0066ff;
+$accent-purple: #7c3aed;
+$accent-pink: #ec4899;
+$accent-green: #10b981;
+$accent-orange: #f59e0b;
+$accent-cyan: #06b6d4;
+
+// Gradients par page (identité unique)
+$gradient-home: linear-gradient(135deg, #0066ff 0%, #7c3aed 50%, #ec4899 100%); // Bleu → Violet → Rose
+$gradient-tarifs: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%); // Orange → Rose
+$gradient-contact: linear-gradient(135deg, #10b981 0%, #0066ff 100%); // Vert → Bleu
+
+// Gradients secondaires
+$gradient-secondary: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); // Vert → Cyan
+$gradient-blue-cyan: linear-gradient(135deg, #0066ff 0%, #06b6d4 100%);
+
+// Alias pour compatibilité (défaut = home)
+$gradient-primary: $gradient-home;
+$gradient-tertiary: $gradient-tarifs;
+$gradient-purple-pink: $gradient-contact;
+
+// Pour compatibilité
+$accent-primary: #0066ff;
+$accent-secondary: #7c3aed;
+
+/* --- États et variations --- */
+$success: $accent-green;
+$error: #ef4444;
+$warning: #f59e0b;
+
+/* --- Ombres & bordures --- */
+$shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
+$shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
+$shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+/* --- Typographie --- */
+$font-family-primary: var(--font-ubuntu), serif;
+$font-family-secondary: var(--font-inter), sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+/* --- Espacements --- */
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 40px;
+$spacing-3xl: 48px;
+$spacing-4xl: 64px;
+$spacing-5xl: 80px;
+
+/* --- Breakpoints --- */
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1600px;

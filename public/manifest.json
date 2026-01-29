@@ -1,0 +1,21 @@
+{
+	"name": "Studio Web 15",
+	"short_name": "Studio Web 15",
+	"description": "Agence de développement web spécialisée en Next.js et React",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#2563eb",
+	"icons": [
+		{
+			"src": "/icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}

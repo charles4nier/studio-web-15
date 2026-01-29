@@ -1,0 +1,406 @@
+.tarifs {
+	background: $white;
+}
+
+.tarifs-hero {
+	min-height: 40vh;
+	padding: $spacing-5xl 0;
+	background: $gradient-tarifs;
+	color: $white;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: min-height 0.6s ease, background 0.6s ease;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		right: -20%;
+		width: 500px;
+		height: 500px;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+		border-radius: 50%;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	&__text-reveal {
+		overflow: hidden;
+		padding: 4px 0;
+	}
+
+	&__title {
+		font-size: clamp(36px, 5vw, 56px);
+		font-weight: 700;
+		color: $white;
+		margin-bottom: $spacing-lg;
+		position: relative;
+		z-index: 1;
+		text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	&__subtitle {
+		font-size: clamp(16px, 2vw, 20px);
+		color: rgba(255, 255, 255, 0.95);
+		max-width: 700px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+	}
+}
+
+.tech-stack {
+	padding: $spacing-5xl 0;
+	background: $white-secondary;
+
+	&__title {
+		text-align: center;
+		margin-bottom: $spacing-4xl;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: $spacing-2xl;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+
+		&__title {
+			margin-bottom: $spacing-3xl;
+		}
+
+		&__grid {
+			gap: $spacing-xl;
+		}
+	}
+}
+
+.tech-feature {
+	background: $white;
+	padding: $spacing-2xl;
+	border-radius: 12px;
+	text-align: center;
+	box-shadow: $shadow-soft;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		background: $gradient-tarifs;
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+		transform-origin: left;
+	}
+
+	&:nth-child(2)::before {
+		background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+	}
+
+	&:nth-child(3)::before {
+		background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+	}
+
+	&:nth-child(4)::before {
+		background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+	}
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: $shadow-medium;
+
+		&::before {
+			transform: scaleX(1);
+		}
+	}
+
+	&__icon {
+		font-size: 48px;
+		margin-bottom: $spacing-lg;
+	}
+
+	&__title {
+		font-size: clamp(18px, 2vw, 22px);
+		margin-bottom: $spacing-md;
+		background: $gradient-tarifs;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&:nth-child(2) &__title {
+		background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&:nth-child(3) &__title {
+		background: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&:nth-child(4) &__title {
+		background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__description {
+		font-size: clamp(14px, 1.2vw, 16px);
+		color: $black-secondary;
+		line-height: 1.6;
+		margin: 0;
+	}
+}
+
+.pricing-section {
+	padding: $spacing-5xl 0;
+
+	&--maintenance {
+		background: $white-secondary;
+	}
+
+	&__header {
+		text-align: center;
+		margin-bottom: $spacing-4xl;
+	}
+
+	&__title {
+		margin-bottom: $spacing-md;
+	}
+
+	&__subtitle {
+		font-size: clamp(16px, 1.5vw, 18px);
+		color: $black-secondary;
+		margin: 0 0 $spacing-xl 0;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+
+		&__header {
+			margin-bottom: $spacing-3xl;
+		}
+	}
+}
+
+.ecommerce-explanation {
+	max-width: 900px;
+	margin: 0 auto;
+	background: linear-gradient(135deg, rgba($accent-orange, 0.05) 0%, rgba($accent-pink, 0.05) 100%);
+	border-left: 4px solid;
+	border-image: $gradient-tarifs 1;
+	padding: $spacing-xl $spacing-2xl;
+	border-radius: 8px;
+	text-align: left;
+
+	&__text {
+		font-size: clamp(14px, 1.2vw, 16px);
+		color: $black-secondary;
+		margin: 0 0 $spacing-md 0;
+		line-height: 1.6;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		strong {
+			background: $gradient-tarifs;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-weight: 600;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-lg;
+	}
+}
+
+.pricing-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: $spacing-3xl;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	&--maintenance {
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		grid-template-columns: 1fr;
+		gap: $spacing-2xl;
+	}
+}
+
+.comparison {
+	padding: $spacing-5xl 0;
+	background: $white;
+
+	&__title {
+		text-align: center;
+		margin-bottom: $spacing-4xl;
+	}
+
+	&__note {
+		text-align: center;
+		font-size: clamp(16px, 1.5vw, 20px);
+		color: $accent-primary;
+		font-weight: 600;
+		margin-top: $spacing-3xl;
+
+		strong {
+			color: $accent-primary;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+
+		&__title {
+			margin-bottom: $spacing-3xl;
+		}
+	}
+}
+
+.comparison-table {
+	max-width: 900px;
+	margin: 0 auto;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: $shadow-medium;
+
+	&__header {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		background: $black-primary;
+		color: $white;
+		font-weight: 600;
+		padding: $spacing-lg 0;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		background: $white;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+		&--total {
+			background: $white-secondary;
+			font-size: clamp(16px, 1.5vw, 18px);
+		}
+	}
+
+	&__cell {
+		padding: $spacing-lg $spacing-xl;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		&--label {
+			justify-content: flex-start;
+			font-weight: 500;
+			color: $black-primary;
+		}
+
+		&--highlight {
+			background: rgba($accent-primary, 0.05);
+			color: $accent-primary;
+			font-weight: 600;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		&__header,
+		&__row {
+			grid-template-columns: 1.5fr 1fr 1fr;
+		}
+
+		&__cell {
+			padding: $spacing-md;
+			font-size: 14px;
+		}
+	}
+}
+
+.cta-section {
+	padding: $spacing-5xl 0;
+	background: $gradient-tarifs;
+	color: $white;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -30%;
+		left: -10%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+		border-radius: 50%;
+	}
+
+	&__title {
+		font-size: clamp(28px, 4vw, 40px);
+		color: $white;
+		margin-bottom: $spacing-lg;
+		position: relative;
+		z-index: 1;
+		text-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	&__subtitle {
+		font-size: clamp(16px, 2vw, 20px);
+		color: rgba(255, 255, 255, 0.95);
+		margin-bottom: $spacing-3xl;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.button-primary {
+		background: $white;
+		color: $accent-primary;
+		font-weight: 600;
+
+		&:hover {
+			background: $white-secondary;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+
+		&__subtitle {
+			margin-bottom: $spacing-2xl;
+		}
+	}
+}

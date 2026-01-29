@@ -1,0 +1,16 @@
+{
+	"name": "studio-web-15-sanity-studio",
+	"private": true,
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "sanity dev",
+		"start": "sanity start",
+		"build": "sanity build"
+	},
+	"devDependencies": {
+		"sanity": "^3.93.0"
+	},
+	"dependencies": {
+		"styled-components": "^6.1.19"
+	}
+}

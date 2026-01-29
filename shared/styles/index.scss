@@ -1,0 +1,236 @@
+@import './variables.scss';
+
+html {
+	box-sizing: border-box;
+	-webkit-text-size-adjust: 100%;
+	height: 100%;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:where(body, button, input, select, textarea) {
+	font: inherit;
+	color: inherit;
+}
+
+body {
+	width: 100%;
+	line-height: 1.5;
+	background-color: $white;
+	padding-top: 80px;
+	font-family: $font-family-secondary;
+	color: $black-primary;
+}
+
+#root,
+#__next {
+	min-height: 100%;
+	width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font-family-primary;
+	font-weight: $font-weight-medium;
+	line-height: $line-height-tight;
+	color: $black-primary;
+}
+
+h1 {
+	font-size: clamp(32px, 4vw, 48px);
+	margin-bottom: $spacing-xl;
+}
+
+h2 {
+	font-size: clamp(24px, 3vw, 36px);
+	margin-bottom: $spacing-lg;
+}
+
+h3 {
+	font-size: clamp(20px, 2.5vw, 28px);
+	margin-bottom: $spacing-md;
+}
+
+p {
+	font-size: clamp(15px, 1.2vw, 18px);
+	line-height: $line-height-relaxed;
+	color: $black-secondary;
+}
+
+.container {
+	width: 100%;
+	max-width: 1600px;
+	padding: 0 $spacing-5xl;
+	margin: 0 auto;
+}
+
+.button-primary {
+	display: inline-block;
+	background: $gradient-home;
+	color: $white;
+	padding: $spacing-md $spacing-2xl;
+	border-radius: 12px;
+	font-weight: 600;
+	transition: all 0.3s ease, background 0.6s ease, box-shadow 0.6s ease;
+	border: none;
+	box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+		transition: left 0.5s ease;
+	}
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+
+		&::before {
+			left: 100%;
+		}
+	}
+
+	&:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	// Adaptation par page
+	.page-tarifs & {
+		background: $gradient-tarifs;
+		box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+
+		&:hover {
+			box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+		}
+	}
+
+	.page-contact & {
+		background: $gradient-contact;
+		box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+
+		&:hover {
+			box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+		}
+	}
+}
+
+.button-secondary {
+	display: inline-block;
+	background: transparent;
+	color: $accent-blue;
+	padding: $spacing-md $spacing-2xl;
+	border-radius: 12px;
+	font-weight: 600;
+	border: 2px solid transparent;
+	background: linear-gradient($white, $white) padding-box, $gradient-home border-box;
+	transition: all 0.3s ease, background 0.6s ease, box-shadow 0.6s ease, color 0.6s ease;
+	cursor: pointer;
+
+	&:hover {
+		background: $gradient-home;
+		color: $white;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+	}
+
+	// Adaptation par page
+	.page-tarifs & {
+		color: $accent-orange;
+		background: linear-gradient($white, $white) padding-box, $gradient-tarifs border-box;
+
+		&:hover {
+			background: $gradient-tarifs;
+			color: $white;
+			box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+		}
+	}
+
+	.page-contact & {
+		color: $accent-green;
+		background: linear-gradient($white, $white) padding-box, $gradient-contact border-box;
+
+		&:hover {
+			background: $gradient-contact;
+			color: $white;
+			box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+		}
+	}
+}
+
+/* --- Responsive --- */
+@media (max-width: $breakpoint-lg) {
+	.container {
+		padding: 0 $spacing-4xl;
+	}
+}
+
+@media (max-width: $breakpoint-md) {
+	.container {
+		padding: 0 $spacing-2xl;
+	}
+}
+
+@media (max-width: $breakpoint-sm) {
+	body {
+		padding-top: 70px;
+	}
+
+	.container {
+		padding: 0 $spacing-xl;
+	}
+}
+
+@media (max-width: $breakpoint-xs) {
+	.container {
+		padding: 0 $spacing-md;
+	}
+}

@@ -1,0 +1,128 @@
+.services {
+	padding: $spacing-5xl 0;
+	background-color: $white;
+
+	&__title {
+		text-align: center;
+		margin-bottom: $spacing-4xl;
+		position: relative;
+		padding-bottom: $spacing-md;
+		color: $black-primary;
+		display: inline-block;
+		width: 100%;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80px;
+			height: 3px;
+			background: $gradient-home;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: $spacing-3xl;
+	}
+
+	&__item {
+		padding: $spacing-3xl;
+		background: $white-secondary;
+		border-radius: 16px;
+		box-shadow: $shadow-soft;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: linear-gradient(135deg, #0066ff 0%, #7c3aed 100%);
+			transform: scaleX(0);
+			transition: transform 0.3s ease;
+			transform-origin: left;
+		}
+
+		&:nth-child(2)::before {
+			background: linear-gradient(135deg, #7c3aed 0%, #0066ff 100%);
+		}
+
+		&:nth-child(3)::before {
+			background: linear-gradient(135deg, #0066ff 0%, #ec4899 100%);
+		}
+
+		&:nth-child(4)::before {
+			background: linear-gradient(135deg, #7c3aed 0%, #0066ff 100%);
+		}
+
+		&:hover {
+			transform: translateY(-8px);
+			box-shadow: $shadow-medium;
+
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+	}
+
+	&__item-title {
+		background: linear-gradient(135deg, #0066ff 0%, #7c3aed 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin-bottom: $spacing-md;
+		font-size: clamp(20px, 2vw, 24px);
+	}
+
+	&__item:nth-child(2) &__item-title {
+		background: linear-gradient(135deg, #7c3aed 0%, #0066ff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__item:nth-child(3) &__item-title {
+		background: linear-gradient(135deg, #0066ff 0%, #ec4899 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__item:nth-child(4) &__item-title {
+		background: linear-gradient(135deg, #7c3aed 0%, #0066ff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__item-description {
+		color: $black-secondary;
+		font-size: clamp(15px, 1.2vw, 17px);
+		line-height: 1.7;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+
+		&__title {
+			margin-bottom: $spacing-3xl;
+		}
+
+		&__grid {
+			grid-template-columns: 1fr;
+			gap: $spacing-xl;
+		}
+
+		&__item {
+			padding: $spacing-xl;
+		}
+	}
+}

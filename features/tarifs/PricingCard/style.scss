@@ -1,0 +1,137 @@
+.pricing-card {
+	background: $white;
+	border: 1px solid rgba(0, 0, 0, 0.08);
+	border-radius: 12px;
+	padding: $spacing-3xl;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: translateY(-4px);
+		box-shadow: $shadow-medium;
+	}
+
+	&--recommended {
+		border: 2px solid transparent;
+		background: linear-gradient($white, $white) padding-box,
+			$gradient-tarifs border-box;
+		box-shadow: $shadow-medium;
+
+		&:hover {
+			box-shadow: $shadow-strong;
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		top: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: $gradient-tarifs;
+		color: $white;
+		padding: $spacing-xs $spacing-lg;
+		border-radius: 20px;
+		font-size: 14px;
+		font-weight: 600;
+		box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+	}
+
+	&__header {
+		text-align: center;
+		margin-bottom: $spacing-2xl;
+	}
+
+	&__name {
+		font-size: clamp(20px, 2vw, 24px);
+		font-weight: 600;
+		color: $black-primary;
+		margin-bottom: $spacing-md;
+	}
+
+	&__price {
+		margin-bottom: $spacing-md;
+	}
+
+	&__amount {
+		font-size: clamp(36px, 4vw, 48px);
+		font-weight: 700;
+		background: $gradient-tarifs;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__unit {
+		font-size: clamp(18px, 2vw, 24px);
+		color: $black-secondary;
+		margin-left: $spacing-xs;
+	}
+
+	&__custom {
+		font-size: clamp(24px, 3vw, 32px);
+		font-weight: 600;
+		background: $gradient-tarifs;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__description {
+		font-size: clamp(14px, 1.2vw, 16px);
+		color: $black-secondary;
+		margin: 0;
+	}
+
+	&__features {
+		list-style: none;
+		margin: 0 0 $spacing-2xl 0;
+		padding: 0;
+		flex: 1;
+	}
+
+	&__feature {
+		display: flex;
+		align-items: flex-start;
+		gap: $spacing-md;
+		margin-bottom: $spacing-md;
+		font-size: clamp(14px, 1.1vw, 16px);
+		color: $black-secondary;
+		line-height: 1.6;
+	}
+
+	&__check {
+		flex-shrink: 0;
+		margin-top: 2px;
+		color: $accent-primary;
+	}
+
+	&__client-cost {
+		text-align: center;
+		margin-bottom: $spacing-lg;
+		padding-top: $spacing-lg;
+		border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+		small {
+			font-size: 14px;
+			color: $black-secondary;
+		}
+	}
+
+	.button-primary,
+	.button-secondary {
+		width: 100%;
+		text-align: center;
+		margin-top: auto;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-2xl;
+
+		&__badge {
+			font-size: 12px;
+			padding: $spacing-xs $spacing-md;
+		}
+	}
+}

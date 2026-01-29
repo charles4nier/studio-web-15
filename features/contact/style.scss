@@ -1,0 +1,70 @@
+.contact {
+	background: $white;
+	min-height: 80vh;
+}
+
+.contact-hero {
+	min-height: 40vh;
+	padding: $spacing-4xl 0;
+	background: $gradient-contact;
+	color: $white;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: min-height 0.6s ease, background 0.6s ease;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 600px;
+		height: 600px;
+		background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+		border-radius: 50%;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	&__text-reveal {
+		overflow: hidden;
+		padding: 4px 0;
+	}
+
+	&__title {
+		font-size: clamp(36px, 5vw, 56px);
+		font-weight: 700;
+		color: $white;
+		margin-bottom: $spacing-lg;
+		position: relative;
+		z-index: 1;
+		text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+	}
+
+	&__subtitle {
+		font-size: clamp(16px, 2vw, 20px);
+		color: rgba(255, 255, 255, 0.95);
+		max-width: 700px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-3xl 0;
+	}
+}
+
+.contact-wizard-section {
+	padding: $spacing-5xl 0;
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+	}
+}
