@@ -14,7 +14,7 @@ export default function Footer() {
 				<div className={`${CLASS_NAME}__top`}>
 					<div className={`${CLASS_NAME}__col`}>
 						<h3>Studio Web 15</h3>
-						<p>Agence de développement web spécialisée en solutions digitales sur mesure.</p>
+						<p>Agence web locale dans le Cantal. Sites Next.js et Shopify pour entreprises du Massif Central.</p>
 					</div>
 
 					<div className={`${CLASS_NAME}__col`}>
@@ -27,6 +27,9 @@ export default function Footer() {
 								<Link href="/tarifs">Tarifs</Link>
 							</li>
 							<li>
+								<Link href="/agence-locale">Votre agence locale</Link>
+							</li>
+							<li>
 								<Link href="/contact">Contact</Link>
 							</li>
 						</ul>
@@ -36,7 +39,8 @@ export default function Footer() {
 						<h4>Contact</h4>
 						<ul>
 							<li>📧 contact@studioweb15.fr</li>
-							<li>📍 Paris, France</li>
+							<li>📍 Cantal, Auvergne</li>
+							<li>📍 Intervention : Cantal, Aveyron, Creuse</li>
 						</ul>
 					</div>
 				</div>

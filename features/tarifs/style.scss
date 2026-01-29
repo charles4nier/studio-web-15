@@ -387,48 +387,12 @@
 	}
 
 	.button-primary {
-		position: relative;
 		background: $white;
+		color: $black-primary;
 		font-weight: 600;
-		background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		transition: all 0.3s ease;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: $white;
-			border-radius: 8px;
-			transition: opacity 0.3s ease;
-			z-index: -1;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
-			opacity: 0;
-			border-radius: 8px;
-			transition: opacity 0.3s ease;
-			z-index: -1;
-		}
 
 		&:hover {
-			-webkit-text-fill-color: $white;
-
-			&::after {
-				opacity: 1;
-			}
+			background: rgba($white, 0.9);
 		}
 	}
 

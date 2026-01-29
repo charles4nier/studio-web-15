@@ -36,6 +36,13 @@
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
 			}
+
+			.page-agence & {
+				background: $gradient-agence;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
 		}
 
 		// Colonne Contact avec gradient Bleu → Violet sur page d'accueil

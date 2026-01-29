@@ -16,6 +16,7 @@ export default function Header() {
 	const navLinks = [
 		{ name: 'Accueil', path: '/' },
 		{ name: 'Tarifs', path: '/tarifs' },
+		{ name: 'Votre agence locale', path: '/agence-locale' },
 		{ name: 'Contact', path: '/contact' }
 	];
 

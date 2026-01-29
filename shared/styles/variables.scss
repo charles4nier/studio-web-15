@@ -21,7 +21,8 @@ $accent-cyan: #06b6d4;
 
 // Gradients par page (identité unique)
 $gradient-home: linear-gradient(135deg, #0066ff 0%, #7c3aed 50%, #ec4899 100%); // Bleu → Violet → Rose
-$gradient-tarifs: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%); // Orange → Rose
+$gradient-tarifs: linear-gradient(135deg, #ec4899 0%, #f59e0b 100%); // Rose → Orange
+$gradient-agence: linear-gradient(135deg, #f59e0b 0%, #00e5ff 100%); // Orange → Cyan électrique 🔥
 $gradient-contact: linear-gradient(135deg, #10b981 0%, #0066ff 100%); // Vert → Bleu
 
 // Gradients secondaires

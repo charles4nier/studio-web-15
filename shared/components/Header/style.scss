@@ -49,6 +49,13 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 		}
+
+		.page-agence & {
+			background: $gradient-agence;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
 	}
 
 	&__nav {
@@ -88,6 +95,10 @@
 			.page-contact & {
 				background: $gradient-contact;
 			}
+
+			.page-agence & {
+				background: $gradient-agence;
+			}
 		}
 
 		&:hover {
@@ -95,6 +106,13 @@
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
+
+			.page-agence & {
+				background: $gradient-agence;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
 
 			.page-tarifs & {
 				background: $gradient-tarifs;
@@ -131,6 +149,13 @@
 
 			.page-contact & {
 				background: $gradient-contact;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.page-agence & {
+				background: $gradient-agence;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;

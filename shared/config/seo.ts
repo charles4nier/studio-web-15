@@ -2,22 +2,41 @@
 export const siteConfig = {
 	name: 'Studio Web 15',
 	description:
-		'Studio Web 15 - Agence de développement web spécialisée en Next.js, React et solutions digitales sur mesure.',
+		'Agence web dans le Cantal. Sites vitrines Next.js dès 1500€, e-commerce Shopify dès 2000€. Intervention Cantal, Aveyron, Creuse. Proximité, réactivité, technologie moderne.',
 	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://studioweb15.fr',
 	ogImage: '/og-image.jpg',
 	twitter: {
 		handle: '@studioweb15',
 		site: '@studioweb15'
 	},
+	location: {
+		region: 'Auvergne-Rhône-Alpes',
+		departments: ['Cantal', 'Aveyron', 'Creuse', 'Corrèze', 'Puy-de-Dôme', 'Haute-Loire', 'Lozère'],
+		city: 'Aurillac'
+	},
 	keywords: [
-		'agence web',
-		'développement web',
-		'Next.js',
-		'React',
-		'TypeScript',
-		'création site web',
-		'développeur web',
-		'studio web'
+		// Local primaire
+		'agence web Cantal',
+		'création site web Aurillac',
+		'développeur web Cantal',
+		'site internet Aurillac',
+		'agence digitale Aveyron',
+		'création site Rodez',
+		'développeur Creuse',
+		// Local + Tech
+		'site Next.js Cantal',
+		'boutique Shopify Aurillac',
+		'e-commerce Aveyron',
+		'site vitrine Cantal',
+		'refonte site web Aurillac',
+		// Tech + Perf
+		'site rapide performant',
+		'hébergement gratuit Vercel',
+		'Sanity CMS',
+		// Général
+		'agence web Auvergne',
+		'développeur freelance Massif Central',
+		'création site TPE PME'
 	]
 };
 

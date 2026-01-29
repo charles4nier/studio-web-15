@@ -1,7 +1,7 @@
 import { siteConfig } from '@shared/config/seo';
 
 interface StructuredDataProps {
-	type: 'Organization' | 'WebSite' | 'WebPage';
+	type: 'Organization' | 'WebSite' | 'WebPage' | 'LocalBusiness';
 	data?: any;
 }
 
@@ -44,6 +44,44 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
 					name: data.name,
 					description: data.description,
 					url: data.url || baseUrl
+				};
+
+			case 'LocalBusiness':
+				return {
+					'@context': 'https://schema.org',
+					'@type': 'LocalBusiness',
+					'@id': `${baseUrl}#localbusiness`,
+					name: siteConfig.name,
+					image: `${baseUrl}/logo.png`,
+					url: baseUrl,
+					telephone: data?.telephone || '',
+					email: 'contact@studioweb15.fr',
+					address: {
+						'@type': 'PostalAddress',
+						addressLocality: siteConfig.location.city,
+						addressRegion: siteConfig.location.region,
+						addressCountry: 'FR'
+					},
+					geo: {
+						'@type': 'GeoCoordinates',
+						latitude: data?.latitude || 45.03,
+						longitude: data?.longitude || 2.44
+					},
+					areaServed: siteConfig.location.departments.map((dept) => ({
+						'@type': 'City',
+						name: dept
+					})),
+					priceRange: '1500€ - 5000€',
+					description: siteConfig.description,
+					openingHoursSpecification: [
+						{
+							'@type': 'OpeningHoursSpecification',
+							dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+							opens: '09:00',
+							closes: '18:00'
+						}
+					],
+					sameAs: []
 				};
 
 			default:

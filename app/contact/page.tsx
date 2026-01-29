@@ -1,7 +1,14 @@
-'use client';
-
+import { Metadata } from 'next';
+import { generatePageMetadata } from '@shared/config/seo';
 import StructuredData from '@shared/components/StructuredData';
 import Contact from '@features/contact';
+
+export const metadata: Metadata = generatePageMetadata({
+	title: 'Contact - Agence Web Cantal, Aveyron, Creuse',
+	description:
+		'Contactez votre agence web locale pour un devis gratuit sous 24h. Basé dans le Cantal, intervention Aurillac, Rodez, Guéret. Sites Next.js et Shopify.',
+	path: '/contact'
+});
 
 export default function ContactPage() {
 	return (

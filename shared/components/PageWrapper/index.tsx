@@ -8,7 +8,7 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
 
 	useEffect(() => {
 		// Enlever les anciennes classes de page
-		document.body.classList.remove('page-home', 'page-tarifs', 'page-contact');
+		document.body.classList.remove('page-home', 'page-tarifs', 'page-contact', 'page-agence');
 
 		// Ajouter la classe correspondante
 		if (pathname === '/') {
@@ -17,6 +17,8 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
 			document.body.classList.add('page-tarifs');
 		} else if (pathname === '/contact') {
 			document.body.classList.add('page-contact');
+		} else if (pathname === '/agence-locale') {
+			document.body.classList.add('page-agence');
 		}
 	}, [pathname]);
 
