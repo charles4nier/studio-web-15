@@ -18,7 +18,7 @@ export default function Header() {
 	const navLinks = [
 		{ name: 'Accueil', path: '/' },
 		{ name: 'Tarifs', path: '/tarifs' },
-		{ name: 'Votre agence locale', path: '/agence-locale' },
+		{ name: 'Votre partenaire local', path: '/partenaire-local' },
 		{ name: 'Contact', path: '/contact' }
 	];
 
@@ -33,10 +33,10 @@ export default function Header() {
 	};
 
 	// Déterminer le gradient selon la page
-	const getGradientId = (): 'home' | 'tarifs' | 'contact' | 'agence' => {
+	const getGradientId = (): 'home' | 'tarifs' | 'contact' | 'partenaire' => {
 		if (pathname === '/tarifs') return 'tarifs';
 		if (pathname === '/contact') return 'contact';
-		if (pathname === '/agence-locale') return 'agence';
+		if (pathname === '/partenaire-local') return 'partenaire';
 		return 'home';
 	};
 

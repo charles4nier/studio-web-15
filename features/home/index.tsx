@@ -21,13 +21,13 @@ export const revalidate = 3600; // Cache 1 heure
 // Valeurs par défaut si pas de contenu Sanity
 const defaultData = {
 	hero: {
-		title: 'Studio Web 15 - Agence digitale',
+		title: 'Studio Web 15 - Votre partenaire web local',
 		subtitle:
-			'Nous créons des expériences web sur mesure, performantes et esthétiques. Spécialistes Next.js, React et solutions digitales modernes.',
+'Création d\'expériences web sur mesure, performantes et esthétiques. Expertise Next.js, Shopify et solutions digitales modernes.',
 		ctaLabel: 'Discutons de votre projet'
 	},
 	services: {
-		title: 'Nos expertises',
+		title: 'Mes expertises',
 		items: [
 			{
 				title: 'Développement web sur mesure',

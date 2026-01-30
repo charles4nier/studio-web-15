@@ -6,16 +6,16 @@ Voici le contenu à remplir dans Sanity Studio pour avoir un site fonctionnel.
 
 ### SEO
 - **Titre SEO** : Studio Web 15 - Agence de développement web Next.js & React
-- **Description SEO** : Agence digitale spécialisée en développement web sur mesure. Next.js, React, TypeScript. Solutions digitales performantes et design moderne.
+- **Description SEO** : Développeur web freelance spécialisé en développement web sur mesure. Next.js, React, TypeScript. Solutions digitales performantes et design moderne.
 
 ### Hero (Section principale)
-- **Titre principal** : Studio Web 15 - Agence digitale
-- **Sous-titre** : Nous créons des expériences web sur mesure, performantes et esthétiques. Spécialistes Next.js, React et solutions digitales modernes.
+- **Titre principal** : Studio Web 15 - Votre partenaire web local
+- **Sous-titre** : Je crée des expériences web sur mesure, performantes et esthétiques. Spécialiste Next.js, React et solutions digitales modernes.
 - **Label du bouton CTA** : Discutons de votre projet
 
 ### Services
 
-**Titre** : Nos expertises
+**Titre** : Mon expertise
 
 **Items (liste des services)** :
 

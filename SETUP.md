@@ -56,7 +56,7 @@ npm run dev
 2. Créer un document "Page Accueil"
 3. Remplir :
    - **Hero** : 
-     - Titre : "Studio Web 15 - Agence digitale"
+     - Titre : "Studio Web 15 - Studio web indépendant"
      - Sous-titre : "Nous créons des expériences web sur mesure"
      - CTA : "Discutons de votre projet"
    - **Services** :

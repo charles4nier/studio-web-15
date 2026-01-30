@@ -2,7 +2,7 @@
 export const siteConfig = {
 	name: 'Studio Web 15',
 	description:
-		'Agence web dans le Cantal. Sites vitrines Next.js dès 1500€, e-commerce Shopify dès 2000€. Intervention Cantal, Aveyron, Creuse. Proximité, réactivité, technologie moderne.',
+		'Développeur web freelance dans le Cantal. Agence web locale : sites vitrines Next.js dès 1500€, e-commerce Shopify dès 2000€. Intervention Cantal, Aveyron, Creuse.',
 	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://studioweb15.fr',
 	ogImage: '/og-image.jpg',
 	twitter: {
@@ -16,11 +16,14 @@ export const siteConfig = {
 	},
 	keywords: [
 		// Local primaire
+		'freelance développeur web Cantal',
+		'développeur web freelance Aurillac',
+		'agence web freelance Auvergne',
 		'agence web Cantal',
 		'création site web Aurillac',
 		'développeur web Cantal',
 		'site internet Aurillac',
-		'agence digitale Aveyron',
+		'Studio web indépendant Aveyron',
 		'création site Rodez',
 		'développeur Creuse',
 		// Local + Tech

@@ -89,7 +89,7 @@ export default function StudioModal({
 							<animate attributeName="offset" values="1;2;1" dur="25s" repeatCount="indefinite" />
 						</stop>
 					</linearGradient>
-					<linearGradient id="modal-gradient-agence" x1="0%" y1="0%" x2="100%" y2="100%">
+					<linearGradient id="modal-gradient-partenaire" x1="0%" y1="0%" x2="100%" y2="100%">
 						<stop offset="0%" stopColor="#f59e0b">
 							<animate attributeName="offset" values="0;1;0" dur="25s" repeatCount="indefinite" />
 						</stop>

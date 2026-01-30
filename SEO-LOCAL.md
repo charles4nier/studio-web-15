@@ -90,7 +90,7 @@ Obtenir des liens depuis :
 
 ### 5. **Pages landing par ville** (optionnel mais puissant)
 Créer des pages dédiées :
-- `/agence-web-aurillac`
+- `/partenaire-web-aurillac`
 - `/creation-site-rodez`
 - `/developpeur-web-gueret`
 
@@ -128,7 +128,7 @@ Chaque page avec :
 - site Next.js Cantal
 - boutique Shopify Aurillac
 - refonte site web Aurillac
-- agence digitale Auvergne
+- Studio web indépendant Auvergne
 - développeur freelance Cantal
 
 ### Longue traîne

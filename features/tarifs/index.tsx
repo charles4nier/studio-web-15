@@ -125,10 +125,9 @@ export default function Tarifs() {
 				'Apps essentielles (avis, newsletter)',
 				'Automatisations emails',
 				'Formation complète 2h',
-				'Client paie : Shopify 92€/mois'
 			],
 			recommended: false,
-			clientCost: '92€/mois à Shopify'
+			clientCost: '29€/mois à Shopify'
 		},
 		{
 			name: 'Headless',
@@ -144,12 +143,11 @@ export default function Tarifs() {
 				'Animations fluides',
 				'Produits illimités',
 				'Interface admin Shopify',
-				'Formation 2h',
-				'Client paie : Shopify 92€/mois',
+				'Formation 2h',,
 				'Hébergement Vercel gratuit'
 			],
 			recommended: true,
-			clientCost: '92€/mois à Shopify'
+			clientCost: '29€/mois à Shopify'
 		},
 		{
 			name: 'Premium',
@@ -169,7 +167,7 @@ export default function Tarifs() {
 				'Formation 3h dédiée'
 			],
 			recommended: false,
-			clientCost: '92€/mois à Shopify'
+			clientCost: '29€/mois à Shopify'
 		}
 	];
 
@@ -200,7 +198,7 @@ export default function Tarifs() {
 				>
 					<div className="tarifs-hero__text-reveal">
 						<motion.h1 className="tarifs-hero__title" variants={itemVariants}>
-							Nos tarifs
+							Mes tarifs
 						</motion.h1>
 					</div>
 					<div className="tarifs-hero__text-reveal">
@@ -221,7 +219,7 @@ export default function Tarifs() {
 				transition={{ duration: 0.6, ease: 'easeOut' }}
 			>
 				<div className="container">
-					<h2 className="tech-stack__title">Pourquoi nos sites sont différents ?</h2>
+					<h2 className="tech-stack__title">Pourquoi mes sites sont différents ?</h2>
 					<div className="tech-stack__grid">
 						<div className="tech-feature">
 							<div className="tech-feature__icon">⚡</div>
@@ -301,7 +299,7 @@ export default function Tarifs() {
 						<div className="pricing-section__header">
 							<h2 className="pricing-section__title">Boutiques en ligne</h2>
 							<p className="pricing-section__subtitle">
-								Shopify Standard (92€/mois) · Solutions professionnelles uniquement
+								Shopify Standard (dès 29/mois) · Solutions professionnelles uniquement
 							</p>
 							<div className="ecommerce-explanation">
 								<p className="ecommerce-explanation__text">
@@ -358,7 +356,7 @@ export default function Tarifs() {
 							<motion.p 
 								initial={{ opacity: 0, y: 10 }}
 								animate={{ opacity: 1, y: 0 }}>
-								{ mobileCategory === 'vitrine' ? 'Next.js + Sanity CMS · Hébergement gratuit · Design moderne' : 'Shopify Standard (92€/mois) · Solutions professionnelles uniquement'}
+								{ mobileCategory === 'vitrine' ? 'Next.js + Sanity CMS · Hébergement gratuit · Design moderne' : 'Shopify Standard (29€/mois) · Solutions professionnelles uniquement'}
 							</motion.p>
 							{
 								mobileCategory !== 'vitrine' && (

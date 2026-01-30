@@ -3,7 +3,7 @@
 import './style.scss';
 import { motion } from 'framer-motion';
 
-export default function AgenceLocale() {
+export default function PartenaireLocal() {
 	const heroVariants = {
 		hidden: {},
 		visible: {
@@ -68,23 +68,23 @@ export default function AgenceLocale() {
 	];
 
 	return (
-		<div className="agence-locale">
+		<div className="partenaire-locale">
 			{/* Hero */}
-			<section className="agence-hero">
+			<section className="partenaire-hero">
 				<motion.div
 					className="container"
 					variants={heroVariants}
 					initial="hidden"
 					animate="visible"
 				>
-					<div className="agence-hero__text-reveal">
-						<motion.h1 className="agence-hero__title" variants={itemVariants}>
-							Votre agence locale
+					<div className="partenaire-hero__text-reveal">
+						<motion.h1 className="partenaire-hero__title" variants={itemVariants}>
+							Votre partenaire local
 						</motion.h1>
 					</div>
-					<div className="agence-hero__text-reveal">
-						<motion.p className="agence-hero__subtitle" variants={itemVariants}>
-							Agence web basée dans le Cantal. Nous accompagnons les entreprises d'Aurillac, Rodez, Guéret et
+					<div className="partenaire-hero__text-reveal">
+						<motion.p className="partenaire-hero__subtitle" variants={itemVariants}>
+						Studio web indépendant basé dans le Cantal. J'accompagne les entreprises de Aurillac, Rodez, Guéret et
 							des départements limitrophes du Massif Central.
 						</motion.p>
 					</div>
@@ -135,13 +135,13 @@ export default function AgenceLocale() {
 				transition={{ duration: 0.6, ease: 'easeOut' }}
 			>
 				<div className="container">
-					<h2 className="values-section__title">Pourquoi choisir une agence locale ?</h2>
+					<h2 className="values-section__title">Pourquoi choisir un partenaire local ?</h2>
 					<div className="values-grid">
 						<div className="value-card">
 							<div className="value-card__icon">🤝</div>
 							<h3 className="value-card__title">Proximité</h3>
 							<p className="value-card__description">
-								Rencontres en présentiel possibles. On se déplace pour comprendre votre activité et
+								Rencontres en présentiel possibles. Je me déplace pour comprendre votre activité et
 								vos besoins.
 							</p>
 						</div>
@@ -174,15 +174,15 @@ export default function AgenceLocale() {
 
 			{/* CTA */}
 			<motion.section
-				className="agence-cta"
+				className="partenaire-cta"
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, margin: '-100px' }}
 				transition={{ duration: 0.6, ease: 'easeOut' }}
 			>
 				<div className="container">
-					<h2 className="agence-cta__title">Un projet web dans votre région ?</h2>
-					<p className="agence-cta__subtitle">
+					<h2 className="partenaire-cta__title">Un projet web dans votre région ?</h2>
+					<p className="partenaire-cta__subtitle">
 						Discutons-en autour d&apos;un café ou en visio. Devis gratuit sous 24h.
 					</p>
 					<a href="/contact" className="button-primary">
