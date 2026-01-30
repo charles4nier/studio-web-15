@@ -6,7 +6,7 @@ import PartenaireLocal from '@features/partenaire-local';
 export const metadata: Metadata = generatePageMetadata({
 	title: 'Votre partenaire local - Cantal, Aveyron, Creuse',
 	description:
-		"Agence web locale basée dans le Cantal. Nous accompagnons les entreprises d'Aurillac, Rodez, Guéret, Tulle, Clermont-Ferrand. Proximité, déplacements possibles, technologie moderne.",
+		"Studio web locale basé dans le Cantal. J'accompagne les entreprises d'Aurillac, Rodez, Guéret, Tulle, Clermont-Ferrand. Proximité, déplacements possibles, technologie moderne.",
 	path: '/partenaire-local'
 });
 
