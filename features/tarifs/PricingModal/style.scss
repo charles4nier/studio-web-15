@@ -1,66 +1,6 @@
 @import '@shared/styles/variables.scss';
 
 .pricing-modal {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 10001;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100vh;
-	background-color: $black-primary;
-
-	&__wave {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 0;
-		width: 100%;
-		height: 100%;
-		pointer-events: none;
-	}
-
-	&__close {
-		position: fixed;
-		top: 30px;
-		right: max(20px, calc((100vw - 1200px) / 2));
-		z-index: 10002;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 56px;
-		height: 56px;
-		padding: 0;
-		background: $gradient-tarifs;
-		border: none;
-		border-radius: 50%;
-		cursor: pointer;
-		transition: all 0.3s ease;
-
-		&:hover {
-			transform: scale(1.1);
-			box-shadow: 0 8px 24px rgba($accent-orange, 0.3);
-		}
-
-		span {
-			position: absolute;
-			width: 24px;
-			height: 2px;
-			background-color: $white;
-			transition: all 0.3s ease;
-
-			&:nth-child(1) {
-				transform: rotate(45deg);
-			}
-
-			&:nth-child(2) {
-				transform: rotate(-45deg);
-			}
-		}
-	}
-
 	&__content {
 		position: relative;
 		z-index: 1;
@@ -97,108 +37,184 @@
 	&__package {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: $spacing-md;
+		justify-content: space-between;
 		margin-bottom: $spacing-lg;
-		padding: $spacing-md $spacing-xl;
+		padding: $spacing-lg;
 		background: rgba($white, 0.05);
 		border: 1px solid rgba($white, 0.1);
 		border-radius: 12px;
 
 		&-name {
-			font-family: var(--font-ubuntu), serif;
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: 600;
 			color: $white;
 		}
 
 		&-price {
+			font-family: var(--font-ubuntu), serif;
 			font-size: 24px;
 			font-weight: 700;
 			background: $gradient-tarifs;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
+
+			&::after {
+				content: ' €';
+			}
 		}
 	}
 
 	&__form {
 		display: flex;
 		flex-direction: column;
-		gap: $spacing-xl;
+		gap: $spacing-lg;
+	}
 
-		&-group {
-			display: flex;
-			flex-direction: column;
-			gap: $spacing-sm;
+	&__form-group {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-sm;
 
-			label {
-				font-family: var(--font-ubuntu), serif;
-				font-size: 14px;
-				font-weight: 600;
-				color: $white;
-				text-transform: uppercase;
-				letter-spacing: 0.5px;
-			}
-
-			input {
-				width: 100%;
-				padding: $spacing-md $spacing-lg;
-				background: rgba($white, 0.05);
-				border: 1px solid rgba($white, 0.1);
-				border-radius: 8px;
-				font-family: var(--font-inter), sans-serif;
-				font-size: 16px;
-				color: $white;
-				transition: all 0.3s ease;
-
-				&::placeholder {
-					color: rgba($white, 0.4);
-				}
-
-				&:focus {
-					background: rgba($white, 0.08);
-					border-color: rgba($accent-orange, 0.5);
-					box-shadow: 0 0 0 3px rgba($accent-orange, 0.1);
-					outline: none;
-				}
-			}
+		label {
+			font-size: 14px;
+			font-weight: 500;
+			color: rgba($white, 0.9);
 		}
 
-		.button-primary {
+		input {
 			width: 100%;
-			margin-top: $spacing-lg;
-			padding: $spacing-lg;
-			font-size: 18px;
+			padding: $spacing-md;
+			font-family: var(--font-inter), sans-serif;
+			font-size: 16px;
+			color: $white;
+			background: rgba($white, 0.05);
+			border: 1px solid rgba($white, 0.1);
+			border-radius: 8px;
+			transition: all 0.3s ease;
 
-			&:disabled {
-				opacity: 0.5;
-				cursor: not-allowed;
+			&:focus {
+				outline: none;
+				border-color: rgba($accent-orange, 0.5);
+				background: rgba($white, 0.08);
 			}
+
+			&::placeholder {
+				color: rgba($white, 0.4);
+			}
+		}
+	}
+
+	&__maintenance {
+		margin-bottom: $spacing-lg;
+	}
+
+	&__maintenance-label {
+		display: block;
+		font-size: 14px;
+		font-weight: 500;
+		color: rgba($white, 0.9);
+		margin-bottom: $spacing-md;
+	}
+
+	&__maintenance-options {
+		display: flex;
+		gap: $spacing-sm;
+	}
+
+	&__maintenance-option {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-xs;
+		padding: $spacing-md;
+		background: rgba($white, 0.05);
+		border: 1px solid rgba($white, 0.1);
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba($white, 0.08);
+			border-color: rgba($accent-pink, 0.3);
+		}
+
+		&.active {
+			background: rgba($accent-pink, 0.1);
+			border-color: $accent-pink;
+			box-shadow: 0 0 0 2px rgba($accent-pink, 0.2);
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $white;
+			outline-offset: 2px;
+		}
+	}
+
+	&__maintenance-option-name {
+		font-size: 13px;
+		font-weight: 500;
+		color: $white;
+		text-align: center;
+	}
+
+	&__maintenance-option-price {
+		font-size: 15px;
+		font-weight: 600;
+		color: $accent-pink;
+		text-align: center;
+	}
+
+	.button-primary {
+		width: 100%;
+		padding: $spacing-md $spacing-2xl;
+		margin-top: $spacing-md;
+		font-family: var(--font-inter), sans-serif;
+		font-size: 18px;
+		font-weight: 600;
+		color: $white;
+		background: $gradient-tarifs;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover:not(:disabled) {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 24px rgba($accent-orange, 0.3);
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: not-allowed;
 		}
 	}
 
 	&__success {
 		text-align: center;
-		padding: $spacing-5xl 0;
+		padding: $spacing-3xl $spacing-lg;
 
 		&-icon {
-			display: flex;
+			display: inline-flex;
 			align-items: center;
 			justify-content: center;
 			width: 80px;
 			height: 80px;
-			margin: 0 auto $spacing-2xl;
-			background: $gradient-tarifs;
-			border-radius: 50%;
+			margin-bottom: $spacing-lg;
 			font-size: 48px;
 			color: $white;
+			background: $gradient-tarifs;
+			border-radius: 50%;
 		}
 
 		h2 {
-			margin-bottom: $spacing-lg;
+			margin-bottom: $spacing-md;
 			font-family: var(--font-ubuntu), serif;
-			font-size: 36px;
+			font-size: 32px;
 			font-weight: 700;
 			color: $white;
 		}
@@ -212,22 +228,17 @@
 
 	@media (max-width: $breakpoint-sm) {
 		&__content {
-			padding: $spacing-xl;
+			padding: $spacing-lg;
 		}
 
 		&__header h2 {
-			font-size: 36px;
+			font-size: 32px;
 		}
 
-		&__close {
-			top: 20px;
-			right: 20px;
-			width: 48px;
-			height: 48px;
-
-			span {
-				width: 20px;
-			}
+		&__package {
+			flex-direction: column;
+			gap: $spacing-sm;
+			text-align: center;
 		}
 	}
 }

@@ -1,3 +1,5 @@
+@import '@shared/styles/variables.scss';
+
 .pricing-card {
 	background: $white;
 	border: 1px solid rgba(0, 0, 0, 0.08);
@@ -5,6 +7,7 @@
 	padding: $spacing-3xl;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	position: relative;
 	transition: all 0.3s ease;
 
@@ -78,6 +81,36 @@
 		background-clip: text;
 	}
 
+	&__maintenance-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: $spacing-xs;
+		margin: $spacing-xs 0 $spacing-md 0;
+		padding: $spacing-xs $spacing-sm;
+		background: transparent;
+		border: 1px solid rgba($accent-pink, 0.3);
+		border-radius: 6px;
+		font-size: 12px;
+		font-weight: 500;
+		color: $accent-pink;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgba($accent-pink, 0.05);
+			border-color: $accent-pink;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $accent-pink;
+			outline-offset: 2px;
+		}
+	}
+
 	&__description {
 		font-size: clamp(14px, 1.2vw, 16px);
 		color: $black-secondary;
@@ -123,9 +156,36 @@
 	.button-secondary {
 		width: 100%;
 		margin-top: auto;
-		border: none;
+		padding: $spacing-md $spacing-xl;
+		font-family: var(--font-inter), sans-serif;
+		font-size: 16px;
+		font-weight: 600;
+		border-radius: 8px;
 		text-align: center;
 		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.button-primary {
+		background: $gradient-tarifs;
+		color: $white;
+		border: none;
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 8px 20px rgba($accent-orange, 0.3);
+		}
+	}
+
+	.button-secondary {
+		background: transparent;
+		color: $black-primary;
+		border: 2px solid $black-primary;
+
+		&:hover {
+			background: $black-primary;
+			color: $white;
+		}
 	}
 
 	@media (max-width: $breakpoint-sm) {

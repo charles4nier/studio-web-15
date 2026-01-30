@@ -245,6 +245,11 @@
 	gap: $spacing-3xl;
 	max-width: 1200px;
 	margin: 0 auto;
+	align-items: stretch;
+
+	> * {
+		display: flex;
+	}
 
 	&--maintenance {
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -343,6 +348,86 @@
 		&__cell {
 			padding: $spacing-md;
 			font-size: 14px;
+		}
+	}
+}
+
+.maintenance-info {
+	padding: $spacing-5xl 0;
+	background: $white-secondary;
+
+	&__content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: $spacing-4xl;
+		background: $white;
+		border-radius: 16px;
+		box-shadow: $shadow-soft;
+		text-align: center;
+		transition: all 0.3s ease;
+
+		&:hover {
+			box-shadow: $shadow-medium;
+		}
+	}
+
+	&__icon {
+		margin-bottom: $spacing-lg;
+		font-size: 64px;
+	}
+
+	&__title {
+		margin-bottom: $spacing-md;
+		font-family: var(--font-ubuntu), serif;
+		font-size: 32px;
+		font-weight: 700;
+		background: $gradient-tarifs;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	&__description {
+		margin-bottom: $spacing-2xl;
+		font-size: 18px;
+		color: $black-secondary;
+		line-height: 1.6;
+	}
+
+	&__button {
+		border: 2px solid transparent;
+		background-image: 
+			linear-gradient($white, $white),
+			$gradient-tarifs;
+		background-origin: border-box;
+		background-clip: padding-box, border-box;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: $gradient-tarifs;
+			color: $white;
+			border-color: transparent;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-4xl 0;
+
+		&__content {
+			padding: $spacing-2xl;
+		}
+
+		&__icon {
+			font-size: 48px;
+		}
+
+		&__title {
+			font-size: 24px;
+		}
+
+		&__description {
+			font-size: 16px;
+			margin-bottom: $spacing-xl;
 		}
 	}
 }

@@ -4,11 +4,13 @@ import { useState } from 'react';
 import './style.scss';
 import PricingCard from './PricingCard';
 import PricingModal from './PricingModal';
+import MaintenanceModal from './MaintenanceModal';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function Tarifs() {
 	const [modalOpen, setModalOpen] = useState(false);
+	const [maintenanceModalOpen, setMaintenanceModalOpen] = useState(false);
 	const [selectedPackage, setSelectedPackage] = useState({ name: '', price: '', category: '' });
 
 	const handleSelectPackage = (name: string, price: string, category: string) => {
@@ -47,8 +49,9 @@ export default function Tarifs() {
 			features: [
 				'5 pages',
 				'Sanity CMS (gestion contenu facile)',
-				'Design adapté moderne',
-				'100% Responsive (mobile/tablet/desktop)',
+				'Design moderne adapté',
+				'100% Responsive',
+				'Accessibilité (WCAG 2.1)',
 				'SEO optimisé',
 				'Formulaire de contact',
 				'Google Maps',
@@ -67,13 +70,14 @@ export default function Tarifs() {
 				'Sanity CMS',
 				'Design 100% sur mesure',
 				'100% Responsive',
+				'Accessibilité (WCAG 2.1)',
 				'SEO optimisé avancé',
 				'Formulaire de contact',
 				'Google Maps',
-				'Animations modernes (Framer Motion)',
+				'Animations fluides',
 				'Blog/Actualités',
 				'Formation Sanity 2h',
-				'Staging pour validation client',
+				'Staging pour validation',
 				'Hébergement Vercel gratuit',
 				'SSL + CDN inclus'
 			],
@@ -82,16 +86,19 @@ export default function Tarifs() {
 		{
 			name: 'Premium',
 			price: 'Sur devis',
-			description: 'Pour projets complexes',
+			description: 'Expérience immersive',
 			features: [
-				'Pages illimitées',
 				'Tout du Pro +',
-				'Fonctionnalités sur mesure',
-				'Design unique et complexe',
-				'Intégrations API tierces',
-				'Espace membre',
+				'Animations sophistiquées (Framer Motion avancé)',
+				'Effets visuels Canvas/SVG poussés',
+				'Scroll narratif & parallax',
+				'Micro-interactions sur mesure',
+				'Transitions morphing/shader CSS',
+				'Intégrations complexes (APIs, CRM)',
+				'Espace membre avancé',
 				'Multi-langues',
-				'Réservations, paiements...'
+				'Fonctionnalités métier sur mesure',
+				'Design système complet'
 			],
 			recommended: false
 		}
@@ -106,16 +113,17 @@ export default function Tarifs() {
 				'Solution 100% Shopify (thème Liquid)',
 				'Interface admin Shopify complète',
 				'Thème 100% custom pour votre marque',
+				'Accessibilité e-commerce (WCAG 2.1)',
 				'Produits illimités',
 				'Paiements Shopify Payments',
 				'Gestion stocks automatique',
 				'Comptes clients',
-				'Apps essentielles (avis, newsletter, etc.)',
-				'Automatisations emails avancées',
+				'Apps essentielles (avis, newsletter)',
+				'Automatisations emails',
 				'Formation complète 2h',
 				'Client paie : Shopify 92€/mois'
 			],
-			recommended: true,
+			recommended: false,
 			clientCost: '92€/mois à Shopify'
 		},
 		{
@@ -123,65 +131,41 @@ export default function Tarifs() {
 			price: '2 500',
 			description: 'Next.js + Shopify',
 			features: [
-				'Frontend Next.js sur mesure (comme vos sites vitrines)',
-				'Backend Shopify (gestion produits/commandes)',
-				'Design 100% liberté (pas limité par Shopify)',
-				'Performance 95+ Google (ultra-rapide)',
-				'SEO optimisé maximum',
-				'Animations Framer Motion',
+				'Frontend Next.js performant',
+				'Backend Shopify (gestion complète)',
+				'Design 100% sur mesure',
+				'Accessibilité (WCAG 2.1 AA)',
+				'Performance 95+ Google',
+				'SEO optimisé',
+				'Animations fluides',
 				'Produits illimités',
-				'Interface admin Shopify pour gérer',
-				'Formation 2h (Shopify + site)',
+				'Interface admin Shopify',
+				'Formation 2h',
 				'Client paie : Shopify 92€/mois',
-				'Site hébergé sur Vercel (gratuit)'
+				'Hébergement Vercel gratuit'
+			],
+			recommended: true,
+			clientCost: '92€/mois à Shopify'
+		},
+		{
+			name: 'Premium',
+			price: 'Sur devis',
+			description: 'Expérience immersive',
+			features: [
+				'Tout du Headless +',
+				'Animations sophistiquées (Framer Motion avancé)',
+				'Effets visuels Canvas/SVG poussés',
+				'Configurateur produit interactif',
+				'Scroll narratif & parallax',
+				'Micro-interactions sur mesure',
+				'Transitions morphing/shader CSS',
+				'Intégrations complexes (CRM, ERP, APIs)',
+				'Personnalisation avancée',
+				'Design système complet',
+				'Formation 3h dédiée'
 			],
 			recommended: false,
 			clientCost: '92€/mois à Shopify'
-		}
-	];
-
-	const maintenancePackages = [
-		{
-			name: 'Hébergement seul',
-			price: '0',
-			description: 'Vous gérez en autonomie',
-			features: [
-				'Hébergement Vercel gratuit',
-				'SSL inclus',
-				'CDN mondial',
-				'Backups automatiques',
-				'Vous gérez via Sanity/Shopify'
-			],
-			unit: '€/mois'
-		},
-		{
-			name: 'Pack Sérénité',
-			price: '39',
-			description: 'Recommandé',
-			features: [
-				'Tout de l\'hébergement gratuit +',
-				'Support prioritaire (email/tél)',
-				'Mises à jour mensuelles',
-				'Backups renforcés',
-				'Modifications mineures (1h/mois)',
-				'Monitoring de disponibilité'
-			],
-			unit: '€/mois',
-			recommended: true
-		},
-		{
-			name: 'Pack Premium',
-			price: '49',
-			description: 'Pour e-commerce',
-			features: [
-				'Tout du Pack Sérénité +',
-				'Support illimité',
-				'Modifications incluses (2h/mois)',
-				'Google Analytics suivi',
-				'Optimisations SEO mensuelles',
-				'Conseils stratégie digitale'
-			],
-			unit: '€/mois'
 		}
 	];
 
@@ -277,6 +261,7 @@ export default function Tarifs() {
 								key={index} 
 								{...pkg} 
 								onSelect={() => handleSelectPackage(pkg.name, pkg.price === 'Sur devis' ? 'Sur devis' : pkg.price + '€', 'Site vitrine')}
+								onMaintenanceClick={() => setMaintenanceModalOpen(true)}
 							/>
 						))}
 					</div>
@@ -314,33 +299,7 @@ export default function Tarifs() {
 								key={index} 
 								{...pkg} 
 								onSelect={() => handleSelectPackage(pkg.name, pkg.price === 'Sur devis' ? 'Sur devis' : pkg.price + '€', 'E-commerce')}
-							/>
-						))}
-					</div>
-				</div>
-			</motion.section>
-
-			{/* Maintenance */}
-			<motion.section
-				className="pricing-section pricing-section--maintenance"
-				initial={{ opacity: 0, y: 40 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				viewport={{ once: true, margin: '-100px' }}
-				transition={{ duration: 0.6, ease: 'easeOut' }}
-			>
-				<div className="container">
-					<div className="pricing-section__header">
-						<h2 className="pricing-section__title">Maintenance (optionnel)</h2>
-						<p className="pricing-section__subtitle">
-							Pas d'abonnement obligatoire · Vous choisissez selon vos besoins
-						</p>
-					</div>
-					<div className="pricing-grid pricing-grid--maintenance">
-						{maintenancePackages.map((pkg, index) => (
-							<PricingCard 
-								key={index} 
-								{...pkg} 
-								onSelect={() => handleSelectPackage(pkg.name, pkg.price + (pkg.unit || '€'), 'Maintenance')}
+								onMaintenanceClick={() => setMaintenanceModalOpen(true)}
 							/>
 						))}
 					</div>
@@ -373,6 +332,12 @@ export default function Tarifs() {
 				packageName={selectedPackage.name}
 				packagePrice={selectedPackage.price}
 				packageCategory={selectedPackage.category}
+			/>
+
+			{/* Modale maintenance */}
+			<MaintenanceModal
+				isOpen={maintenanceModalOpen}
+				onClose={() => setMaintenanceModalOpen(false)}
 			/>
 		</div>
 	);

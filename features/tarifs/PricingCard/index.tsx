@@ -9,6 +9,7 @@ interface PricingCardProps {
 	unit?: string;
 	clientCost?: string;
 	onSelect?: () => void;
+	onMaintenanceClick?: () => void;
 }
 
 export default function PricingCard({
@@ -19,7 +20,8 @@ export default function PricingCard({
 	recommended = false,
 	unit = '€',
 	clientCost,
-	onSelect
+	onSelect,
+	onMaintenanceClick
 }: PricingCardProps) {
 	return (
 		<div className={`pricing-card ${recommended ? 'pricing-card--recommended' : ''}`}>
@@ -37,6 +39,15 @@ export default function PricingCard({
 						<span className="pricing-card__custom">Sur devis</span>
 					)}
 				</div>
+				<button
+					className="pricing-card__maintenance-btn"
+					onClick={(e) => {
+						e.stopPropagation();
+						onMaintenanceClick?.();
+					}}
+				>
+					+ Maintenance optionnelle
+				</button>
 				<p className="pricing-card__description">{description}</p>
 			</div>
 

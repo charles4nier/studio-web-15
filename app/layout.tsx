@@ -53,14 +53,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="fr" className={`${ubuntu.variable} ${inter.variable}`}>
 			<body>
-				<PageWrapper>
-					<HeroTransition />
-					<Header />
-					<PageTransition>
-						<main>{children}</main>
-					</PageTransition>
-					<Footer />
-				</PageWrapper>
+				<div id="main-content">
+					<PageWrapper>
+						<HeroTransition />
+						<Header />
+						<PageTransition>
+							<main>{children}</main>
+						</PageTransition>
+						<Footer />
+					</PageWrapper>
+				</div>
 			</body>
 		</html>
 	);

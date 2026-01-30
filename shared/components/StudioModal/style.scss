@@ -1,0 +1,144 @@
+@import '@shared/styles/variables.scss';
+
+.studio-modal {
+	background: $black-primary;
+
+	&__waves {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	&__close {
+		position: fixed;
+		top: 30px;
+		right: max(20px, calc((100vw - 1200px) / 2));
+		z-index: 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 56px;
+		height: 56px;
+		padding: 0;
+		background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+		border: none;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		// Focus visible uniquement au clavier
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			outline: 3px solid $white;
+			outline-offset: 4px;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+			box-shadow: 0 8px 24px rgba($accent-orange, 0.3);
+		}
+
+		span {
+			position: absolute;
+			width: 24px;
+			height: 2px;
+			background-color: $white;
+			transition: all 0.3s ease;
+
+			&:nth-child(1) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		
+		// Cacher la scrollbar
+		scrollbar-width: none; // Firefox
+		-ms-overflow-style: none; // IE/Edge
+		
+		&::-webkit-scrollbar {
+			display: none; // Chrome/Safari
+		}
+	}
+
+	&__scroll-indicator {
+		position: fixed;
+		bottom: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 48px;
+		height: 48px;
+		padding: 0;
+		background: $gradient-tarifs;
+		border: none;
+		border-radius: 50%;
+		color: $white;
+		box-shadow: 0 4px 16px rgba($accent-orange, 0.4);
+		cursor: pointer;
+		animation: bounce 2s infinite;
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: translateX(-50%) scale(1.1);
+			box-shadow: 0 6px 20px rgba($accent-orange, 0.5);
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:focus-visible {
+			outline: 3px solid $white;
+			outline-offset: 4px;
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	@keyframes bounce {
+		0%, 100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		50% {
+			transform: translateX(-50%) translateY(8px);
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		&__close {
+			top: 20px;
+			right: 20px;
+			width: 48px;
+			height: 48px;
+
+			span {
+				width: 20px;
+			}
+		}
+	}
+}
