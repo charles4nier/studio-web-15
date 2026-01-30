@@ -353,9 +353,30 @@ export default function Tarifs() {
 								Sites marchands
 							</button>
 						</div>
-
 						{/* Accordion */}
 						<div className="pricing-mobile__accordion">
+							<motion.p 
+								initial={{ opacity: 0, y: 10 }}
+								animate={{ opacity: 1, y: 0 }}>
+								{ mobileCategory === 'vitrine' ? 'Next.js + Sanity CMS · Hébergement gratuit · Design moderne' : 'Shopify Standard (92€/mois) · Solutions professionnelles uniquement'}
+							</motion.p>
+							{
+								mobileCategory !== 'vitrine' && (
+									<motion.div 
+										className="ecommerce-explanation"
+										initial={{ opacity: 0, y: 10 }}
+										animate={{ opacity: 1, y: 0 }}>
+										<p className="ecommerce-explanation__text">
+											<strong>Pro</strong> : Shopify classique avec thème 100% custom. Interface admin
+											Shopify complète pour tout gérer facilement.
+										</p>
+										<p className="ecommerce-explanation__text">
+											<strong>Headless</strong> : Frontend Next.js ultra-performant + Backend Shopify.
+											Performance maximale, SEO optimisé, même facilité de gestion via l'admin Shopify.
+										</p>
+									</motion.div>
+								)
+							}
 							{currentPackages.map((pkg, index) => {
 								const isExpanded = expandedCards.includes(index);
 								const categoryName = mobileCategory === 'vitrine' ? 'Site vitrine' : 'E-commerce';
@@ -395,6 +416,8 @@ export default function Tarifs() {
 												</button>
 												<p className="pricing-card__description">{pkg.description}</p>
 											</div>
+
+											
 
 											{/* Features (déployables) */}
 											<AnimatePresence>
