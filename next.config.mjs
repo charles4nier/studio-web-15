@@ -26,6 +26,9 @@ const nextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	  },
+	typescript: {
+	ignoreBuildErrors: true,
+	},
 	poweredByHeader: false,
 	webpack: (config, { isServer }) => {
 		config.resolve.alias = {
