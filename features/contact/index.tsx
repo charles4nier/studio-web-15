@@ -2,9 +2,13 @@
 
 import ContactWizard from './ContactWizard';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import './style.scss';
 
 export default function Contact() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	const heroVariants = {
 		hidden: {},
 		visible: {
@@ -46,13 +50,6 @@ export default function Contact() {
 					<div className="contact-hero__text-reveal">
 						<motion.p className="contact-hero__subtitle" variants={itemVariants}>
 							Quelques clics pour nous en dire plus. On vous répond sous 24h.
-						</motion.p>
-					</div>
-					<div className="contact-hero__text-reveal">
-						<motion.p className="contact-hero__contact-info" variants={itemVariants}>
-							<a href="mailto:contact@studioweb15.fr">contact@studioweb15.fr</a>
-							<span className="contact-hero__separator"> · </span>
-							<a href="tel:+33698483658">06 98 48 36 58</a>
 						</motion.p>
 					</div>
 				</motion.div>

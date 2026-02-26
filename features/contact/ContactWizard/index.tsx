@@ -30,13 +30,14 @@ export default function ContactWizard() {
 
 	const totalSteps = 4;
 
-	// Scroll vers le wizard à chaque changement d'étape
+	// Scroll vers le wizard sur mobile uniquement quand on change d’étape (pas à l’arrivée sur la page)
+	const prevStepRef = useRef(step);
 	useEffect(() => {
-		if (wizardRef.current && window.innerWidth <= 768) {
-			wizardRef.current.scrollIntoView({ 
-				behavior: 'smooth', 
-				block: 'start' 
-			});
+		if (wizardRef.current && window.innerWidth <= 768 && step !== prevStepRef.current) {
+			prevStepRef.current = step;
+			wizardRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		} else {
+			prevStepRef.current = step;
 		}
 	}, [step]);
 

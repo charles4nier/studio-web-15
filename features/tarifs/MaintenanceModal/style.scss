@@ -16,7 +16,7 @@
 
 		h2 {
 			margin-bottom: $spacing-lg;
-			font-family: var(--font-ubuntu), serif;
+			font-family: var(--font-ubuntu), sans-serif;
 			font-size: 48px;
 			font-weight: 700;
 			color: $white;
@@ -106,7 +106,7 @@
 
 	&__name {
 		margin-bottom: $spacing-md;
-		font-family: var(--font-ubuntu), serif;
+		font-family: var(--font-ubuntu), sans-serif;
 		font-size: clamp(20px, 2vw, 24px);
 		font-weight: 600;
 		color: $black-primary;
@@ -121,7 +121,7 @@
 	}
 
 	&__amount {
-		font-family: var(--font-ubuntu), serif;
+		font-family: var(--font-ubuntu), sans-serif;
 		font-size: clamp(36px, 4vw, 48px);
 		font-weight: 700;
 		background: $gradient-tarifs;

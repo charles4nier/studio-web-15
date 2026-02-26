@@ -1,0 +1,178 @@
+.floating-contact {
+	position: fixed;
+	bottom: $spacing-lg;
+	right: $spacing-lg;
+	z-index: 1000;
+	width: 56px;
+	min-height: 56px;
+
+	&--open {
+		height: 200px;
+	}
+}
+
+/* Cellule noire en cercle */
+.floating-contact__cell {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: $black-primary;
+	box-shadow:
+		0 4px 12px rgba(0, 0, 0, 0.25),
+		0 14px 44px rgba(0, 0, 0, 0.45),
+		0 24px 60px rgba(0, 0, 0, 0.25);
+	overflow: hidden;
+}
+
+.floating-contact__waves {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.floating-contact__content {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: $spacing-xs;
+	width: 100%;
+	padding: 0 $spacing-lg;
+	box-sizing: border-box;
+}
+
+.floating-contact__line {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	padding: $spacing-sm $spacing-md;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	font-family: $font-family-primary;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.92);
+	text-align: center;
+	border-radius: 8px;
+	transition: background 0.15s ease;
+	box-sizing: border-box;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.06);
+	}
+
+	&:focus-visible {
+		outline: 2px solid rgba(255, 255, 255, 0.4);
+		outline-offset: -2px;
+	}
+}
+
+.floating-contact__line-text {
+	flex: 0 0 auto;
+}
+
+.floating-contact__copied {
+	position: absolute;
+	right: $spacing-xs;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: $font-family-primary;
+	font-size: 11px;
+	font-weight: 600;
+	color: $accent-green;
+	flex-shrink: 0;
+}
+
+/* Une seule pastille : position animée (bas = fermé, remonte = ouvert) */
+.floating-contact__pill {
+	position: absolute;
+	right: 0;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: $gradient-home;
+	color: $white;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+	transition: box-shadow 0.2s ease;
+	z-index: 2;
+
+	.page-tarifs & {
+		background: $gradient-tarifs;
+	}
+
+	.page-contact & {
+		background: $gradient-contact;
+	}
+
+	.page-partenaire & {
+		background: $gradient-partenaire;
+	}
+
+	&:hover {
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+	}
+
+	&:focus-visible {
+		outline: 2px solid rgba(255, 255, 255, 0.8);
+		outline-offset: 3px;
+	}
+}
+
+.floating-contact__icon-svg {
+	width: 26px;
+	height: 26px;
+}
+
+@media (max-width: $breakpoint-sm) {
+	.floating-contact {
+		bottom: $spacing-md;
+		right: $spacing-md;
+	}
+
+	.floating-contact__cell {
+		width: 180px;
+		height: 180px;
+	}
+
+	.floating-contact--open {
+		height: 180px;
+	}
+
+	.floating-contact__pill {
+		width: 52px;
+		height: 52px;
+	}
+
+	.floating-contact__icon-svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.floating-contact__content {
+		padding: 0 $spacing-md;
+	}
+
+	.floating-contact__line {
+		padding: $spacing-sm $spacing-sm;
+		font-size: 12px;
+	}
+}

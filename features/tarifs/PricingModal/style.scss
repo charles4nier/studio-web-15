@@ -16,7 +16,7 @@
 
 		h2 {
 			margin-bottom: $spacing-lg;
-			font-family: var(--font-ubuntu), serif;
+			font-family: var(--font-ubuntu), sans-serif;
 			font-size: 48px;
 			font-weight: 700;
 			color: $white;
@@ -51,7 +51,7 @@
 		}
 
 		&-price {
-			font-family: var(--font-ubuntu), serif;
+			font-family: var(--font-ubuntu), sans-serif;
 			font-size: 24px;
 			font-weight: 700;
 			background: $gradient-tarifs;
@@ -213,7 +213,7 @@
 
 		h2 {
 			margin-bottom: $spacing-md;
-			font-family: var(--font-ubuntu), serif;
+			font-family: var(--font-ubuntu), sans-serif;
 			font-size: 32px;
 			font-weight: 700;
 			color: $white;

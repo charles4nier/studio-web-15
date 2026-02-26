@@ -20,7 +20,7 @@
 	}
 
 	&__logo {
-		font-family: var(--font-ubuntu), serif;
+		font-family: var(--font-ubuntu), sans-serif;
 		font-weight: 700;
 		font-size: 24px;
 		background: $gradient-home;
@@ -327,7 +327,7 @@
 	}
 
 	&__mobile-logo {
-		font-family: var(--font-ubuntu), serif;
+		font-family: var(--font-ubuntu), sans-serif;
 		font-weight: 700;
 		font-size: 20px;
 		color: $white;

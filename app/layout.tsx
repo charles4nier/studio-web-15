@@ -48,6 +48,7 @@ import PageTransition from '@shared/components/PageTransition';
 import Footer from '@shared/components/Footer';
 import PageWrapper from '@shared/components/PageWrapper';
 import HeroTransition from '@shared/components/HeroTransition';
+import FloatingContact from '@shared/components/FloatingContact';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -61,6 +62,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 							<main>{children}</main>
 						</PageTransition>
 						<Footer />
+						<FloatingContact />
 					</PageWrapper>
 				</div>
 			</body>
