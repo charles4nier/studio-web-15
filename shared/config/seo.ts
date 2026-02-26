@@ -98,11 +98,23 @@ export const defaultMetadata = {
 			'max-snippet': -1
 		}
 	},
-	verification: {
-		google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
-		yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
-		yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION
-	}
+	// Vérification Search Console : n'ajouter que si au moins une clé est définie
+	...(typeof process !== 'undefined' &&
+		(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION ||
+			process.env.NEXT_PUBLIC_YANDEX_VERIFICATION ||
+			process.env.NEXT_PUBLIC_YAHOO_VERIFICATION) && {
+			verification: {
+				...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION && {
+					google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION
+				}),
+				...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION && {
+					yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION
+				}),
+				...(process.env.NEXT_PUBLIC_YAHOO_VERIFICATION && {
+					yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION
+				})
+			}
+		})
 };
 
 // Helper pour générer les métadonnées de page
