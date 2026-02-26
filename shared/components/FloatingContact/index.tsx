@@ -61,8 +61,11 @@ export default function FloatingContact() {
 	}, [isOpen]);
 
 	const toggle = () => setIsOpen((o) => !o);
+	
 
 	return (
+		<>
+
 		<div className={`floating-contact${isOpen ? ' floating-contact--open' : ''}`} ref={containerRef}>
 			{/* Cellule noire en cercle : se forme au clic */}
 			<AnimatePresence>
@@ -101,11 +104,11 @@ export default function FloatingContact() {
 								fill="none"
 								stroke={`url(#float-grad-${gradientId})`}
 								strokeWidth="1.4"
-								opacity="0.2"
+								opacity="0.35"
 							>
 								<animate
 									attributeName="d"
-									dur="28s"
+									dur="20s"
 									repeatCount="indefinite"
 									values="M 150 30 Q 100 80, 50 120 T 20 180; M 150 30 Q 110 100, 50 100 T 20 160; M 150 30 Q 90 60, 50 140 T 20 180; M 150 30 Q 100 80, 50 120 T 20 180"
 								/>
@@ -114,12 +117,12 @@ export default function FloatingContact() {
 							<path
 								fill="none"
 								stroke={`url(#float-grad-${gradientId})`}
-								strokeWidth="1"
+								strokeWidth="1.2"
 								opacity="0.1"
 							>
 								<animate
 									attributeName="d"
-									dur="25s"
+									dur="18s"
 									repeatCount="indefinite"
 									values="M 100 180 Q 60 120, 30 80 T 50 30; M 100 180 Q 80 140, 30 100 T 60 30; M 100 180 Q 50 100, 30 60 T 50 30; M 100 180 Q 60 120, 30 80 T 50 30"
 								/>
@@ -198,5 +201,7 @@ export default function FloatingContact() {
 				</svg>
 			</motion.button>
 		</div>
+		<div className={`floating-contact__overlay ${isOpen ? ' floating-contact__overlay--open' : ''}`}  onClick={toggle} />
+		</>
 	);
 }

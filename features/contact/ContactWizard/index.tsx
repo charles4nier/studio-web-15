@@ -11,6 +11,7 @@ interface FormData {
 	timing: string;
 	name: string;
 	email: string;
+	phone: string;
 	message: string;
 }
 
@@ -22,6 +23,7 @@ export default function ContactWizard() {
 		timing: '',
 		name: '',
 		email: '',
+		phone: '',
 		message: ''
 	});
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -65,6 +67,7 @@ export default function ContactWizard() {
 				body: JSON.stringify({
 					name: formData.name,
 					email: formData.email,
+					phone: formData.phone || undefined,
 					message: formData.message || undefined,
 					source: 'Contact',
 					projectType: formData.projectType || undefined,
@@ -352,6 +355,20 @@ export default function ContactWizard() {
 									value={formData.email}
 									onChange={(e) => handleInputChange('email', e.target.value)}
 									required
+								/>
+							</div>
+
+							<div className="wizard-form__group">
+								<label htmlFor="phone" className="wizard-form__label">
+									Téléphone (optionnel)
+								</label>
+								<input
+									type="tel"
+									id="phone"
+									className="wizard-form__input"
+									value={formData.phone}
+									onChange={(e) => handleInputChange('phone', e.target.value)}
+									placeholder="06 12 34 56 78"
 								/>
 							</div>
 
