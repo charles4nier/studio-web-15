@@ -39,6 +39,9 @@ export default function Footer() {
 						<h4>Contact</h4>
 						<ul>
 							<li>📧 contact@studioweb15.fr</li>
+							<li>
+								<a href="tel:+33698483658">📞 06 98 48 36 58</a>
+							</li>
 							<li>📍 Cantal, Auvergne</li>
 							<li>📍 Intervention : Cantal, Aveyron, Creuse</li>
 						</ul>

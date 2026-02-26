@@ -57,12 +57,29 @@ export default function ContactWizard() {
 		e.preventDefault();
 		setIsSubmitting(true);
 
-		// Simulation d'envoi (à remplacer par vraie API)
-		await new Promise((resolve) => setTimeout(resolve, 1500));
-
-		console.log('Form submitted:', formData);
-		setIsSubmitting(false);
-		setIsSuccess(true);
+		try {
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name: formData.name,
+					email: formData.email,
+					message: formData.message || undefined,
+					source: 'Contact',
+					projectType: formData.projectType || undefined,
+					budget: formData.budget || undefined,
+					timing: formData.timing || undefined
+				})
+			});
+			const data = await res.json().catch(() => ({}));
+			if (!res.ok) {
+				alert(data.error || "Une erreur s'est produite. Réessayez ou écrivez à contact@studioweb15.fr");
+				return;
+			}
+			setIsSuccess(true);
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	const handleBack = () => {

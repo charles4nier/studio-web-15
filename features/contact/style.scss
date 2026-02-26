@@ -56,6 +56,28 @@
 		z-index: 1;
 	}
 
+	&__contact-info {
+		font-size: clamp(15px, 1.8vw, 18px);
+		margin: $spacing-md auto 0;
+		position: relative;
+		z-index: 1;
+
+		a {
+			color: rgba(255, 255, 255, 0.95);
+			text-decoration: none;
+			transition: opacity 0.2s ease;
+
+			&:hover {
+				opacity: 0.9;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__separator {
+		opacity: 0.8;
+	}
+
 	@media (max-width: $breakpoint-sm) {
 		padding: $spacing-3xl 0;
 	}

@@ -37,26 +37,40 @@ export default function PricingModal({ isOpen, onClose, packageName, packagePric
 		e.preventDefault();
 		setIsSubmitting(true);
 
-		// Simulation d'envoi
-		await new Promise((resolve) => setTimeout(resolve, 1500));
-
 		const selectedMaintenancePack = maintenanceOptions.find(opt => opt.id === selectedMaintenance);
-		console.log('Demande express:', { 
-			...formData, 
-			category: packageCategory,
-			package: packageName, 
-			price: packagePrice,
-			maintenance: selectedMaintenancePack
-		});
-		setIsSubmitting(false);
-		setIsSuccess(true);
+		const maintenanceLabel = selectedMaintenancePack
+			? `${selectedMaintenancePack.name}${selectedMaintenancePack.price ? ` (${selectedMaintenancePack.price}€/mois)` : ''}`
+			: '';
 
-		// Fermeture auto après succès
-		setTimeout(() => {
-			onClose();
-			setIsSuccess(false);
-			setFormData({ name: '', email: '', phone: '' });
-		}, 3000);
+		try {
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name: formData.name,
+					email: formData.email,
+					phone: formData.phone,
+					source: 'Demande express (Tarifs)',
+					packageName,
+					packagePrice,
+					packageCategory,
+					maintenance: maintenanceLabel
+				})
+			});
+			const data = await res.json().catch(() => ({}));
+			if (!res.ok) {
+				alert(data.error || "Une erreur s'est produite. Réessayez ou écrivez à contact@studioweb15.fr");
+				return;
+			}
+			setIsSuccess(true);
+			setTimeout(() => {
+				onClose();
+				setIsSuccess(false);
+				setFormData({ name: '', email: '', phone: '' });
+			}, 3000);
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
