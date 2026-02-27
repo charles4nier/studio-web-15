@@ -201,7 +201,7 @@ export default function FloatingContact() {
 				</svg>
 			</motion.button>
 		</div>
-		<div className={`floating-contact__overlay ${isOpen ? ' floating-contact__overlay--open' : ''}`}  onClick={toggle} />
+		<div className={`floating-contact__overlay ${isOpen ? ' floating-contact__overlay--open' : ''}`}  {...(isOpen && {onClick: toggle})} />
 		</>
 	);
 }
