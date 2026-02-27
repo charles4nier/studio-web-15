@@ -10,17 +10,6 @@
 		color: $black-primary;
 		display: inline-block;
 		width: 100%;
-
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 80px;
-			height: 3px;
-			background: $gradient-home;
-		}
 	}
 
 	&__grid {
@@ -105,7 +94,7 @@
 
 	&__item-description {
 		color: $black-secondary;
-		font-size: clamp(15px, 1.2vw, 17px);
+		font-size: clamp(15px, 1.2vw, 16px);
 		line-height: 1.7;
 	}
 
