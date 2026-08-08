@@ -6,7 +6,9 @@
 	z-index: 1000;
 	background-color: $white;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-	transition: box-shadow 0.3s ease, background-color 0.3s ease;
+	transition:
+		box-shadow 0.3s ease,
+		background-color 0.3s ease;
 
 	.container {
 		display: flex;
@@ -28,7 +30,9 @@
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		text-decoration: none;
-		transition: opacity 0.3s ease, background 0.6s ease;
+		transition:
+			opacity 0.3s ease,
+			background 0.6s ease;
 		position: relative;
 
 		&:hover {
@@ -50,8 +54,8 @@
 			background-clip: text;
 		}
 
-		.page-partenaire & {
-			background: $gradient-partenaire;
+		.page-realisations & {
+			background: $gradient-realisations;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
@@ -76,7 +80,9 @@
 		font-size: 16px;
 		color: $black-primary;
 		text-decoration: none;
-		transition: all 0.3s ease, background 0.6s ease;
+		transition:
+			all 0.3s ease,
+			background 0.6s ease;
 
 		&::after {
 			content: '';
@@ -86,7 +92,9 @@
 			width: 0;
 			height: 2px;
 			background: $gradient-home;
-			transition: width 0.3s ease, background 0.6s ease;
+			transition:
+				width 0.3s ease,
+				background 0.6s ease;
 
 			.page-tarifs & {
 				background: $gradient-tarifs;
@@ -96,8 +104,8 @@
 				background: $gradient-contact;
 			}
 
-			.page-partenaire & {
-				background: $gradient-partenaire;
+			.page-realisations & {
+				background: $gradient-realisations;
 			}
 		}
 
@@ -107,13 +115,6 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 
-			.page-partenaire & {
-				background: $gradient-partenaire;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-
 			.page-tarifs & {
 				background: $gradient-tarifs;
 				-webkit-background-clip: text;
@@ -123,6 +124,13 @@
 
 			.page-contact & {
 				background: $gradient-contact;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.page-realisations & {
+				background: $gradient-realisations;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -154,8 +162,8 @@
 				background-clip: text;
 			}
 
-			.page-partenaire & {
-				background: $gradient-partenaire;
+			.page-realisations & {
+				background: $gradient-realisations;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -289,8 +297,8 @@
 			background: $gradient-contact;
 		}
 
-		.page-partenaire & {
-			background: $gradient-partenaire;
+		.page-realisations & {
+			background: $gradient-realisations;
 		}
 
 		&:focus {
@@ -403,8 +411,8 @@
 				background-clip: text;
 			}
 
-			.page-partenaire & {
-				background: $gradient-partenaire;
+			.page-realisations & {
+				background: $gradient-realisations;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -431,8 +439,8 @@
 				background-clip: text;
 			}
 
-			.page-partenaire & {
-				background: $gradient-partenaire;
+			.page-realisations & {
+				background: $gradient-realisations;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -526,4 +534,3 @@
 		}
 	}
 }
-

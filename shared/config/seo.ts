@@ -3,7 +3,7 @@ export const siteConfig = {
 	name: 'Studio Web 15',
 	description:
 		'Développeur web freelance dans le Cantal. Agence web locale : sites vitrines Next.js dès 1500€, e-commerce Shopify dès 2000€. Intervention Cantal, Aveyron, Creuse.',
-	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://studioweb15.fr',
+	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.studioweb15.fr',
 	ogImage: '/og-image.jpg',
 	twitter: {
 		handle: '@studioweb15',

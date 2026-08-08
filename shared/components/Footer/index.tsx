@@ -14,7 +14,10 @@ export default function Footer() {
 				<div className={`${CLASS_NAME}__top`}>
 					<div className={`${CLASS_NAME}__col`}>
 						<h3>Studio Web 15</h3>
-						<p>Création de sites web dans le Cantal. Next.js et Shopify pour entreprises du Massif Central.</p>
+						<p>
+							Création de sites web dans le Cantal. Next.js et
+							Shopify pour entreprises du Massif Central.
+						</p>
 					</div>
 
 					<div className={`${CLASS_NAME}__col`}>
@@ -24,10 +27,10 @@ export default function Footer() {
 								<Link href="/">Accueil</Link>
 							</li>
 							<li>
-								<Link href="/tarifs">Tarifs</Link>
+								<Link href="/realisations">Réalisations</Link>
 							</li>
 							<li>
-								<Link href="/partenaire-local">Votre partenaire local</Link>
+								<Link href="/tarifs">Tarifs</Link>
 							</li>
 							<li>
 								<Link href="/contact">Contact</Link>
@@ -35,7 +38,9 @@ export default function Footer() {
 						</ul>
 					</div>
 
-					<div className={`${CLASS_NAME}__col ${CLASS_NAME}__col--contact`}>
+					<div
+						className={`${CLASS_NAME}__col ${CLASS_NAME}__col--contact`}
+					>
 						<h4>Contact</h4>
 						<ul>
 							<li>📧 contact@studioweb15.fr</li>

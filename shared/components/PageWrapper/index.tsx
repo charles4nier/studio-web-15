@@ -3,12 +3,21 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-export default function PageWrapper({ children }: { children: React.ReactNode }) {
+export default function PageWrapper({
+	children
+}: {
+	children: React.ReactNode;
+}) {
 	const pathname = usePathname();
 
 	useEffect(() => {
 		// Enlever les anciennes classes de page
-		document.body.classList.remove('page-home', 'page-tarifs', 'page-contact', 'page-partenaire');
+		document.body.classList.remove(
+			'page-home',
+			'page-tarifs',
+			'page-contact',
+			'page-realisations'
+		);
 
 		// Ajouter la classe correspondante
 		if (pathname === '/') {
@@ -17,8 +26,8 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
 			document.body.classList.add('page-tarifs');
 		} else if (pathname === '/contact') {
 			document.body.classList.add('page-contact');
-		} else if (pathname === '/partenaire-local') {
-			document.body.classList.add('page-partenaire');
+		} else if (pathname.startsWith('/realisations')) {
+			document.body.classList.add('page-realisations');
 		}
 	}, [pathname]);
 

@@ -10,7 +10,7 @@ interface StudioModalProps {
 	onClose: () => void;
 	children: ReactNode;
 	ariaLabel: string;
-	gradientId?: 'home' | 'tarifs' | 'contact' | 'agence';
+	gradientId?: 'home' | 'tarifs' | 'contact' | 'realisations';
 	showCloseButton?: boolean;
 }
 
@@ -30,10 +30,11 @@ export default function StudioModal({
 
 		const checkScroll = () => {
 			if (!contentRef.current) return;
-			const { scrollHeight, clientHeight, scrollTop } = contentRef.current;
+			const { scrollHeight, clientHeight, scrollTop } =
+				contentRef.current;
 			const isScrollable = scrollHeight > clientHeight;
 			const isAtBottom = scrollTop + clientHeight >= scrollHeight - 10;
-			
+
 			setShowScrollIndicator(isScrollable && !isAtBottom);
 		};
 
@@ -52,63 +53,156 @@ export default function StudioModal({
 	}, [isOpen]);
 
 	return (
-		<AccessibleModal isOpen={isOpen} onClose={onClose} ariaLabel={ariaLabel} className="studio-modal">
+		<AccessibleModal
+			isOpen={isOpen}
+			onClose={onClose}
+			ariaLabel={ariaLabel}
+			className="studio-modal"
+		>
 			{/* Fils de soie animés */}
-			<svg className="studio-modal__waves" viewBox="0 0 1200 1000" preserveAspectRatio="none">
+			<svg
+				className="studio-modal__waves"
+				viewBox="0 0 1200 1000"
+				preserveAspectRatio="none"
+			>
 				<defs>
-					<linearGradient id="modal-gradient-home" x1="0%" y1="0%" x2="100%" y2="100%">
+					<linearGradient
+						id="modal-gradient-home"
+						x1="0%"
+						y1="0%"
+						x2="100%"
+						y2="100%"
+					>
 						<stop offset="0%" stopColor="#0066ff">
-							<animate attributeName="offset" values="0;1;0" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="0;1;0"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 						<stop offset="50%" stopColor="#ec4899">
-							<animate attributeName="offset" values="0.5;1.5;0.5" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="0.5;1.5;0.5"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 						<stop offset="100%" stopColor="#0066ff">
-							<animate attributeName="offset" values="1;2;1" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="1;2;1"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 					</linearGradient>
-					<linearGradient id="modal-gradient-tarifs" x1="0%" y1="0%" x2="100%" y2="100%">
+					<linearGradient
+						id="modal-gradient-tarifs"
+						x1="0%"
+						y1="0%"
+						x2="100%"
+						y2="100%"
+					>
 						<stop offset="0%" stopColor="#f97316">
-							<animate attributeName="offset" values="0;1;0" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="0;1;0"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 						<stop offset="50%" stopColor="#ec4899">
-							<animate attributeName="offset" values="0.5;1.5;0.5" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="0.5;1.5;0.5"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 						<stop offset="100%" stopColor="#f97316">
-							<animate attributeName="offset" values="1;2;1" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="1;2;1"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 					</linearGradient>
-					<linearGradient id="modal-gradient-contact" x1="0%" y1="0%" x2="100%" y2="100%">
+					<linearGradient
+						id="modal-gradient-contact"
+						x1="0%"
+						y1="0%"
+						x2="100%"
+						y2="100%"
+					>
 						<stop offset="0%" stopColor="#10b981">
-							<animate attributeName="offset" values="0;1;0" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="0;1;0"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 						<stop offset="50%" stopColor="#0066ff">
-							<animate attributeName="offset" values="0.5;1.5;0.5" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="0.5;1.5;0.5"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 						<stop offset="100%" stopColor="#10b981">
-							<animate attributeName="offset" values="1;2;1" dur="25s" repeatCount="indefinite" />
+							<animate
+								attributeName="offset"
+								values="1;2;1"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 					</linearGradient>
-					<linearGradient id="modal-gradient-partenaire" x1="0%" y1="0%" x2="100%" y2="100%">
-						<stop offset="0%" stopColor="#f59e0b">
-							<animate attributeName="offset" values="0;1;0" dur="25s" repeatCount="indefinite" />
+					<linearGradient
+						id="modal-gradient-realisations"
+						x1="0%"
+						y1="0%"
+						x2="100%"
+						y2="100%"
+					>
+						<stop offset="0%" stopColor="#7c3aed">
+							<animate
+								attributeName="offset"
+								values="0;1;0"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
-						<stop offset="50%" stopColor="#00e5ff">
-							<animate attributeName="offset" values="0.5;1.5;0.5" dur="25s" repeatCount="indefinite" />
+						<stop offset="50%" stopColor="#06b6d4">
+							<animate
+								attributeName="offset"
+								values="0.5;1.5;0.5"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
-						<stop offset="100%" stopColor="#f59e0b">
-							<animate attributeName="offset" values="1;2;1" dur="25s" repeatCount="indefinite" />
+						<stop offset="100%" stopColor="#7c3aed">
+							<animate
+								attributeName="offset"
+								values="1;2;1"
+								dur="25s"
+								repeatCount="indefinite"
+							/>
 						</stop>
 					</linearGradient>
 				</defs>
 				{/* Ligne principale - centre */}
-				<path 
-					fill="none" 
+				<path
+					fill="none"
 					stroke={`url(#modal-gradient-${gradientId})`}
 					strokeWidth="2.5"
 					opacity="0.2"
 				>
-					<animate 
+					<animate
 						attributeName="d"
 						dur="30s"
 						repeatCount="indefinite"
@@ -121,13 +215,13 @@ export default function StudioModal({
 					/>
 				</path>
 				{/* Ligne 2 - bas gauche */}
-				<path 
-					fill="none" 
+				<path
+					fill="none"
 					stroke={`url(#modal-gradient-${gradientId})`}
 					strokeWidth="2"
 					opacity="0.15"
 				>
-					<animate 
+					<animate
 						attributeName="d"
 						dur="30s"
 						repeatCount="indefinite"
@@ -140,13 +234,13 @@ export default function StudioModal({
 					/>
 				</path>
 				{/* Ligne 3 - haut droite */}
-				<path 
-					fill="none" 
+				<path
+					fill="none"
 					stroke={`url(#modal-gradient-${gradientId})`}
 					strokeWidth="1.8"
 					opacity="0.12"
 				>
-					<animate 
+					<animate
 						attributeName="d"
 						dur="30s"
 						repeatCount="indefinite"
@@ -194,7 +288,12 @@ export default function StudioModal({
 						}}
 						aria-label="Défiler vers le bas"
 					>
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+						>
 							<path
 								d="M12 5L12 19M12 19L19 12M12 19L5 12"
 								stroke="currentColor"

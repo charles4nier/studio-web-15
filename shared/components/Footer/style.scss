@@ -37,8 +37,8 @@
 				background-clip: text;
 			}
 
-			.page-partenaire & {
-				background: $gradient-partenaire;
+			.page-realisations & {
+				background: $gradient-realisations;
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -77,7 +77,9 @@
 			a {
 				color: rgba(255, 255, 255, 0.85);
 				text-decoration: none;
-				transition: all 0.3s ease, background 0.6s ease;
+				transition:
+					all 0.3s ease,
+					background 0.6s ease;
 				position: relative;
 
 				&::after {
@@ -88,7 +90,9 @@
 					width: 0;
 					height: 2px;
 					background: $gradient-home;
-					transition: width 0.3s ease, background 0.6s ease;
+					transition:
+						width 0.3s ease,
+						background 0.6s ease;
 
 					.page-tarifs & {
 						background: $gradient-tarifs;
@@ -96,6 +100,10 @@
 
 					.page-contact & {
 						background: $gradient-contact;
+					}
+
+					.page-realisations & {
+						background: $gradient-realisations;
 					}
 				}
 
@@ -108,6 +116,10 @@
 
 					.page-contact & {
 						color: $accent-green;
+					}
+
+					.page-realisations & {
+						color: $accent-purple;
 					}
 
 					&::after {

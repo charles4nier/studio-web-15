@@ -161,6 +161,15 @@ p {
 			box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
 		}
 	}
+
+	.page-realisations & {
+		background: $gradient-realisations;
+		box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+
+		&:hover {
+			box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+		}
+	}
 }
 
 .button-secondary {
@@ -202,6 +211,17 @@ p {
 			background: $gradient-contact;
 			color: $white;
 			box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+		}
+	}
+
+	.page-realisations & {
+		color: $accent-purple;
+		background: linear-gradient($white, $white) padding-box, $gradient-realisations border-box;
+
+		&:hover {
+			background: $gradient-realisations;
+			color: $white;
+			box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
 		}
 	}
 }

@@ -17,12 +17,13 @@ export default function Header() {
 
 	const navLinks = [
 		{ name: 'Accueil', path: '/' },
+		{ name: 'Réalisations', path: '/realisations' },
 		{ name: 'Tarifs', path: '/tarifs' },
-		{ name: 'Votre partenaire local', path: '/partenaire-local' },
 		{ name: 'Contact', path: '/contact' }
 	];
 
-	const isActive = (path: string) => pathname === path;
+	const isActive = (path: string) =>
+		path === '/' ? pathname === '/' : pathname.startsWith(path);
 
 	const handleClose = () => {
 		setIsClosing(true);
@@ -33,10 +34,14 @@ export default function Header() {
 	};
 
 	// Déterminer le gradient selon la page
-	const getGradientId = (): 'home' | 'tarifs' | 'contact' | 'partenaire' => {
+	const getGradientId = ():
+		| 'home'
+		| 'tarifs'
+		| 'contact'
+		| 'realisations' => {
 		if (pathname === '/tarifs') return 'tarifs';
 		if (pathname === '/contact') return 'contact';
-		if (pathname === '/partenaire-local') return 'partenaire';
+		if (pathname.startsWith('/realisations')) return 'realisations';
 		return 'home';
 	};
 
@@ -75,23 +80,25 @@ export default function Header() {
 						</ul>
 					</nav>
 
-				<button
-					className={`${CLASS_NAME}__burger ${isOpen ? 'open' : ''}`}
-					onClick={() => {
-						if (isOpen) {
-							handleClose();
-						} else {
-							setIsOpen(true);
+					<button
+						className={`${CLASS_NAME}__burger ${isOpen ? 'open' : ''}`}
+						onClick={() => {
+							if (isOpen) {
+								handleClose();
+							} else {
+								setIsOpen(true);
+							}
+						}}
+						aria-label={
+							isOpen ? 'Fermer le menu' : 'Ouvrir le menu'
 						}
-					}}
-					aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-					aria-expanded={isOpen}
-					aria-controls="mobile-nav"
-				>
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
+						aria-expanded={isOpen}
+						aria-controls="mobile-nav"
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
 				</div>
 			</div>
 
@@ -120,13 +127,19 @@ export default function Header() {
 					<nav className={`${CLASS_NAME}__mobile-nav`}>
 						<motion.ul
 							initial="closed"
-							animate={isOpen && !isClosing ? "open" : "closed"}
+							animate={isOpen && !isClosing ? 'open' : 'closed'}
 							variants={{
 								open: {
-									transition: { staggerChildren: 0.08, delayChildren: 0.1 }
+									transition: {
+										staggerChildren: 0.08,
+										delayChildren: 0.1
+									}
 								},
 								closed: {
-									transition: { staggerChildren: 0.06, staggerDirection: -1 }
+									transition: {
+										staggerChildren: 0.06,
+										staggerDirection: -1
+									}
 								}
 							}}
 						>
@@ -134,16 +147,16 @@ export default function Header() {
 								<motion.li
 									key={link.path}
 									variants={{
-										open: { 
-											opacity: 1, 
+										open: {
+											opacity: 1,
 											y: 0,
-											transition: { 
+											transition: {
 												duration: 0.4,
 												ease: [0.25, 0.1, 0.25, 1]
 											}
 										},
-										closed: { 
-											opacity: 0, 
+										closed: {
+											opacity: 0,
 											y: 10,
 											transition: {
 												duration: 0.35,

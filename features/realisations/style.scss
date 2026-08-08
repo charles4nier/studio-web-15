@@ -1,0 +1,57 @@
+.realisations {
+	background: $white;
+}
+
+.cta-section {
+	padding: $spacing-5xl 0;
+	background: $gradient-realisations;
+	color: $white;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -30%;
+		left: -10%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(
+			circle,
+			rgba(255, 255, 255, 0.1) 0%,
+			transparent 70%
+		);
+		border-radius: 50%;
+	}
+
+	&__title {
+		font-size: clamp(28px, 4vw, 40px);
+		color: $white;
+		margin-bottom: $spacing-lg;
+		position: relative;
+		z-index: 1;
+		text-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+	}
+
+	&__subtitle {
+		font-size: clamp(16px, 2vw, 20px);
+		color: rgba(255, 255, 255, 0.95);
+		max-width: 600px;
+		margin: 0 auto $spacing-xl;
+		position: relative;
+		z-index: 1;
+	}
+
+	.button-primary {
+		position: relative;
+		z-index: 1;
+		background: $white;
+		color: $accent-purple;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+		&:hover {
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+		}
+	}
+}

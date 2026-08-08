@@ -27,7 +27,6 @@
 		opacity: 1;
 		pointer-events: all;
 	}
-
 }
 
 /* Cellule noire en cercle */
@@ -147,8 +146,8 @@
 		background: $gradient-contact;
 	}
 
-	.page-partenaire & {
-		background: $gradient-partenaire;
+	.page-realisations & {
+		background: $gradient-realisations;
 	}
 
 	&:hover {

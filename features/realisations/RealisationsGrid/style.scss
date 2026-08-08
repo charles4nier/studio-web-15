@@ -1,0 +1,40 @@
+.realisations-grid {
+	padding: $spacing-3xl 0 $spacing-5xl;
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: $spacing-xl;
+	}
+
+	@media (max-width: $breakpoint-md) {
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		&__list {
+			grid-template-columns: 1fr;
+			gap: $spacing-lg;
+		}
+	}
+}
+
+.realisations-empty {
+	padding: $spacing-4xl 0 $spacing-5xl;
+	text-align: center;
+
+	&__title {
+		font-family: var(--font-ubuntu), sans-serif;
+		font-size: 24px;
+		font-weight: 700;
+		color: $black-primary;
+		margin-bottom: $spacing-sm;
+	}
+
+	&__text {
+		color: $black-secondary;
+		margin-bottom: $spacing-xl;
+	}
+}
