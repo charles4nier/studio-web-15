@@ -1,75 +1,67 @@
 /* =========================
-   🎨 Palette Studio Web 15
+   🎨 Palette Studio Web 15 — acide (studio-refresh)
    ========================= */
 
-/* --- Couleurs principales --- */
-$black: #1a1a1a;
-$black-primary: #2d2926;
-$black-secondary: #5b554f;
+/* --- Couleurs de base --- */
+$background: oklch(0.99 0.002 110);
+$foreground: oklch(0.16 0.018 250);
+$surface: oklch(0.965 0.008 110);
+$surface-2: oklch(0.93 0.014 110);
+$muted-foreground: oklch(0.46 0.025 250);
+$border: oklch(0.16 0.018 250 / 14%);
 
-$white: #ffffff;
-$white-secondary: #f3f1ed;
-$white-tertiary: #faf8f6;
+/* --- Acides --- */
+$ember: oklch(0.78 0.22 128); // acide principal (citron vert électrique)
+$ember-foreground: oklch(0.16 0.018 250);
+$acid-2: oklch(0.72 0.16 200); // acide secondaire (cyan électrique)
 
-// Couleurs vibrantes
-$accent-blue: #0066ff;
-$accent-purple: #7c3aed;
-$accent-pink: #ec4899;
-$accent-green: #10b981;
-$accent-orange: #f59e0b;
-$accent-cyan: #06b6d4;
+$gradient-acid: linear-gradient(100deg, $ember, $acid-2);
+$glow-acid:
+	0 0 0 1px color-mix(in oklab, $ember 40%, transparent),
+	0 0 40px -8px color-mix(in oklab, $ember 55%, transparent);
 
-// Gradients par page (identité unique)
-$gradient-home: linear-gradient(
-	135deg,
-	#0066ff 0%,
-	#7c3aed 50%,
-	#ec4899 100%
-); // Bleu → Violet → Rose
-$gradient-tarifs: linear-gradient(
-	135deg,
-	#ec4899 0%,
-	#f59e0b 100%
-); // Rose → Orange
-$gradient-contact: linear-gradient(
-	135deg,
-	#10b981 0%,
-	#0066ff 100%
-); // Vert → Bleu
-$gradient-realisations: linear-gradient(
-	135deg,
-	#7c3aed 0%,
-	#06b6d4 100%
-); // Violet → Cyan
+/* --- Alias de compatibilité (ancien système multi-couleurs → palette unique) --- */
+$black: $foreground;
+$black-primary: $foreground;
+$black-secondary: $muted-foreground;
 
-// Gradients secondaires
-$gradient-secondary: linear-gradient(
-	135deg,
-	#10b981 0%,
-	#06b6d4 100%
-); // Vert → Cyan
-$gradient-blue-cyan: linear-gradient(135deg, #0066ff 0%, #06b6d4 100%);
+$white: $background;
+$white-secondary: $surface;
+$white-tertiary: $surface-2;
 
-// Alias pour compatibilité (défaut = home)
-$gradient-primary: $gradient-home;
-$gradient-tertiary: $gradient-tarifs;
-$gradient-purple-pink: $gradient-contact;
+$accent-blue: $ember;
+$accent-purple: $ember;
+$accent-pink: $acid-2;
+$accent-green: $ember;
+$accent-orange: $acid-2;
+$accent-cyan: $acid-2;
+$accent-primary: $ember;
+$accent-secondary: $acid-2;
 
-// Pour compatibilité
-$accent-primary: #0066ff;
-$accent-secondary: #7c3aed;
+$gradient-home: $gradient-acid;
+$gradient-tarifs: $gradient-acid;
+$gradient-contact: $gradient-acid;
+$gradient-realisations: $gradient-acid;
+$gradient-secondary: $gradient-acid;
+$gradient-blue-cyan: $gradient-acid;
+$gradient-primary: $gradient-acid;
+$gradient-tertiary: $gradient-acid;
+$gradient-purple-pink: $gradient-acid;
 
 /* --- États et variations --- */
-$success: $accent-green;
+$success: $ember;
 $error: #ef4444;
-$warning: #f59e0b;
+$warning: $acid-2;
 
 /* --- Ombres & bordures --- */
 $shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04);
 $shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
 $shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.12);
 
-/* --- Typographie --- */
+/* --- Typographie ---
+   Les variables CSS gardent leur nom historique (--font-ubuntu/--font-inter)
+   pour ne pas casser les dizaines de composants qui les référencent déjà en
+   dur — seule la police chargée dessous change (layout.tsx). */
 $font-family-primary: var(--font-ubuntu), sans-serif;
 $font-family-secondary: var(--font-inter), sans-serif;
 
@@ -80,6 +72,10 @@ $font-weight-bold: 700;
 $line-height-tight: 1.2;
 $line-height-normal: 1.5;
 $line-height-relaxed: 1.75;
+
+/* --- Rayons --- */
+$radius-sharp: 4px;
+$radius-pill: 9999px;
 
 /* --- Espacements --- */
 $spacing-xs: 4px;

@@ -14,11 +14,13 @@ const query = `
   title,
   client,
   category,
+  role,
   year,
   excerpt,
   coverImage,
   gallery,
   technologies,
+  resultLine,
   url,
   body,
   seo

@@ -2,7 +2,7 @@
 export const siteConfig = {
 	name: 'Studio Web 15',
 	description:
-		'Développeur web freelance dans le Cantal. Agence web locale : sites vitrines Next.js dès 1500€, e-commerce Shopify dès 2000€. Intervention Cantal, Aveyron, Creuse.',
+		'Développeur web freelance à Aurillac, dans le Cantal. Création de sites internet dès 500€ : landing page, site vitrine, e-commerce. Intervention Cantal, Aveyron, Creuse.',
 	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.studioweb15.fr',
 	ogImage: '/og-image.jpg',
 	twitter: {
@@ -47,7 +47,7 @@ export const siteConfig = {
 export const defaultMetadata = {
 	metadataBase: new URL(siteConfig.url),
 	title: {
-		default: siteConfig.name,
+		default: 'Création de site internet à Aurillac, Cantal',
 		template: `%s | ${siteConfig.name}`
 	},
 	description: siteConfig.description,
@@ -67,7 +67,7 @@ export const defaultMetadata = {
 		type: 'website',
 		locale: 'fr_FR',
 		url: siteConfig.url,
-		title: siteConfig.name,
+		title: 'Création de site internet à Aurillac, Cantal',
 		description: siteConfig.description,
 		siteName: siteConfig.name,
 		images: [
@@ -81,7 +81,7 @@ export const defaultMetadata = {
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: siteConfig.name,
+		title: 'Création de site internet à Aurillac, Cantal',
 		description: siteConfig.description,
 		creator: siteConfig.twitter.handle,
 		site: siteConfig.twitter.site,

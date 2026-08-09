@@ -22,6 +22,7 @@ export default function Tarifs() {
 		setModalOpen(true);
 	};
 
+
 	const heroVariants = {
 		hidden: {},
 		visible: {
@@ -190,70 +191,62 @@ export default function Tarifs() {
 		<div className="tarifs">
 			{/* Hero */}
 			<section className="tarifs-hero">
+				<div className="grid-lines tarifs-hero__grid" />
 				<motion.div
-					className="container"
+					className="container tarifs-hero__inner"
 					variants={heroVariants}
 					initial="hidden"
 					animate="visible"
 				>
-					<div className="tarifs-hero__text-reveal">
+					<div>
+						<motion.p className="eyebrow" variants={itemVariants}>
+							Tarifs
+						</motion.p>
 						<motion.h1 className="tarifs-hero__title" variants={itemVariants}>
-							Mes tarifs
+							Des tarifs clairs pour un site internet
+							<span className="acid-text tarifs-hero__title-accent">
+								qui vous ressemble.
+							</span>
 						</motion.h1>
 					</div>
-					<div className="tarifs-hero__text-reveal">
-						<motion.p className="tarifs-hero__subtitle" variants={itemVariants}>
-							Transparents, compétitifs, sans surprise. Technologie moderne au prix du
-							template WordPress.
-						</motion.p>
-					</div>
+					<motion.div className="tarifs-hero__side" variants={itemVariants}>
+						<p>
+							Sites vitrines et boutiques en ligne développés avec des
+							technologies modernes (Next.js, Sanity CMS, Shopify) — au
+							prix d&apos;un template classique, mais plus rapides et plus
+							faciles à faire évoluer.
+						</p>
+						<p className="tarifs-hero__highlight">À partir de 500 €</p>
+					</motion.div>
 				</motion.div>
 			</section>
 
-			{/* Stack Tech */}
+			{/* Offre phare */}
 			<motion.section
-				className="tech-stack"
+				className="band offer-highlight"
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, margin: '-100px' }}
 				transition={{ duration: 0.6, ease: 'easeOut' }}
 			>
-				<div className="container">
-					<h2 className="tech-stack__title">Pourquoi mes sites sont différents ?</h2>
-					<div className="tech-stack__grid">
-						<div className="tech-feature">
-							<div className="tech-feature__icon">⚡</div>
-							<h3 className="tech-feature__title">Next.js 14</h3>
-							<p className="tech-feature__description">
-								Framework React moderne. Sites 10x plus rapides que WordPress. Score
-								Google 95+.
-							</p>
-						</div>
-						<div className="tech-feature">
-							<div className="tech-feature__icon">🎨</div>
-							<h3 className="tech-feature__title">Sanity CMS</h3>
-							<p className="tech-feature__description">
-								Interface moderne et intuitive. Modifiez votre contenu facilement, sans
-								développeur.
-							</p>
-						</div>
-						<div className="tech-feature">
-							<div className="tech-feature__icon">🛍️</div>
-							<h3 className="tech-feature__title">Shopify</h3>
-							<p className="tech-feature__description">
-								La meilleure plateforme e-commerce. Gestion simple, paiements sécurisés,
-								évolutif.
-							</p>
-						</div>
-						<div className="tech-feature">
-							<div className="tech-feature__icon">🚀</div>
-							<h3 className="tech-feature__title">Vercel</h3>
-							<p className="tech-feature__description">
-								Hébergement premium gratuit. SSL, CDN mondial, backups automatiques.
-								Infrastructure d'entreprise.
-							</p>
-						</div>
+				<div className="container offer-highlight__inner">
+					<div className="offer-highlight__info">
+						<span className="offer-highlight__badge">Landing page</span>
+						<h2 className="offer-highlight__title">
+							Une landing page dès 500&nbsp;€
+						</h2>
+						<p className="offer-highlight__text">
+							Une page unique, claire et efficace, pour présenter votre
+							activité. Ajoutez un backoffice pour gérer vos contenus
+							vous-même, dès que vous en avez besoin.
+						</p>
 					</div>
+					<button
+						className="button-primary offer-highlight__action"
+						onClick={() => handleSelectPackage('Landing', '500€', 'Site vitrine')}
+					>
+						Choisir cette offre
+					</button>
 				</div>
 			</motion.section>
 
@@ -505,19 +498,26 @@ export default function Tarifs() {
 
 			{/* CTA */}
 			<motion.section
-				className="cta-section"
+				className="band cta-section"
 				initial={{ opacity: 0, y: 40 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, margin: '-100px' }}
 				transition={{ duration: 0.6, ease: 'easeOut' }}
 			>
-				<div className="container">
-					<h2 className="cta-section__title">Prêt à démarrer votre projet ?</h2>
-					<p className="cta-section__subtitle">
-						Discutons de vos besoins et trouvons la solution idéale ensemble.
-					</p>
+				<div className="container cta-section__inner">
+					<div>
+						<p className="eyebrow">Votre projet</p>
+						<h2 className="cta-section__title">
+							Prêt à démarrer votre projet ?
+						</h2>
+						<p className="cta-section__text">
+							Discutons de vos besoins et trouvons la solution idéale
+							ensemble.
+						</p>
+					</div>
 					<Link href="/contact" className="button-primary">
 						Demander un devis gratuit
+						<span aria-hidden="true">→</span>
 					</Link>
 				</div>
 			</motion.section>

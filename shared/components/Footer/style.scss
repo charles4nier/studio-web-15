@@ -1,8 +1,9 @@
 .footer {
-	background-color: $black-primary;
-	color: $white;
+	background-color: $background;
+	color: $foreground;
+	border-top: 1px solid $border;
 	padding: $spacing-5xl 0 $spacing-2xl;
-	font-family: var(--font-inter), sans-serif;
+	font-family: $font-family-secondary;
 
 	&__top {
 		display: grid;
@@ -11,52 +12,21 @@
 		margin-bottom: $spacing-3xl;
 	}
 
+	&__brand-accent {
+		color: $ember;
+	}
+
 	&__col {
 		h3,
 		h4 {
-			font-family: var(--font-ubuntu), sans-serif;
-			font-weight: 600;
+			font-family: $font-family-primary;
+			font-weight: 700;
 			margin-bottom: $spacing-md;
-			background: $gradient-home;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			transition: background 0.6s ease;
-
-			.page-tarifs & {
-				background: $gradient-tarifs;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-
-			.page-contact & {
-				background: $gradient-contact;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-
-			.page-realisations & {
-				background: $gradient-realisations;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-		}
-
-		// Colonne Contact avec gradient Bleu → Violet sur page d'accueil
-		&--contact {
-			.page-home h4 {
-				background: linear-gradient(135deg, #0066ff 0%, #7c3aed 100%);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
+			color: $foreground;
 		}
 
 		p {
-			color: rgba(255, 255, 255, 0.85);
+			color: $muted-foreground;
 			font-size: 16px;
 			line-height: 1.6;
 		}
@@ -70,16 +40,14 @@
 			gap: $spacing-sm;
 
 			li {
-				color: rgba(255, 255, 255, 0.85);
+				color: $muted-foreground;
 				font-size: 16px;
 			}
 
 			a {
-				color: rgba(255, 255, 255, 0.85);
+				color: $muted-foreground;
 				text-decoration: none;
-				transition:
-					all 0.3s ease,
-					background 0.6s ease;
+				transition: color 0.3s ease;
 				position: relative;
 
 				&::after {
@@ -89,38 +57,12 @@
 					left: 0;
 					width: 0;
 					height: 2px;
-					background: $gradient-home;
-					transition:
-						width 0.3s ease,
-						background 0.6s ease;
-
-					.page-tarifs & {
-						background: $gradient-tarifs;
-					}
-
-					.page-contact & {
-						background: $gradient-contact;
-					}
-
-					.page-realisations & {
-						background: $gradient-realisations;
-					}
+					background: $ember;
+					transition: width 0.3s ease;
 				}
 
 				&:hover {
-					color: $accent-blue;
-
-					.page-tarifs & {
-						color: $accent-orange;
-					}
-
-					.page-contact & {
-						color: $accent-green;
-					}
-
-					.page-realisations & {
-						color: $accent-purple;
-					}
+					color: $foreground;
 
 					&::after {
 						width: 100%;
@@ -131,13 +73,13 @@
 	}
 
 	&__bottom {
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		border-top: 1px solid $border;
 		padding-top: $spacing-lg;
 		text-align: center;
 
 		p {
 			font-size: 14px;
-			color: rgba(255, 255, 255, 0.6);
+			color: $muted-foreground;
 			margin: 0;
 		}
 	}

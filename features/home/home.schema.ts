@@ -13,14 +13,18 @@ export default {
 					title: 'Titre SEO',
 					type: 'string',
 					validation: (Rule: any) =>
-						Rule.max(60).warning('Le titre doit faire moins de 60 caractères')
+						Rule.max(60).warning(
+							'Le titre doit faire moins de 60 caractères'
+						)
 				},
 				{
 					name: 'metaDescription',
 					title: 'Description SEO',
 					type: 'text',
 					validation: (Rule: any) =>
-						Rule.max(160).warning('La description doit faire moins de 160 caractères')
+						Rule.max(160).warning(
+							'La description doit faire moins de 160 caractères'
+						)
 				},
 				{
 					name: 'openGraphImage',

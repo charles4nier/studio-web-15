@@ -89,6 +89,20 @@ export default {
 			type: 'url'
 		},
 		{
+			name: 'role',
+			title: 'Rôle sur le projet',
+			description: 'Ex: "Conception complète", "Design & développement"',
+			type: 'string'
+		},
+		{
+			name: 'resultLine',
+			title: 'Résultat obtenu',
+			description: 'Courte phrase affichée avec ↳ sur la carte (ex: "Rendre des données complexes faciles à comprendre")',
+			type: 'string',
+			validation: (Rule: any) =>
+				Rule.max(120).warning('120 caractères max recommandé')
+		},
+		{
 			name: 'body',
 			title: 'Contenu détaillé',
 			type: 'array',

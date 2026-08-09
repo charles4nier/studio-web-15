@@ -1,40 +1,38 @@
 .realisations-grid {
-	padding: $spacing-3xl 0 $spacing-5xl;
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-4xl;
 
-	&__list {
+	&__title {
+		font-size: clamp(28px, 4vw, 40px);
+		margin: 0;
+	}
+
+	&__rest {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: $spacing-xl;
+		gap: $spacing-2xl;
 	}
 
-	@media (max-width: $breakpoint-md) {
-		&__list {
+	@media (min-width: $breakpoint-md) {
+		&__rest {
 			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (max-width: $breakpoint-sm) {
-		&__list {
-			grid-template-columns: 1fr;
-			gap: $spacing-lg;
+			gap: $spacing-2xl $spacing-xl;
 		}
 	}
 }
 
 .realisations-empty {
-	padding: $spacing-4xl 0 $spacing-5xl;
+	padding: $spacing-4xl 0;
 	text-align: center;
 
 	&__title {
-		font-family: var(--font-ubuntu), sans-serif;
 		font-size: 24px;
 		font-weight: 700;
-		color: $black-primary;
 		margin-bottom: $spacing-sm;
 	}
 
 	&__text {
-		color: $black-secondary;
+		color: $muted-foreground;
 		margin-bottom: $spacing-xl;
 	}
 }

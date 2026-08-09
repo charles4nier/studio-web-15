@@ -9,18 +9,16 @@ import './style.scss';
 
 const CLASS_NAME = 'header';
 
+const navLinks = [
+	{ name: 'Réalisations', path: '/realisations' },
+	{ name: 'Tarifs', path: '/tarifs' }
+];
+
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isClosing, setIsClosing] = useState(false);
 	const pathname = usePathname();
 	const prevPathnameRef = useRef(pathname);
-
-	const navLinks = [
-		{ name: 'Accueil', path: '/' },
-		{ name: 'Réalisations', path: '/realisations' },
-		{ name: 'Tarifs', path: '/tarifs' },
-		{ name: 'Contact', path: '/contact' }
-	];
 
 	const isActive = (path: string) =>
 		path === '/' ? pathname === '/' : pathname.startsWith(path);
@@ -31,18 +29,6 @@ export default function Header() {
 			setIsOpen(false);
 			setIsClosing(false);
 		}, 400);
-	};
-
-	// Déterminer le gradient selon la page
-	const getGradientId = ():
-		| 'home'
-		| 'tarifs'
-		| 'contact'
-		| 'realisations' => {
-		if (pathname === '/tarifs') return 'tarifs';
-		if (pathname === '/contact') return 'contact';
-		if (pathname.startsWith('/realisations')) return 'realisations';
-		return 'home';
 	};
 
 	// Fermer le menu quand on change de page
@@ -58,7 +44,7 @@ export default function Header() {
 			<div className="container">
 				<div className={`${CLASS_NAME}__inner`}>
 					<Link href="/" className={`${CLASS_NAME}__logo`}>
-						Studio Web 15
+						Studio Web <span className={`${CLASS_NAME}__logo-accent`}>15</span>
 					</Link>
 
 					<nav className={`${CLASS_NAME}__nav`}>
@@ -80,6 +66,10 @@ export default function Header() {
 						</ul>
 					</nav>
 
+					<Link href="/contact" className={`${CLASS_NAME}__cta`}>
+						Démarrer un projet
+					</Link>
+
 					<button
 						className={`${CLASS_NAME}__burger ${isOpen ? 'open' : ''}`}
 						onClick={() => {
@@ -89,9 +79,7 @@ export default function Header() {
 								setIsOpen(true);
 							}
 						}}
-						aria-label={
-							isOpen ? 'Fermer le menu' : 'Ouvrir le menu'
-						}
+						aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
 						aria-expanded={isOpen}
 						aria-controls="mobile-nav"
 					>
@@ -107,7 +95,6 @@ export default function Header() {
 				isOpen={isOpen}
 				onClose={handleClose}
 				ariaLabel="Menu de navigation"
-				gradientId={getGradientId()}
 				showCloseButton={false}
 			>
 				<div className={`${CLASS_NAME}__mobile-content`}>
@@ -121,7 +108,7 @@ export default function Header() {
 							<span></span>
 						</button>
 						<Link href="/" className={`${CLASS_NAME}__mobile-logo`}>
-							Studio Web 15
+							Studio Web <span className={`${CLASS_NAME}__logo-accent`}>15</span>
 						</Link>
 					</div>
 					<nav className={`${CLASS_NAME}__mobile-nav`}>
@@ -177,6 +164,33 @@ export default function Header() {
 									</Link>
 								</motion.li>
 							))}
+							<motion.li
+								variants={{
+									open: {
+										opacity: 1,
+										y: 0,
+										transition: {
+											duration: 0.4,
+											ease: [0.25, 0.1, 0.25, 1]
+										}
+									},
+									closed: {
+										opacity: 0,
+										y: 10,
+										transition: {
+											duration: 0.35,
+											ease: [0.4, 0, 0.6, 1]
+										}
+									}
+								}}
+							>
+								<Link
+									href="/contact"
+									className={`${CLASS_NAME}__mobile-link ${CLASS_NAME}__mobile-link--cta`}
+								>
+									Démarrer un projet
+								</Link>
+							</motion.li>
 						</motion.ul>
 					</nav>
 				</div>

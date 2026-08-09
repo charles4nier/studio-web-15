@@ -1,0 +1,159 @@
+.home-methode {
+	background: $surface;
+
+	&__title {
+		margin-top: $spacing-md;
+		max-width: 42rem;
+		font-size: clamp(28px, 4vw, 40px);
+	}
+
+	&__list {
+		margin-top: $spacing-3xl;
+		display: grid;
+		gap: 1px;
+		background: $border;
+		border: 1px solid $border;
+		list-style: none;
+		padding: 0;
+	}
+
+	&__item {
+		background: $surface;
+		padding: $spacing-xl;
+
+		h3 {
+			margin-top: $spacing-md;
+			font-size: 18px;
+		}
+
+		p {
+			margin-top: $spacing-sm;
+			font-size: 14px;
+			line-height: $line-height-relaxed;
+			color: $muted-foreground;
+		}
+	}
+
+	&__number {
+		font-family: $font-family-primary;
+		font-size: 12px;
+		color: $ember;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		&__list {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+.home-tarifs {
+	background: $background;
+
+	&__title {
+		margin-top: $spacing-md;
+		max-width: 42rem;
+		font-size: clamp(28px, 4vw, 40px);
+	}
+
+	&__grid {
+		margin-top: $spacing-3xl;
+		display: grid;
+		gap: $spacing-lg;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid $border;
+		padding: $spacing-xl;
+		transition: border-color 0.3s ease;
+
+		&:hover {
+			border-color: $ember;
+		}
+
+		h3 {
+			font-size: 18px;
+			margin: 0;
+		}
+
+		ul {
+			margin-top: $spacing-xl;
+			display: flex;
+			flex-direction: column;
+			gap: $spacing-sm;
+			list-style: none;
+			padding: 0;
+			font-size: 14px;
+			color: $muted-foreground;
+
+			li {
+				display: flex;
+				gap: $spacing-sm;
+
+				span {
+					color: $ember;
+				}
+			}
+		}
+
+		&--featured {
+			border-color: $ember;
+			background: color-mix(in oklab, $ember 5%, transparent);
+			box-shadow: $glow-acid;
+		}
+	}
+
+	&__price {
+		margin-top: $spacing-sm;
+		font-size: 14px;
+		color: $ember;
+		font-weight: 600;
+	}
+
+	&__more {
+		margin-top: $spacing-2xl;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		&__grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}
+
+.home-contact {
+	background: $foreground;
+	color: $background;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-xl;
+	}
+
+	&__title {
+		margin-top: $spacing-md;
+		max-width: 36rem;
+		font-size: clamp(28px, 5vw, 48px);
+		color: $background;
+	}
+
+	&__text {
+		margin-top: $spacing-lg;
+		max-width: 26rem;
+		font-size: 14px;
+		line-height: $line-height-relaxed;
+		color: color-mix(in oklab, $background 70%, transparent);
+	}
+
+	@media (min-width: $breakpoint-md) {
+		&__inner {
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: $spacing-3xl;
+		}
+	}
+}

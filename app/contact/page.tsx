@@ -18,7 +18,7 @@ export default function ContactPage() {
 				data={{
 					name: 'Contact - Studio Web 15',
 					description:
-						'Contactez Studio Web 15 pour votre projet web. Sites Next.js et boutiques Shopify.'
+						'Contactez Studio Web 15 pour votre projet de création de site internet. Sites Next.js et boutiques Shopify.'
 				}}
 			/>
 			<Contact />

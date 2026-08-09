@@ -7,7 +7,7 @@ import realisation from '../../features/realisations/realisations.schema';
 export default defineConfig({
 	name: 'default',
 	title: 'Studio Web 15',
-	projectId: 'tgge8srz',
+	projectId: '7lu7xtgt',
 	dataset: 'production',
 	plugins: [deskTool()],
 	schema: {

@@ -38,7 +38,7 @@
 		border-radius: 20px;
 		font-size: 14px;
 		font-weight: 600;
-		box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+		box-shadow: 0 4px 12px color-mix(in oklab, $ember 40%, transparent);
 	}
 
 	&__header {
@@ -88,7 +88,7 @@
 		margin: $spacing-xs 0 $spacing-md 0;
 		padding: $spacing-xs $spacing-sm;
 		background: transparent;
-		border: 1px solid rgba($accent-pink, 0.3);
+		border: 1px solid color-mix(in oklab, $accent-pink 30%, transparent);
 		border-radius: 6px;
 		font-size: 12px;
 		font-weight: 500;
@@ -97,7 +97,7 @@
 		transition: all 0.3s ease;
 
 		&:hover {
-			background: rgba($accent-pink, 0.05);
+			background: color-mix(in oklab, $accent-pink 5%, transparent);
 			border-color: $accent-pink;
 		}
 
@@ -173,7 +173,7 @@
 
 		&:hover {
 			transform: translateY(-2px);
-			box-shadow: 0 8px 20px rgba($accent-orange, 0.3);
+			box-shadow: 0 8px 20px color-mix(in oklab, $accent-orange 30%, transparent);
 		}
 	}
 

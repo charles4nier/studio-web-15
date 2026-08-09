@@ -29,7 +29,7 @@
 
 		p {
 			font-size: 18px;
-			color: rgba($white, 0.8);
+			color: color-mix(in oklab, $white 80%, transparent);
 			line-height: 1.6;
 		}
 	}
@@ -96,7 +96,7 @@
 		border-radius: 20px;
 		font-size: 14px;
 		font-weight: 600;
-		box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+		box-shadow: 0 4px 12px color-mix(in oklab, $ember 40%, transparent);
 	}
 
 	&__header {

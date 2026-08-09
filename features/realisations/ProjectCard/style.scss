@@ -1,121 +1,147 @@
 .project-card {
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	background: $white;
-	border-radius: 20px;
-	overflow: hidden;
-	text-decoration: none;
-	box-shadow: $shadow-soft;
-	transition:
-		transform 0.35s ease,
-		box-shadow 0.35s ease;
 
-	&:hover {
-		transform: translateY(-6px);
-		box-shadow: $shadow-strong;
-
-		.project-card__image {
-			transform: scale(1.05);
-		}
-
-		.project-card__arrow {
-			transform: translate(4px, -4px);
-			opacity: 1;
-		}
+	&__media-link {
+		display: block;
 	}
 
 	&__media {
 		position: relative;
-		aspect-ratio: 4 / 3;
 		overflow: hidden;
-		background: $white-secondary;
+		border: 1px solid $border;
+		background: $surface;
 	}
 
 	&__image {
 		width: 100%;
-		height: 100%;
+		aspect-ratio: 3 / 2;
 		object-fit: cover;
-		transition: transform 0.5s ease;
-	}
-
-	&__category {
-		position: absolute;
-		top: $spacing-md;
-		left: $spacing-md;
-		background: rgba(255, 255, 255, 0.92);
-		color: $black-primary;
-		font-size: 12px;
-		font-weight: 600;
-		letter-spacing: 0.03em;
-		padding: 6px 14px;
-		border-radius: 9999px;
-	}
-
-	&__body {
-		padding: $spacing-lg;
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		gap: 6px;
-	}
-
-	&__title {
-		font-family: var(--font-ubuntu), sans-serif;
-		font-size: 20px;
-		font-weight: 700;
-		color: $black-primary;
-		margin: 0;
-	}
-
-	&__client {
-		font-size: 14px;
-		color: $black-secondary;
-		margin: 0;
-	}
-
-	&__excerpt {
-		font-size: 15px;
-		color: $black-secondary;
-		line-height: $line-height-normal;
-		margin: 4px 0 0;
-	}
-
-	&__tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 8px;
-		list-style: none;
-		margin: $spacing-sm 0 0;
-		padding: 0;
-
-		li {
-			font-size: 12px;
-			font-weight: 600;
-			color: $accent-purple;
-			background: rgba(124, 58, 237, 0.08);
-			padding: 4px 10px;
-			border-radius: 9999px;
-		}
 	}
 
 	&__arrow {
 		position: absolute;
-		top: $spacing-lg;
-		right: $spacing-lg;
+		top: $spacing-md;
+		right: $spacing-md;
 		width: 40px;
 		height: 40px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: $white;
 		border-radius: 50%;
+		background: $ember;
+		color: $ember-foreground;
+		font-family: $font-family-primary;
 		font-size: 18px;
-		color: $accent-purple;
 		opacity: 0;
-		transition:
-			transform 0.3s ease,
-			opacity 0.3s ease;
-		box-shadow: $shadow-medium;
+		transition: opacity 0.25s ease;
+	}
+
+	&:hover &__arrow {
+		opacity: 1;
+	}
+
+	&__body {
+		margin-top: $spacing-lg;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-sm;
+	}
+
+	&__meta {
+		display: flex;
+		align-items: center;
+		gap: $spacing-md;
+	}
+
+	&__number {
+		font-family: $font-family-primary;
+		font-size: 12px;
+		color: $ember;
+	}
+
+	&__category {
+		font-family: $font-family-primary;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.16em;
+		color: $muted-foreground;
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	&__excerpt {
+		margin: 0;
+		max-width: 32rem;
+		font-size: 14px;
+		line-height: $line-height-relaxed;
+		color: $muted-foreground;
+	}
+
+	&__services {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-sm;
+		list-style: none;
+		margin: $spacing-xs 0 0;
+		padding: 0;
+
+		li {
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+			color: $muted-foreground;
+
+			&:not(:last-child)::after {
+				content: '·';
+				margin-left: $spacing-sm;
+				color: $border;
+			}
+		}
+	}
+
+	&__result {
+		margin: $spacing-lg 0 0;
+		padding-top: $spacing-sm;
+		border-top: 1px solid $border;
+		font-family: $font-family-primary;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: $foreground;
+
+		span {
+			margin-right: $spacing-sm;
+			color: $ember;
+		}
+	}
+
+	&__link {
+		margin-top: $spacing-md;
+		align-self: flex-start;
+		font-family: $font-family-primary;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: $foreground;
+		text-decoration: underline;
+		text-decoration-color: $ember;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
+		transition: color 0.25s ease;
+
+		&:hover {
+			color: $ember;
+		}
+	}
+
+	&--featured {
+		.project-card__title {
+			font-size: 32px;
+		}
 	}
 }

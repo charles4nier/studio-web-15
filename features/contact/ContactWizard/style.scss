@@ -67,7 +67,7 @@
 	gap: $spacing-xs;
 
 	&:hover {
-		background: linear-gradient(135deg, rgba($accent-green, 0.1) 0%, rgba($accent-blue, 0.1) 100%);
+		background: linear-gradient(135deg, color-mix(in oklab, $accent-green 10%, transparent) 0%, color-mix(in oklab, $accent-blue 10%, transparent) 100%);
 		color: $accent-green;
 		transform: translateX(-4px);
 	}
@@ -78,7 +78,7 @@
 }
 
 .wizard-recap {
-	background: linear-gradient(135deg, rgba($accent-green, 0.05) 0%, rgba($accent-blue, 0.05) 100%);
+	background: linear-gradient(135deg, color-mix(in oklab, $accent-green 5%, transparent) 0%, color-mix(in oklab, $accent-blue 5%, transparent) 100%);
 	border-left: 4px solid;
 	border-image: $gradient-contact 1;
 	padding: $spacing-xl $spacing-2xl;

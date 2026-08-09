@@ -36,22 +36,31 @@ export default function Contact() {
 	return (
 		<div className="contact">
 			<section className="contact-hero">
+				<div className="grid-lines contact-hero__grid" />
 				<motion.div
-					className="container"
+					className="container contact-hero__inner"
 					variants={heroVariants}
 					initial="hidden"
 					animate="visible"
 				>
-					<div className="contact-hero__text-reveal">
+					<div>
+						<motion.p className="eyebrow" variants={itemVariants}>
+							Contact
+						</motion.p>
 						<motion.h1 className="contact-hero__title" variants={itemVariants}>
-							Démarrons votre projet
+							Démarrons
+							<span className="acid-text contact-hero__title-accent">
+								votre projet.
+							</span>
 						</motion.h1>
 					</div>
-					<div className="contact-hero__text-reveal">
-						<motion.p className="contact-hero__subtitle" variants={itemVariants}>
-							Quelques clics pour nous en dire plus. On vous répond sous 24h.
-						</motion.p>
-					</div>
+					<motion.div className="contact-hero__side" variants={itemVariants}>
+						<p>
+							Quelques clics pour nous en dire plus sur votre activité et
+							vos besoins.
+						</p>
+						<p className="contact-hero__highlight">Réponse sous 24h</p>
+					</motion.div>
 				</motion.div>
 			</section>
 

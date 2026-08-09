@@ -6,7 +6,7 @@ import Tarifs from '@features/tarifs';
 export const metadata: Metadata = generatePageMetadata({
 	title: 'Tarifs - Création Site Web Cantal & Aveyron',
 	description:
-		'Tarifs transparents : Site vitrine dès 1500€, e-commerce Shopify dès 2000€. Intervention Cantal, Aveyron, Creuse. Hébergement gratuit, technologie Next.js moderne.',
+		'Tarifs transparents : création de site internet dès 500€, e-commerce Shopify. Intervention Cantal, Aveyron, Creuse. Hébergement gratuit, technologie moderne.',
 	path: '/tarifs'
 });
 
@@ -18,7 +18,7 @@ export default function TarifsPage() {
 				data={{
 					name: 'Tarifs - Studio Web 15',
 					description:
-						'Tarifs création sites web Next.js et e-commerce Shopify. Technologie moderne, performance optimale.'
+						'Tarifs création de sites internet et boutiques en ligne. Technologie moderne, performance optimale.'
 				}}
 			/>
 			<Tarifs />

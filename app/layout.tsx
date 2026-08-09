@@ -1,18 +1,20 @@
-import { Ubuntu, Inter } from 'next/font/google';
+import { Space_Grotesk, DM_Sans } from 'next/font/google';
 import type { Metadata, Viewport } from 'next';
 import { defaultMetadata } from '@shared/config/seo';
 
-export const ubuntu = Ubuntu({
+// Variables CSS conservées (--font-ubuntu/--font-inter) : de nombreux
+// composants les référencent déjà en dur, seule la police chargée change.
+export const ubuntu = Space_Grotesk({
 	subsets: ['latin'],
-	weight: ['400', '500', '700'],
+	weight: ['500', '700'],
 	variable: '--font-ubuntu',
 	display: 'swap',
 	preload: true
 });
 
-export const inter = Inter({
+export const inter = DM_Sans({
 	subsets: ['latin'],
-	weight: ['400', '500', '700'],
+	weight: ['400', '500'],
 	variable: '--font-inter',
 	display: 'swap',
 	preload: true

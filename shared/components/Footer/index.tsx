@@ -13,10 +13,12 @@ export default function Footer() {
 			<div className="container">
 				<div className={`${CLASS_NAME}__top`}>
 					<div className={`${CLASS_NAME}__col`}>
-						<h3>Studio Web 15</h3>
+						<h3>
+							Studio Web <span className={`${CLASS_NAME}__brand-accent`}>15</span>
+						</h3>
 						<p>
-							Création de sites web dans le Cantal. Next.js et
-							Shopify pour entreprises du Massif Central.
+							Création de sites internet à Aurillac, dans le
+							Cantal et le Massif Central.
 						</p>
 					</div>
 
@@ -43,12 +45,12 @@ export default function Footer() {
 					>
 						<h4>Contact</h4>
 						<ul>
-							<li>📧 contact@studioweb15.fr</li>
+							<li>contact@studioweb15.fr</li>
 							<li>
-								<a href="tel:+33698483658">📞 06 98 48 36 58</a>
+								<a href="tel:+33698483658">06 98 48 36 58</a>
 							</li>
-							<li>📍 Cantal, Auvergne</li>
-							<li>📍 Intervention : Cantal, Aveyron, Creuse</li>
+							<li>Aurillac, Cantal</li>
+							<li>Intervention : Cantal, Aveyron, Creuse</li>
 						</ul>
 					</div>
 				</div>

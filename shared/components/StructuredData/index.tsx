@@ -71,7 +71,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
 						'@type': 'City',
 						name: dept
 					})),
-					priceRange: '1500€ - 5000€',
+					priceRange: '500€ - 5000€',
 					description: siteConfig.description,
 					openingHoursSpecification: [
 						{

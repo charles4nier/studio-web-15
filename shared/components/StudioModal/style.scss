@@ -24,7 +24,7 @@
 		width: 56px;
 		height: 56px;
 		padding: 0;
-		background: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+		background: $gradient-acid;
 		border: none;
 		border-radius: 50%;
 		cursor: pointer;
@@ -42,7 +42,7 @@
 
 		&:hover {
 			transform: scale(1.1);
-			box-shadow: 0 8px 24px rgba($accent-orange, 0.3);
+			box-shadow: 0 8px 24px color-mix(in oklab, $accent-orange 30%, transparent);
 		}
 
 		span {
@@ -95,14 +95,14 @@
 		border: none;
 		border-radius: 50%;
 		color: $white;
-		box-shadow: 0 4px 16px rgba($accent-orange, 0.4);
+		box-shadow: 0 4px 16px color-mix(in oklab, $accent-orange 40%, transparent);
 		cursor: pointer;
 		animation: bounce 2s infinite;
 		transition: all 0.3s ease;
 
 		&:hover {
 			transform: translateX(-50%) scale(1.1);
-			box-shadow: 0 6px 20px rgba($accent-orange, 0.5);
+			box-shadow: 0 6px 20px color-mix(in oklab, $accent-orange 50%, transparent);
 		}
 
 		&:focus {

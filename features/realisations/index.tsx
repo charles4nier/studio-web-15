@@ -5,7 +5,7 @@ import RealisationsHero from './RealisationsHero';
 import RealisationsGrid, { Project } from './RealisationsGrid';
 
 const query = `
-*[_type == "realisation"] | order(coalesce(order, 999) asc, year desc) {
+*[_type == "realisation"] | order(coalesce(year, "0") desc, _createdAt desc) {
   "_id": _id,
   "slug": slug.current,
   title,
@@ -13,7 +13,8 @@ const query = `
   category,
   excerpt,
   coverImage,
-  technologies
+  technologies,
+  resultLine
 }
 `;
 
@@ -24,18 +25,21 @@ export default async function Realisations() {
 
 	return (
 		<div className="realisations">
-			<RealisationsHero />
+			<RealisationsHero count={projects.length} />
 			<RealisationsGrid projects={projects} />
 
-			<section className="cta-section">
-				<div className="container">
-					<h2 className="cta-section__title">Un projet en tête ?</h2>
-					<p className="cta-section__subtitle">
-						Discutons de vos besoins et trouvons la solution idéale
-						ensemble.
-					</p>
+			<section className="realisations-cta">
+				<div className="container realisations-cta__inner">
+					<div>
+						<p className="realisations-cta__eyebrow">
+							Votre projet
+						</p>
+						<h2 className="realisations-cta__title">
+							Vous avez besoin d&apos;un site ? Écrivez-moi.
+						</h2>
+					</div>
 					<Link href="/contact" className="button-primary">
-						Demander un devis gratuit
+						Décrire mon projet <span aria-hidden="true">→</span>
 					</Link>
 				</div>
 			</section>

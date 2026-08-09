@@ -10,7 +10,6 @@ interface StudioModalProps {
 	onClose: () => void;
 	children: ReactNode;
 	ariaLabel: string;
-	gradientId?: 'home' | 'tarifs' | 'contact' | 'realisations';
 	showCloseButton?: boolean;
 }
 
@@ -19,7 +18,6 @@ export default function StudioModal({
 	onClose,
 	children,
 	ariaLabel,
-	gradientId = 'home',
 	showCloseButton = true
 }: StudioModalProps) {
 	const contentRef = useRef<HTMLDivElement>(null);
@@ -67,13 +65,13 @@ export default function StudioModal({
 			>
 				<defs>
 					<linearGradient
-						id="modal-gradient-home"
+						id="modal-gradient-acid"
 						x1="0%"
 						y1="0%"
 						x2="100%"
 						y2="100%"
 					>
-						<stop offset="0%" stopColor="#0066ff">
+						<stop offset="0%" stopColor="#b4f125">
 							<animate
 								attributeName="offset"
 								values="0;1;0"
@@ -81,7 +79,7 @@ export default function StudioModal({
 								repeatCount="indefinite"
 							/>
 						</stop>
-						<stop offset="50%" stopColor="#ec4899">
+						<stop offset="50%" stopColor="#3ecbe0">
 							<animate
 								attributeName="offset"
 								values="0.5;1.5;0.5"
@@ -89,103 +87,7 @@ export default function StudioModal({
 								repeatCount="indefinite"
 							/>
 						</stop>
-						<stop offset="100%" stopColor="#0066ff">
-							<animate
-								attributeName="offset"
-								values="1;2;1"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-					</linearGradient>
-					<linearGradient
-						id="modal-gradient-tarifs"
-						x1="0%"
-						y1="0%"
-						x2="100%"
-						y2="100%"
-					>
-						<stop offset="0%" stopColor="#f97316">
-							<animate
-								attributeName="offset"
-								values="0;1;0"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-						<stop offset="50%" stopColor="#ec4899">
-							<animate
-								attributeName="offset"
-								values="0.5;1.5;0.5"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-						<stop offset="100%" stopColor="#f97316">
-							<animate
-								attributeName="offset"
-								values="1;2;1"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-					</linearGradient>
-					<linearGradient
-						id="modal-gradient-contact"
-						x1="0%"
-						y1="0%"
-						x2="100%"
-						y2="100%"
-					>
-						<stop offset="0%" stopColor="#10b981">
-							<animate
-								attributeName="offset"
-								values="0;1;0"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-						<stop offset="50%" stopColor="#0066ff">
-							<animate
-								attributeName="offset"
-								values="0.5;1.5;0.5"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-						<stop offset="100%" stopColor="#10b981">
-							<animate
-								attributeName="offset"
-								values="1;2;1"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-					</linearGradient>
-					<linearGradient
-						id="modal-gradient-realisations"
-						x1="0%"
-						y1="0%"
-						x2="100%"
-						y2="100%"
-					>
-						<stop offset="0%" stopColor="#7c3aed">
-							<animate
-								attributeName="offset"
-								values="0;1;0"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-						<stop offset="50%" stopColor="#06b6d4">
-							<animate
-								attributeName="offset"
-								values="0.5;1.5;0.5"
-								dur="25s"
-								repeatCount="indefinite"
-							/>
-						</stop>
-						<stop offset="100%" stopColor="#7c3aed">
+						<stop offset="100%" stopColor="#b4f125">
 							<animate
 								attributeName="offset"
 								values="1;2;1"
@@ -198,7 +100,7 @@ export default function StudioModal({
 				{/* Ligne principale - centre */}
 				<path
 					fill="none"
-					stroke={`url(#modal-gradient-${gradientId})`}
+					stroke="url(#modal-gradient-acid)"
 					strokeWidth="2.5"
 					opacity="0.2"
 				>
@@ -217,7 +119,7 @@ export default function StudioModal({
 				{/* Ligne 2 - bas gauche */}
 				<path
 					fill="none"
-					stroke={`url(#modal-gradient-${gradientId})`}
+					stroke="url(#modal-gradient-acid)"
 					strokeWidth="2"
 					opacity="0.15"
 				>
@@ -236,7 +138,7 @@ export default function StudioModal({
 				{/* Ligne 3 - haut droite */}
 				<path
 					fill="none"
-					stroke={`url(#modal-gradient-${gradientId})`}
+					stroke="url(#modal-gradient-acid)"
 					strokeWidth="1.8"
 					opacity="0.12"
 				>

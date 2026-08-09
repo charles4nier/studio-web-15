@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CONTACT_EMAIL } from '@shared/config/contact';
 import './style.scss';
@@ -24,18 +23,7 @@ const CROSS_PATH = 'M 6 6 L 18 18 M 18 6 L 6 18';
 // Pastille au-dessus du cercle quand ouvert (bord bas du cercle = 200px)
 const PILL_OFFSET_OPEN = 144;
 
-type GradientId = 'home' | 'tarifs' | 'contact' | 'realisations';
-
-function getGradientId(pathname: string): GradientId {
-	if (pathname === '/tarifs') return 'tarifs';
-	if (pathname === '/contact') return 'contact';
-	if (pathname.startsWith('/realisations')) return 'realisations';
-	return 'home';
-}
-
 export default function FloatingContact() {
-	const pathname = usePathname();
-	const gradientId = getGradientId(pathname);
 	const [isOpen, setIsOpen] = useState(false);
 	const [copiedField, setCopiedField] = useState<'phone' | 'email' | null>(
 		null
@@ -97,68 +85,25 @@ export default function FloatingContact() {
 							>
 								<defs>
 									<linearGradient
-										id="float-grad-home"
+										id="float-grad-acid"
 										x1="0%"
 										y1="0%"
 										x2="100%"
 										y2="100%"
 									>
-										<stop offset="0%" stopColor="#0066ff" />
-										<stop
-											offset="50%"
-											stopColor="#7c3aed"
-										/>
+										<stop offset="0%" stopColor="#b4f125" />
 										<stop
 											offset="100%"
-											stopColor="#ec4899"
-										/>
-									</linearGradient>
-									<linearGradient
-										id="float-grad-tarifs"
-										x1="0%"
-										y1="0%"
-										x2="100%"
-										y2="100%"
-									>
-										<stop offset="0%" stopColor="#ec4899" />
-										<stop
-											offset="100%"
-											stopColor="#f59e0b"
-										/>
-									</linearGradient>
-									<linearGradient
-										id="float-grad-contact"
-										x1="0%"
-										y1="0%"
-										x2="100%"
-										y2="100%"
-									>
-										<stop offset="0%" stopColor="#10b981" />
-										<stop
-											offset="100%"
-											stopColor="#0066ff"
-										/>
-									</linearGradient>
-									<linearGradient
-										id="float-grad-realisations"
-										x1="0%"
-										y1="0%"
-										x2="100%"
-										y2="100%"
-									>
-										<stop offset="0%" stopColor="#7c3aed" />
-										<stop
-											offset="100%"
-											stopColor="#06b6d4"
+											stopColor="#3ecbe0"
 										/>
 									</linearGradient>
 								</defs>
 								{/* Fil secondaire */}
 								<path
 									fill="none"
-									stroke={`url(#float-grad-${gradientId})`}
+									stroke="url(#float-grad-acid)"
 									strokeWidth="1.4"
-									opacity="0.35"
+									opacity="0.45"
 								>
 									<animate
 										attributeName="d"
@@ -170,9 +115,9 @@ export default function FloatingContact() {
 								{/* Fil tertiaire */}
 								<path
 									fill="none"
-									stroke={`url(#float-grad-${gradientId})`}
+									stroke="url(#float-grad-acid)"
 									strokeWidth="1.2"
-									opacity="0.1"
+									opacity="0.2"
 								>
 									<animate
 										attributeName="d"

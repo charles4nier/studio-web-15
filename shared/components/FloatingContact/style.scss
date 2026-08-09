@@ -132,23 +132,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: $gradient-home;
-	color: $white;
+	background: $ember;
+	color: $ember-foreground;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 	transition: box-shadow 0.2s ease;
 	z-index: 2;
-
-	.page-tarifs & {
-		background: $gradient-tarifs;
-	}
-
-	.page-contact & {
-		background: $gradient-contact;
-	}
-
-	.page-realisations & {
-		background: $gradient-realisations;
-	}
 
 	&:hover {
 		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);

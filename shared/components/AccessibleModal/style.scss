@@ -10,7 +10,7 @@
 	justify-content: center;
 	width: 100%;
 	height: 100vh;
-	background: rgba($black-primary, 0.95);
+	background: color-mix(in oklab, $black-primary 95%, transparent);
 
 	&__document {
 		position: relative;

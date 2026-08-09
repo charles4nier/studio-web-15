@@ -1,7 +1,6 @@
 'use client';
 
 import './style.scss';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ProjectCard from '../ProjectCard';
 import { SanityImage } from '@types/sanity';
@@ -15,35 +14,18 @@ export interface Project {
 	excerpt?: string;
 	coverImage: SanityImage;
 	technologies?: string[];
+	resultLine?: string;
 }
 
 interface RealisationsGridProps {
 	projects: Project[];
 }
 
-const gridVariants = {
-	hidden: {},
-	visible: {
-		transition: {
-			staggerChildren: 0.12
-		}
-	}
-};
-
-const itemVariants = {
-	hidden: { y: 30, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
-	}
-};
-
 export default function RealisationsGrid({ projects }: RealisationsGridProps) {
 	if (projects.length === 0) {
 		return (
-			<section className="realisations-empty">
-				<div className="container">
+			<section className="band">
+				<div className="container realisations-empty">
 					<p className="realisations-empty__title">
 						Les premières réalisations arrivent bientôt.
 					</p>
@@ -58,23 +40,29 @@ export default function RealisationsGrid({ projects }: RealisationsGridProps) {
 		);
 	}
 
+	const [latest, ...rest] = projects;
+
 	return (
-		<motion.section
-			className="realisations-grid"
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true, margin: '-100px' }}
-			variants={gridVariants}
-		>
+		<section className="band" aria-labelledby="projects-title">
 			<div className="container">
-				<div className="realisations-grid__list">
-					{projects.map((project) => (
-						<motion.div key={project._id} variants={itemVariants}>
-							<ProjectCard {...project} />
-						</motion.div>
-					))}
+				<div className="realisations-grid">
+					<div className="realisations-grid__featured">
+						<ProjectCard {...latest} number={1} featured />
+					</div>
+
+					{rest.length > 0 && (
+						<div className="realisations-grid__rest">
+							{rest.map((project, index) => (
+								<ProjectCard
+									key={project._id}
+									{...project}
+									number={index + 2}
+								/>
+							))}
+						</div>
+					)}
 				</div>
 			</div>
-		</motion.section>
+		</section>
 	);
 }
