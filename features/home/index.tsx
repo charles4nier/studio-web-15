@@ -76,13 +76,23 @@ const methode = [
 
 const offres = [
 	{
-		name: 'Vitrine',
+		name: 'Landing page',
 		price: 'à partir de 500 €',
 		items: [
-			'3 à 5 pages',
+			'Page unique',
 			'Design sur mesure',
-			'SEO technique',
+			'Backoffice en option',
 			'Mise en ligne incluse'
+		]
+	},
+	{
+		name: 'Site vitrine',
+		price: 'à partir de 1 500 €',
+		items: [
+			'5 pages',
+			'Sanity CMS',
+			'SEO optimisé',
+			'Hébergement inclus'
 		]
 	},
 	{
@@ -93,16 +103,6 @@ const offres = [
 			'Paiements sécurisés',
 			'Produits illimités',
 			'Formation à la gestion'
-		]
-	},
-	{
-		name: 'Accompagnement',
-		price: '150 € / mois',
-		items: [
-			'Mises à jour',
-			'Sauvegardes',
-			'Évolutions régulières',
-			'Support prioritaire'
 		]
 	}
 ];
@@ -148,10 +148,7 @@ export default async function HomePage() {
 					</h2>
 					<div className="home-tarifs__grid">
 						{offres.map((o) => (
-							<div
-								key={o.name}
-								className={`home-tarifs__card${o.featured ? ' home-tarifs__card--featured' : ''}`}
-							>
+							<div key={o.name} className="home-tarifs__card">
 								<h3>{o.name}</h3>
 								<p className="home-tarifs__price">{o.price}</p>
 								<ul>
