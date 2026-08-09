@@ -83,9 +83,9 @@
 	}
 
 	&__cover {
-		margin-top: -$spacing-2xl;
 		position: relative;
 		z-index: 2;
+		border-top: none;
 	}
 
 	&__cover-image {
@@ -113,7 +113,7 @@
 	}
 
 	&__body {
-		max-width: 42rem;
+		max-width: 48rem;
 		font-size: 16px;
 		line-height: $line-height-relaxed;
 		color: $muted-foreground;
@@ -140,27 +140,40 @@
 		border-bottom: 1px solid $border;
 	}
 
-	&__tags {
-		margin: $spacing-lg 0 0;
+	&__stack-title {
+		margin-top: $spacing-md;
+		max-width: 42rem;
+		font-size: clamp(28px, 4vw, 48px);
+	}
+
+	&__highlights {
+		margin: $spacing-3xl 0 0;
 		padding: 0;
 		list-style: none;
 		display: grid;
-		gap: 1px;
-		background: $border;
-		border: 1px solid $border;
+		gap: $spacing-2xl;
 
 		li {
-			background: $background;
-			padding: $spacing-lg;
-			font-weight: 500;
+			padding-top: $spacing-xl;
+			border-top: 1px solid $border;
+		}
 
-			span {
-				display: block;
-				margin-bottom: $spacing-sm;
-				font-family: $font-family-primary;
-				font-size: 11px;
-				color: $ember;
-			}
+		span {
+			font-family: $font-family-primary;
+			font-size: 11px;
+			color: $ember;
+		}
+
+		h3 {
+			margin-top: $spacing-md;
+			font-size: 20px;
+		}
+
+		p {
+			margin-top: $spacing-sm;
+			font-size: 14px;
+			line-height: $line-height-relaxed;
+			color: $muted-foreground;
 		}
 	}
 
@@ -174,8 +187,16 @@
 			grid-template-columns: 18rem minmax(0, 1fr);
 		}
 
-		&__tags {
+		&__highlights {
 			grid-template-columns: repeat(3, 1fr);
+			gap: $spacing-3xl;
+
+			li {
+				padding-top: 0;
+				padding-left: $spacing-2xl;
+				border-top: none;
+				border-left: 1px solid $border;
+			}
 		}
 	}
 }

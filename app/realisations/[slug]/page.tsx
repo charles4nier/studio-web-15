@@ -23,6 +23,9 @@ const query = `
   resultLine,
   url,
   body,
+  storyTitle,
+  stackTitle,
+  highlights,
   seo
 }
 `;

@@ -109,6 +109,42 @@ export default {
 			of: [{ type: 'block' }]
 		},
 		{
+			name: 'storyTitle',
+			title: 'Titre — Le projet',
+			description:
+				'Phrase d\'orientation affichée sous "Le projet" (ex: "Faire parler les données."). Si vide, le nom du projet est utilisé.',
+			type: 'string'
+		},
+		{
+			name: 'stackTitle',
+			title: 'Titre — Ce qui a été créé',
+			description:
+				'Phrase affichée sous "Ce qui a été créé" (ex: "Une expérience claire à chaque étape."). Section masquée si vide.',
+			type: 'string'
+		},
+		{
+			name: 'highlights',
+			title: 'Points forts — Ce qui a été créé',
+			description:
+				'3 blocs numérotés (titre + description) affichés sous le titre "Ce qui a été créé".',
+			type: 'array',
+			of: [
+				{
+					type: 'object',
+					fields: [
+						{ name: 'title', title: 'Titre', type: 'string' },
+						{
+							name: 'description',
+							title: 'Description',
+							type: 'text',
+							rows: 2
+						}
+					]
+				}
+			],
+			validation: (Rule: any) => Rule.max(3)
+		},
+		{
 			name: 'featured',
 			title: 'Mise en avant',
 			description: 'Affiché en priorité dans la liste',

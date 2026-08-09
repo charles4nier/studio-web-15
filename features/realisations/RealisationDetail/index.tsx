@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { PortableText, PortableTextBlock } from '@portabletext/react';
 import SanityImage from '@shared/components/SanityImage';
-import GallerySlideshow from './GallerySlideshow';
 import { SanityImage as SanityImageType } from '@types/sanity';
 
 export interface RealisationData {
@@ -20,6 +19,9 @@ export interface RealisationData {
 	technologies?: string[];
 	url?: string;
 	body?: PortableTextBlock[];
+	storyTitle?: string;
+	stackTitle?: string;
+	highlights?: { title: string; description: string }[];
 }
 
 const fadeUp = {
@@ -39,10 +41,12 @@ export default function RealisationDetail({
 	year,
 	excerpt,
 	coverImage,
-	gallery,
 	technologies,
 	url,
-	body
+	body,
+	storyTitle,
+	stackTitle,
+	highlights
 }: RealisationData) {
 	return (
 		<article className="realisation-detail">
@@ -88,7 +92,7 @@ export default function RealisationDetail({
 								)}
 							</div>
 
-							{(client || role || category || year) && (
+							{(client || role || category || year || technologies?.length) && (
 								<dl className="realisation-detail__meta">
 									{category && (
 										<div>
@@ -112,6 +116,12 @@ export default function RealisationDetail({
 										<div>
 											<dt>Année</dt>
 											<dd>{year}</dd>
+										</div>
+									)}
+									{technologies && technologies.length > 0 && (
+										<div>
+											<dt>Technologies</dt>
+											<dd>{technologies.join(', ')}</dd>
 										</div>
 									)}
 								</dl>
@@ -152,7 +162,7 @@ export default function RealisationDetail({
 					<div className="container realisation-detail__story-inner">
 						<div>
 							<p className="eyebrow">Le projet</p>
-							<h2>{title}</h2>
+							<h2>{storyTitle || title}</h2>
 						</div>
 						<div className="realisation-detail__body">
 							<PortableText value={body} />
@@ -161,35 +171,26 @@ export default function RealisationDetail({
 				</motion.section>
 			)}
 
-			{gallery && gallery.length > 0 && (
-				<motion.section
-					className="band realisation-detail__gallery"
-					initial={{ opacity: 0, y: 40 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: '-100px' }}
-					transition={{ duration: 0.6, ease: 'easeOut' }}
-				>
-					<div className="container">
-						<p className="eyebrow">Aperçu</p>
-						<GallerySlideshow images={gallery} title={title} />
-					</div>
-				</motion.section>
-			)}
-
-			{technologies && technologies.length > 0 && (
+			{stackTitle && (
 				<section className="band realisation-detail__stack">
 					<div className="container">
 						<p className="eyebrow">Ce qui a été créé</p>
-						<ul className="realisation-detail__tags">
-							{technologies.map((tech, index) => (
-								<li key={tech}>
-									<span>
-										{String(index + 1).padStart(2, '0')}
-									</span>
-									{tech}
-								</li>
-							))}
-						</ul>
+						<h2 className="realisation-detail__stack-title">
+							{stackTitle}
+						</h2>
+						{highlights && highlights.length > 0 && (
+							<ul className="realisation-detail__highlights">
+								{highlights.map((highlight, index) => (
+									<li key={highlight.title}>
+										<span>
+											{String(index + 1).padStart(2, '0')}
+										</span>
+										<h3>{highlight.title}</h3>
+										<p>{highlight.description}</p>
+									</li>
+								))}
+							</ul>
+						)}
 					</div>
 				</section>
 			)}
