@@ -114,6 +114,23 @@
 
 	&__more {
 		margin-top: $spacing-2xl;
+		text-align: right;
+	}
+
+	&__more-link {
+		font-family: $font-family-primary;
+		font-size: 14px;
+		font-weight: 500;
+		color: $foreground;
+		text-decoration: underline;
+		text-decoration-color: $ember;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
+		transition: color 0.25s ease;
+
+		&:hover {
+			color: $ember;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {

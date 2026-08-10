@@ -163,7 +163,7 @@ export default async function HomePage() {
 						))}
 					</div>
 					<div className="home-tarifs__more">
-						<Link href="/tarifs" className="button-secondary">
+						<Link href="/tarifs" className="home-tarifs__more-link">
 							Voir le détail des tarifs
 						</Link>
 					</div>
