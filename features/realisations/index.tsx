@@ -5,7 +5,7 @@ import RealisationsHero from './RealisationsHero';
 import RealisationsGrid, { Project } from './RealisationsGrid';
 
 const query = `
-*[_type == "realisation"] | order(coalesce(year, "0") desc, _createdAt desc) {
+*[_type == "realisation"] | order(featured desc, _createdAt desc) {
   "_id": _id,
   "slug": slug.current,
   title,

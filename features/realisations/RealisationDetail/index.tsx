@@ -41,7 +41,6 @@ export default function RealisationDetail({
 	year,
 	excerpt,
 	coverImage,
-	technologies,
 	url,
 	body,
 	storyTitle,
@@ -92,7 +91,7 @@ export default function RealisationDetail({
 								)}
 							</div>
 
-							{(client || role || category || year || technologies?.length) && (
+							{(client || role || category || year) && (
 								<dl className="realisation-detail__meta">
 									{category && (
 										<div>
@@ -116,12 +115,6 @@ export default function RealisationDetail({
 										<div>
 											<dt>Année</dt>
 											<dd>{year}</dd>
-										</div>
-									)}
-									{technologies && technologies.length > 0 && (
-										<div>
-											<dt>Technologies</dt>
-											<dd>{technologies.join(', ')}</dd>
 										</div>
 									)}
 								</dl>

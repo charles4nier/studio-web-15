@@ -28,6 +28,7 @@ export default {
 			options: {
 				list: [
 					{ title: 'Site vitrine', value: 'Site vitrine' },
+					{ title: 'Landing page', value: 'Landing page' },
 					{ title: 'E-commerce', value: 'E-commerce' },
 					{ title: 'Application', value: 'Application' },
 					{ title: 'Autre', value: 'Autre' }
