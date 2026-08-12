@@ -1,5 +1,9 @@
 .realisations {
 	background: $background;
+
+	@media (prefers-color-scheme: dark) {
+		background: $background !important;
+	}
 }
 
 .realisations-cta {
@@ -7,6 +11,13 @@
 	border-bottom: 1px solid $border;
 	background: $foreground;
 	color: $background;
+
+	@media (prefers-color-scheme: dark) {
+		border-top-color: $border !important;
+		border-bottom-color: $border !important;
+		background: $foreground !important;
+		color: $background !important;
+	}
 
 	&__inner {
 		display: flex;
@@ -23,6 +34,10 @@
 		letter-spacing: 0.2em;
 		color: $ember;
 		margin: 0;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	&__title {
@@ -31,6 +46,10 @@
 		font-size: clamp(28px, 5vw, 48px);
 		line-height: 1.1;
 		color: $background;
+
+		@media (prefers-color-scheme: dark) {
+			color: $background !important;
+		}
 	}
 
 	.button-primary {

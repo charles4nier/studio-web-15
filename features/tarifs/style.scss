@@ -1,5 +1,9 @@
 .tarifs {
 	background: $white;
+
+	@media (prefers-color-scheme: dark) {
+		background: $white !important;
+	}
 }
 
 .tarifs-hero {
@@ -7,6 +11,11 @@
 	overflow: hidden;
 	border-bottom: 1px solid $border;
 	background: $background;
+
+	@media (prefers-color-scheme: dark) {
+		border-bottom-color: $border !important;
+		background: $background !important;
+	}
 
 	&__grid {
 		position: absolute;
@@ -39,11 +48,19 @@
 		border-left: 2px solid $ember;
 		padding-left: $spacing-lg;
 
+		@media (prefers-color-scheme: dark) {
+			border-left-color: $ember !important;
+		}
+
 		p {
 			font-size: 14px;
 			line-height: $line-height-relaxed;
 			color: $muted-foreground;
 			margin: 0;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 	}
 
@@ -55,6 +72,10 @@
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
 		color: $foreground !important;
+
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {
@@ -76,6 +97,10 @@
 
 	&--maintenance {
 		background: $white-secondary;
+
+		@media (prefers-color-scheme: dark) {
+			background: $white-secondary !important;
+		}
 	}
 
 	&__header {
@@ -91,6 +116,10 @@
 		font-size: clamp(16px, 1.5vw, 18px);
 		color: $black-secondary;
 		margin: 0 0 $spacing-xl 0;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	@media (max-width: $breakpoint-sm) {
@@ -105,6 +134,11 @@
 .offer-highlight {
 	background: $foreground;
 	color: $background;
+
+	@media (prefers-color-scheme: dark) {
+		background: $foreground !important;
+		color: $background !important;
+	}
 
 	&__inner {
 		display: flex;
@@ -124,6 +158,10 @@
 		text-transform: uppercase;
 		letter-spacing: 0.22em;
 		color: $ember;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	&__title {
@@ -131,6 +169,10 @@
 		font-size: clamp(28px, 5vw, 48px);
 		font-weight: 700;
 		color: $background;
+
+		@media (prefers-color-scheme: dark) {
+			color: $background !important;
+		}
 	}
 
 	&__text {
@@ -139,6 +181,10 @@
 		font-size: 14px;
 		line-height: $line-height-relaxed;
 		color: color-mix(in oklab, $background 70%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			color: color-mix(in oklab, $background 70%, transparent) !important;
+		}
 	}
 
 	&__action {
@@ -165,11 +211,20 @@
 	border-radius: 8px;
 	text-align: left;
 
+	@media (prefers-color-scheme: dark) {
+		background: linear-gradient(135deg, color-mix(in oklab, $accent-orange 5%, transparent) 0%, color-mix(in oklab, $accent-pink 5%, transparent) 100%) !important;
+		border-image: $gradient-tarifs 1 !important;
+	}
+
 	&__text {
 		font-size: clamp(14px, 1.2vw, 16px);
 		color: $black-secondary;
 		margin: 0 0 $spacing-md 0;
 		line-height: 1.6;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -181,6 +236,11 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			font-weight: 600;
+
+			@media (prefers-color-scheme: dark) {
+				background: $gradient-tarifs !important;
+				-webkit-text-fill-color: transparent !important;
+			}
 		}
 	}
 
@@ -226,15 +286,32 @@
 		cursor: pointer;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			background: $white !important;
+			color: $black-secondary !important;
+			border-color: rgba(0, 0, 0, 0.08) !important;
+		}
+
 		&.active {
 			background: $gradient-tarifs;
 			color: $white;
 			border-color: transparent;
 			box-shadow: 0 4px 12px color-mix(in oklab, $accent-orange 30%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				background: $gradient-tarifs !important;
+				color: $white !important;
+				border-color: transparent !important;
+				box-shadow: 0 4px 12px color-mix(in oklab, $accent-orange 30%, transparent) !important;
+			}
 		}
 
 		&:not(.active):hover {
 			border-color: color-mix(in oklab, $accent-pink 30%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				border-color: color-mix(in oklab, $accent-pink 30%, transparent) !important;
+			}
 		}
 	}
 
@@ -262,11 +339,23 @@
 	flex-direction: column;
 	align-items: center;
 
+	@media (prefers-color-scheme: dark) {
+		background: $white !important;
+		border-color: rgba(0, 0, 0, 0.08) !important;
+	}
+
 	&--recommended {
 		border: 2px solid transparent;
 		background: linear-gradient($white, $white) padding-box,
 			$gradient-tarifs border-box;
 		box-shadow: $shadow-medium;
+
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background: linear-gradient($white, $white) padding-box,
+				$gradient-tarifs border-box !important;
+			box-shadow: $shadow-medium !important;
+		}
 	}
 
 	// Forcer le style correct des boutons
@@ -275,9 +364,20 @@
 		color: $black-primary !important;
 		border: 2px solid $black-primary !important;
 
+		@media (prefers-color-scheme: dark) {
+			background: transparent !important;
+			color: $black-primary !important;
+			border-color: $black-primary !important;
+		}
+
 		&:hover {
 			background: $black-primary !important;
 			color: $white !important;
+
+			@media (prefers-color-scheme: dark) {
+				background: $black-primary !important;
+				color: $white !important;
+			}
 		}
 	}
 
@@ -304,9 +404,19 @@
 		transition: all 0.3s ease;
 		z-index: 10;
 
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			color: $white !important;
+			box-shadow: 0 4px 12px color-mix(in oklab, $accent-orange 40%, transparent) !important;
+		}
+
 		&:hover {
 			transform: translateX(-50%) scale(1.1);
 			box-shadow: 0 6px 16px color-mix(in oklab, $accent-orange 50%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: 0 6px 16px color-mix(in oklab, $accent-orange 50%, transparent) !important;
+			}
 		}
 
 		&:focus {
@@ -316,6 +426,10 @@
 		&:focus-visible {
 			outline: 2px solid $accent-pink;
 			outline-offset: 3px;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: $accent-pink !important;
+			}
 		}
 
 		span {
@@ -355,6 +469,10 @@
 	padding: $spacing-5xl 0;
 	background: $white;
 
+	@media (prefers-color-scheme: dark) {
+		background: $white !important;
+	}
+
 	&__title {
 		text-align: center;
 		margin-bottom: $spacing-4xl;
@@ -367,8 +485,16 @@
 		font-weight: 600;
 		margin-top: $spacing-3xl;
 
+		@media (prefers-color-scheme: dark) {
+			color: $accent-primary !important;
+		}
+
 		strong {
 			color: $accent-primary;
+
+			@media (prefers-color-scheme: dark) {
+				color: $accent-primary !important;
+			}
 		}
 	}
 
@@ -388,6 +514,10 @@
 	overflow: hidden;
 	box-shadow: $shadow-medium;
 
+	@media (prefers-color-scheme: dark) {
+		box-shadow: $shadow-medium !important;
+	}
+
 	&__header {
 		display: grid;
 		grid-template-columns: 2fr 1fr 1fr;
@@ -395,6 +525,11 @@
 		color: $white;
 		font-weight: 600;
 		padding: $spacing-lg 0;
+
+		@media (prefers-color-scheme: dark) {
+			background: $black-primary !important;
+			color: $white !important;
+		}
 	}
 
 	&__row {
@@ -403,9 +538,18 @@
 		background: $white;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
+		@media (prefers-color-scheme: dark) {
+			background: $white !important;
+			border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+		}
+
 		&--total {
 			background: $white-secondary;
 			font-size: clamp(16px, 1.5vw, 18px);
+
+			@media (prefers-color-scheme: dark) {
+				background: $white-secondary !important;
+			}
 		}
 	}
 
@@ -420,12 +564,21 @@
 			justify-content: flex-start;
 			font-weight: 500;
 			color: $black-primary;
+
+			@media (prefers-color-scheme: dark) {
+				color: $black-primary !important;
+			}
 		}
 
 		&--highlight {
 			background: color-mix(in oklab, $accent-primary 5%, transparent);
 			color: $accent-primary;
 			font-weight: 600;
+
+			@media (prefers-color-scheme: dark) {
+				background: color-mix(in oklab, $accent-primary 5%, transparent) !important;
+				color: $accent-primary !important;
+			}
 		}
 	}
 
@@ -446,6 +599,10 @@
 	padding: $spacing-5xl 0;
 	background: $white-secondary;
 
+	@media (prefers-color-scheme: dark) {
+		background: $white-secondary !important;
+	}
+
 	&__content {
 		max-width: 800px;
 		margin: 0 auto;
@@ -456,8 +613,17 @@
 		text-align: center;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			background: $white !important;
+			box-shadow: $shadow-soft !important;
+		}
+
 		&:hover {
 			box-shadow: $shadow-medium;
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: $shadow-medium !important;
+			}
 		}
 	}
 
@@ -475,6 +641,11 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			-webkit-text-fill-color: transparent !important;
+		}
 	}
 
 	&__description {
@@ -482,21 +653,38 @@
 		font-size: 18px;
 		color: $black-secondary;
 		line-height: 1.6;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__button {
 		border: 2px solid transparent;
-		background-image: 
+		background-image:
 			linear-gradient($white, $white),
 			$gradient-tarifs;
 		background-origin: border-box;
 		background-clip: padding-box, border-box;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background-image:
+				linear-gradient($white, $white),
+				$gradient-tarifs !important;
+		}
+
 		&:hover {
 			background: $gradient-tarifs;
 			color: $white;
 			border-color: transparent;
+
+			@media (prefers-color-scheme: dark) {
+				background: $gradient-tarifs !important;
+				color: $white !important;
+				border-color: transparent !important;
+			}
 		}
 	}
 
@@ -526,6 +714,11 @@
 	background: $foreground;
 	color: $background;
 
+	@media (prefers-color-scheme: dark) {
+		background: $foreground !important;
+		color: $background !important;
+	}
+
 	&__inner {
 		display: flex;
 		flex-direction: column;
@@ -537,6 +730,10 @@
 		max-width: 36rem;
 		font-size: clamp(28px, 5vw, 48px);
 		color: $background;
+
+		@media (prefers-color-scheme: dark) {
+			color: $background !important;
+		}
 	}
 
 	&__text {
@@ -545,6 +742,10 @@
 		font-size: 14px;
 		line-height: $line-height-relaxed;
 		color: color-mix(in oklab, $background 70%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			color: color-mix(in oklab, $background 70%, transparent) !important;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {

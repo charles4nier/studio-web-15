@@ -1,6 +1,10 @@
 .home-methode {
 	background: $surface;
 
+	@media (prefers-color-scheme: dark) {
+		background: $surface !important;
+	}
+
 	&__title {
 		margin-top: $spacing-md;
 		max-width: 42rem;
@@ -15,11 +19,20 @@
 		border: 1px solid $border;
 		list-style: none;
 		padding: 0;
+
+		@media (prefers-color-scheme: dark) {
+			background: $border !important;
+			border-color: $border !important;
+		}
 	}
 
 	&__item {
 		background: $surface;
 		padding: $spacing-xl;
+
+		@media (prefers-color-scheme: dark) {
+			background: $surface !important;
+		}
 
 		h3 {
 			margin-top: $spacing-md;
@@ -31,6 +44,10 @@
 			font-size: 14px;
 			line-height: $line-height-relaxed;
 			color: $muted-foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 	}
 
@@ -38,6 +55,10 @@
 		font-family: $font-family-primary;
 		font-size: 12px;
 		color: $ember;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {
@@ -49,6 +70,10 @@
 
 .home-tarifs {
 	background: $background;
+
+	@media (prefers-color-scheme: dark) {
+		background: $background !important;
+	}
 
 	&__title {
 		margin-top: $spacing-md;
@@ -69,8 +94,16 @@
 		padding: $spacing-xl;
 		transition: border-color 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			border-color: $border !important;
+		}
+
 		&:hover {
 			border-color: $ember;
+
+			@media (prefers-color-scheme: dark) {
+				border-color: $ember !important;
+			}
 		}
 
 		h3 {
@@ -88,12 +121,20 @@
 			font-size: 14px;
 			color: $muted-foreground;
 
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
+
 			li {
 				display: flex;
 				gap: $spacing-sm;
 
 				span {
 					color: $ember;
+
+					@media (prefers-color-scheme: dark) {
+						color: $ember !important;
+					}
 				}
 			}
 		}
@@ -102,6 +143,12 @@
 			border-color: $ember;
 			background: color-mix(in oklab, $ember 5%, transparent);
 			box-shadow: $glow-acid;
+
+			@media (prefers-color-scheme: dark) {
+				border-color: $ember !important;
+				background: color-mix(in oklab, $ember 5%, transparent) !important;
+				box-shadow: $glow-acid !important;
+			}
 		}
 	}
 
@@ -110,6 +157,10 @@
 		font-size: 14px;
 		color: $ember;
 		font-weight: 600;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	&__more {
@@ -128,8 +179,17 @@
 		text-underline-offset: 4px;
 		transition: color 0.25s ease;
 
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+			text-decoration-color: $ember !important;
+		}
+
 		&:hover {
 			color: $ember;
+
+			@media (prefers-color-scheme: dark) {
+				color: $ember !important;
+			}
 		}
 	}
 
@@ -144,6 +204,11 @@
 	background: $foreground;
 	color: $background;
 
+	@media (prefers-color-scheme: dark) {
+		background: $foreground !important;
+		color: $background !important;
+	}
+
 	&__inner {
 		display: flex;
 		flex-direction: column;
@@ -155,6 +220,10 @@
 		max-width: 36rem;
 		font-size: clamp(28px, 5vw, 48px);
 		color: $background;
+
+		@media (prefers-color-scheme: dark) {
+			color: $background !important;
+		}
 	}
 
 	&__text {
@@ -163,6 +232,10 @@
 		font-size: 14px;
 		line-height: $line-height-relaxed;
 		color: color-mix(in oklab, $background 70%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			color: color-mix(in oklab, $background 70%, transparent) !important;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {

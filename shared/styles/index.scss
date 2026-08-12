@@ -36,6 +36,11 @@ body {
 	padding-top: 80px;
 	font-family: $font-family-secondary;
 	color: $foreground;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: $background !important;
+		color: $foreground !important;
+	}
 }
 
 #root,
@@ -75,6 +80,10 @@ h6 {
 	line-height: $line-height-tight;
 	letter-spacing: -0.02em;
 	color: $foreground;
+
+	@media (prefers-color-scheme: dark) {
+		color: $foreground !important;
+	}
 }
 
 h1 {
@@ -96,6 +105,10 @@ p {
 	font-size: clamp(16px, 1.2vw, 18px);
 	line-height: $line-height-relaxed;
 	color: $black-secondary;
+
+	@media (prefers-color-scheme: dark) {
+		color: $black-secondary !important;
+	}
 }
 
 .container {
@@ -122,9 +135,18 @@ p {
 	position: relative;
 	cursor: pointer;
 
+	@media (prefers-color-scheme: dark) {
+		background: $ember !important;
+		color: $ember-foreground !important;
+	}
+
 	&:hover {
 		opacity: 0.9;
 		box-shadow: $glow-acid;
+
+		@media (prefers-color-scheme: dark) {
+			box-shadow: $glow-acid !important;
+		}
 	}
 
 	&:disabled {
@@ -150,9 +172,20 @@ p {
 		color 0.3s ease;
 	cursor: pointer;
 
+	@media (prefers-color-scheme: dark) {
+		background: transparent !important;
+		color: $foreground !important;
+		border-color: $border !important;
+	}
+
 	&:hover {
 		border-color: $ember;
 		color: $ember;
+
+		@media (prefers-color-scheme: dark) {
+			border-color: $ember !important;
+			color: $ember !important;
+		}
 	}
 }
 
@@ -163,11 +196,19 @@ p {
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
 	color: $ember;
+
+	@media (prefers-color-scheme: dark) {
+		color: $ember !important;
+	}
 }
 
 .band {
 	border-top: 1px solid $border;
 	padding-block: $spacing-5xl;
+
+	@media (prefers-color-scheme: dark) {
+		border-top-color: $border !important;
+	}
 }
 
 .acid-text {
@@ -175,10 +216,19 @@ p {
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
+
+	@media (prefers-color-scheme: dark) {
+		background-image: $gradient-acid !important;
+		color: transparent !important;
+	}
 }
 
 .acid-glow {
 	box-shadow: $glow-acid;
+
+	@media (prefers-color-scheme: dark) {
+		box-shadow: $glow-acid !important;
+	}
 }
 
 .grid-lines {
@@ -194,6 +244,20 @@ p {
 			transparent 1px
 		);
 	background-size: 72px 72px;
+
+	@media (prefers-color-scheme: dark) {
+		background-image:
+			linear-gradient(
+				to right,
+				color-mix(in oklab, $ember 10%, transparent) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				to bottom,
+				color-mix(in oklab, $ember 10%, transparent) 1px,
+				transparent 1px
+			) !important;
+	}
 }
 
 /* --- Responsive --- */

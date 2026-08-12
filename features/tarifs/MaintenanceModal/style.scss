@@ -25,12 +25,22 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			line-height: 1.2;
+
+			@media (prefers-color-scheme: dark) {
+				color: $white !important;
+				background: $gradient-tarifs !important;
+				-webkit-text-fill-color: transparent !important;
+			}
 		}
 
 		p {
 			font-size: 18px;
 			color: color-mix(in oklab, $white 80%, transparent);
 			line-height: 1.6;
+
+			@media (prefers-color-scheme: dark) {
+				color: color-mix(in oklab, $white 80%, transparent) !important;
+			}
 		}
 	}
 
@@ -69,9 +79,18 @@
 	border-radius: 12px;
 	transition: all 0.3s ease;
 
+	@media (prefers-color-scheme: dark) {
+		background: $white !important;
+		border-color: rgba(0, 0, 0, 0.08) !important;
+	}
+
 	&:hover {
 		transform: translateY(-4px);
 		box-shadow: $shadow-medium;
+
+		@media (prefers-color-scheme: dark) {
+			box-shadow: $shadow-medium !important;
+		}
 	}
 
 	&--recommended {
@@ -80,8 +99,19 @@
 			$gradient-tarifs border-box;
 		box-shadow: $shadow-medium;
 
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background: linear-gradient($white, $white) padding-box,
+				$gradient-tarifs border-box !important;
+			box-shadow: $shadow-medium !important;
+		}
+
 		&:hover {
 			box-shadow: $shadow-strong;
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: $shadow-strong !important;
+			}
 		}
 	}
 
@@ -97,6 +127,12 @@
 		font-size: 14px;
 		font-weight: 600;
 		box-shadow: 0 4px 12px color-mix(in oklab, $ember 40%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			color: $white !important;
+			box-shadow: 0 4px 12px color-mix(in oklab, $ember 40%, transparent) !important;
+		}
 	}
 
 	&__header {
@@ -110,6 +146,10 @@
 		font-size: clamp(20px, 2vw, 24px);
 		font-weight: 600;
 		color: $black-primary;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-primary !important;
+		}
 	}
 
 	&__price {
@@ -129,18 +169,31 @@
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		line-height: 1;
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			-webkit-text-fill-color: transparent !important;
+		}
 	}
 
 	&__unit {
 		font-size: clamp(18px, 2vw, 24px);
 		color: $black-secondary;
 		margin-left: $spacing-xs;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__description {
 		font-size: clamp(14px, 1.2vw, 16px);
 		color: $black-secondary;
 		margin: 0;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__features {
@@ -160,10 +213,18 @@
 			color: $black-secondary;
 			line-height: 1.6;
 
+			@media (prefers-color-scheme: dark) {
+				color: $black-secondary !important;
+			}
+
 			svg {
 				flex-shrink: 0;
 				margin-top: 2px;
 				color: $accent-primary;
+
+				@media (prefers-color-scheme: dark) {
+					color: $accent-primary !important;
+				}
 			}
 		}
 	}

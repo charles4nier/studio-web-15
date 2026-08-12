@@ -11,9 +11,18 @@
 	position: relative;
 	transition: all 0.3s ease;
 
+	@media (prefers-color-scheme: dark) {
+		background: $white !important;
+		border-color: rgba(0, 0, 0, 0.08) !important;
+	}
+
 	&:hover {
 		transform: translateY(-4px);
 		box-shadow: $shadow-medium;
+
+		@media (prefers-color-scheme: dark) {
+			box-shadow: $shadow-medium !important;
+		}
 	}
 
 	&--recommended {
@@ -22,8 +31,19 @@
 			$gradient-tarifs border-box;
 		box-shadow: $shadow-medium;
 
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background: linear-gradient($white, $white) padding-box,
+				$gradient-tarifs border-box !important;
+			box-shadow: $shadow-medium !important;
+		}
+
 		&:hover {
 			box-shadow: $shadow-strong;
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: $shadow-strong !important;
+			}
 		}
 	}
 
@@ -39,6 +59,12 @@
 		font-size: 14px;
 		font-weight: 600;
 		box-shadow: 0 4px 12px color-mix(in oklab, $ember 40%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			color: $white !important;
+			box-shadow: 0 4px 12px color-mix(in oklab, $ember 40%, transparent) !important;
+		}
 	}
 
 	&__header {
@@ -51,6 +77,10 @@
 		font-weight: 600;
 		color: $black-primary;
 		margin-bottom: $spacing-md;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-primary !important;
+		}
 	}
 
 	&__price {
@@ -62,6 +92,10 @@
 		font-weight: 500;
 		color: $black-secondary;
 		margin-right: $spacing-xs;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__amount {
@@ -71,12 +105,21 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			-webkit-text-fill-color: transparent !important;
+		}
 	}
 
 	&__unit {
 		font-size: clamp(18px, 2vw, 24px);
 		color: $black-secondary;
 		margin-left: $spacing-xs;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__custom {
@@ -86,6 +129,11 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			-webkit-text-fill-color: transparent !important;
+		}
 	}
 
 	&__maintenance-btn {
@@ -103,9 +151,20 @@
 		cursor: pointer;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			background: transparent !important;
+			border-color: color-mix(in oklab, $accent-pink 30%, transparent) !important;
+			color: $accent-pink !important;
+		}
+
 		&:hover {
 			background: color-mix(in oklab, $accent-pink 5%, transparent);
 			border-color: $accent-pink;
+
+			@media (prefers-color-scheme: dark) {
+				background: color-mix(in oklab, $accent-pink 5%, transparent) !important;
+				border-color: $accent-pink !important;
+			}
 		}
 
 		&:focus {
@@ -115,6 +174,10 @@
 		&:focus-visible {
 			outline: 2px solid $accent-pink;
 			outline-offset: 2px;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: $accent-pink !important;
+			}
 		}
 	}
 
@@ -122,6 +185,10 @@
 		font-size: clamp(14px, 1.2vw, 16px);
 		color: $black-secondary;
 		margin: 0;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__features {
@@ -139,12 +206,20 @@
 		font-size: clamp(14px, 1.1vw, 16px);
 		color: $black-secondary;
 		line-height: 1.6;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__check {
 		flex-shrink: 0;
 		margin-top: 2px;
 		color: $accent-primary;
+
+		@media (prefers-color-scheme: dark) {
+			color: $accent-primary !important;
+		}
 	}
 
 	&__client-cost {
@@ -153,9 +228,17 @@
 		padding-top: $spacing-lg;
 		border-top: 1px solid rgba(0, 0, 0, 0.08);
 
+		@media (prefers-color-scheme: dark) {
+			border-top-color: rgba(0, 0, 0, 0.08) !important;
+		}
+
 		small {
 			font-size: 14px;
 			color: $black-secondary;
+
+			@media (prefers-color-scheme: dark) {
+				color: $black-secondary !important;
+			}
 		}
 	}
 
@@ -178,9 +261,18 @@
 		color: $white;
 		border: none;
 
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			color: $white !important;
+		}
+
 		&:hover {
 			transform: translateY(-2px);
 			box-shadow: 0 8px 20px color-mix(in oklab, $accent-orange 30%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: 0 8px 20px color-mix(in oklab, $accent-orange 30%, transparent) !important;
+			}
 		}
 	}
 
@@ -189,9 +281,20 @@
 		color: $black-primary;
 		border: 2px solid $black-primary;
 
+		@media (prefers-color-scheme: dark) {
+			background: transparent !important;
+			color: $black-primary !important;
+			border-color: $black-primary !important;
+		}
+
 		&:hover {
 			background: $black-primary;
 			color: $white;
+
+			@media (prefers-color-scheme: dark) {
+				background: $black-primary !important;
+				color: $white !important;
+			}
 		}
 	}
 

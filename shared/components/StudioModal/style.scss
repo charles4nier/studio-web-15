@@ -3,6 +3,10 @@
 .studio-modal {
 	background: $black-primary;
 
+	@media (prefers-color-scheme: dark) {
+		background: $black-primary !important;
+	}
+
 	&__waves {
 		position: absolute;
 		top: 0;
@@ -30,6 +34,10 @@
 		cursor: pointer;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-acid !important;
+		}
+
 		// Focus visible uniquement au clavier
 		&:focus {
 			outline: none;
@@ -38,11 +46,19 @@
 		&:focus-visible {
 			outline: 3px solid $white;
 			outline-offset: 4px;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: $white !important;
+			}
 		}
 
 		&:hover {
 			transform: scale(1.1);
 			box-shadow: 0 8px 24px color-mix(in oklab, $accent-orange 30%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: 0 8px 24px color-mix(in oklab, $accent-orange 30%, transparent) !important;
+			}
 		}
 
 		span {
@@ -51,6 +67,10 @@
 			height: 2px;
 			background-color: $white;
 			transition: all 0.3s ease;
+
+			@media (prefers-color-scheme: dark) {
+				background-color: $white !important;
+			}
 
 			&:nth-child(1) {
 				transform: rotate(45deg);
@@ -100,9 +120,19 @@
 		animation: bounce 2s infinite;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-tarifs !important;
+			color: $white !important;
+			box-shadow: 0 4px 16px color-mix(in oklab, $accent-orange 40%, transparent) !important;
+		}
+
 		&:hover {
 			transform: translateX(-50%) scale(1.1);
 			box-shadow: 0 6px 20px color-mix(in oklab, $accent-orange 50%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: 0 6px 20px color-mix(in oklab, $accent-orange 50%, transparent) !important;
+			}
 		}
 
 		&:focus {
@@ -112,6 +142,10 @@
 		&:focus-visible {
 			outline: 3px solid $white;
 			outline-offset: 4px;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: $white !important;
+			}
 		}
 
 		svg {

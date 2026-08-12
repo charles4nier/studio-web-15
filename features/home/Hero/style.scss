@@ -4,6 +4,11 @@
 	background: $background;
 	border-bottom: 1px solid $border;
 
+	@media (prefers-color-scheme: dark) {
+		background: $background !important;
+		border-bottom-color: $border !important;
+	}
+
 	&__image {
 		object-fit: cover;
 		opacity: 0.45;
@@ -13,6 +18,10 @@
 		position: absolute;
 		inset: 0;
 		background: color-mix(in oklab, $background 75%, transparent);
+
+		@media (prefers-color-scheme: dark) {
+			background: color-mix(in oklab, $background 75%, transparent) !important;
+		}
 	}
 
 	&__grid {
@@ -41,6 +50,10 @@
 		font-weight: 700;
 		line-height: 1.05;
 		color: $foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+		}
 	}
 
 	&__title-accent {
@@ -53,6 +66,10 @@
 		font-size: clamp(16px, 2vw, 20px);
 		line-height: $line-height-relaxed;
 		color: $muted-foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
 	}
 
 	&__actions {
@@ -74,8 +91,17 @@
 		text-underline-offset: 4px;
 		transition: color 0.25s ease;
 
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+			text-decoration-color: $ember !important;
+		}
+
 		&:hover {
 			color: $ember;
+
+			@media (prefers-color-scheme: dark) {
+				color: $ember !important;
+			}
 		}
 	}
 

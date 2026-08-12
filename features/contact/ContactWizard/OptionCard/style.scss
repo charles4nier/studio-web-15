@@ -8,11 +8,24 @@
 	transition: all 0.3s ease;
 	box-shadow: $shadow-soft;
 
+	@media (prefers-color-scheme: dark) {
+		background: $white !important;
+		border-color: rgba(0, 0, 0, 0.08) !important;
+		box-shadow: $shadow-soft !important;
+	}
+
 	&:hover {
 		border-color: transparent;
 		background: linear-gradient($white, $white) padding-box,
 			$gradient-contact border-box;
 		box-shadow: $shadow-medium;
+
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background: linear-gradient($white, $white) padding-box,
+				$gradient-contact border-box !important;
+			box-shadow: $shadow-medium !important;
+		}
 	}
 
 	&--selected {
@@ -20,12 +33,25 @@
 		background: linear-gradient($white, $white) padding-box,
 			$gradient-contact border-box;
 		box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background: linear-gradient($white, $white) padding-box,
+				$gradient-contact border-box !important;
+			box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25) !important;
+		}
 	}
 
 	&--recommended {
 		border-color: transparent;
 		background: linear-gradient($white, $white) padding-box,
 			$gradient-contact border-box;
+
+		@media (prefers-color-scheme: dark) {
+			border-color: transparent !important;
+			background: linear-gradient($white, $white) padding-box,
+				$gradient-contact border-box !important;
+		}
 	}
 
 	&__badge {
@@ -39,6 +65,12 @@
 		font-size: 12px;
 		font-weight: 600;
 		box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-contact !important;
+			color: $white !important;
+			box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
+		}
 	}
 
 	&__icon {
@@ -53,6 +85,10 @@
 		color: $black-primary;
 		margin-bottom: $spacing-sm;
 		text-align: center;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-primary !important;
+		}
 	}
 
 	&__description {
@@ -61,6 +97,10 @@
 		margin: 0;
 		text-align: center;
 		line-height: 1.5;
+
+		@media (prefers-color-scheme: dark) {
+			color: $black-secondary !important;
+		}
 	}
 
 	&__check {
@@ -78,6 +118,12 @@
 		font-size: 18px;
 		font-weight: 700;
 		box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+
+		@media (prefers-color-scheme: dark) {
+			background: $gradient-secondary !important;
+			color: $white !important;
+			box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+		}
 	}
 
 	@media (max-width: $breakpoint-sm) {

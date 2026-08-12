@@ -12,6 +12,10 @@
 	height: 100vh;
 	background: color-mix(in oklab, $black-primary 95%, transparent);
 
+	@media (prefers-color-scheme: dark) {
+		background: color-mix(in oklab, $black-primary 95%, transparent) !important;
+	}
+
 	&__document {
 		position: relative;
 		width: 100%;

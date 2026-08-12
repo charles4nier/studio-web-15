@@ -1,6 +1,10 @@
 .services {
 	background: $background;
 
+	@media (prefers-color-scheme: dark) {
+		background: $background !important;
+	}
+
 	&__title {
 		margin-top: $spacing-md;
 		max-width: 42rem;
@@ -10,6 +14,10 @@
 	&__list {
 		margin-top: $spacing-3xl;
 		border-top: 1px solid $border;
+
+		@media (prefers-color-scheme: dark) {
+			border-top-color: $border !important;
+		}
 	}
 
 	&__item {
@@ -17,12 +25,20 @@
 		gap: $spacing-md;
 		padding: $spacing-2xl 0;
 		border-bottom: 1px solid $border;
+
+		@media (prefers-color-scheme: dark) {
+			border-bottom-color: $border !important;
+		}
 	}
 
 	&__item-number {
 		font-family: $font-family-primary;
 		font-size: 13px;
 		color: $ember;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	&__item-title {
@@ -37,6 +53,10 @@
 		font-size: 14px;
 		line-height: $line-height-relaxed;
 		color: $muted-foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {

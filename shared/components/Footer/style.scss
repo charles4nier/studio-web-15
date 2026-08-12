@@ -5,6 +5,12 @@
 	padding: $spacing-5xl 0 $spacing-2xl;
 	font-family: $font-family-secondary;
 
+	@media (prefers-color-scheme: dark) {
+		background-color: $background !important;
+		color: $foreground !important;
+		border-top-color: $border !important;
+	}
+
 	&__top {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -14,6 +20,10 @@
 
 	&__brand-accent {
 		color: $ember;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	&__col {
@@ -23,12 +33,20 @@
 			font-weight: 700;
 			margin-bottom: $spacing-md;
 			color: $foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $foreground !important;
+			}
 		}
 
 		p {
 			color: $muted-foreground;
 			font-size: 16px;
 			line-height: 1.6;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 
 		ul {
@@ -42,6 +60,10 @@
 			li {
 				color: $muted-foreground;
 				font-size: 16px;
+
+				@media (prefers-color-scheme: dark) {
+					color: $muted-foreground !important;
+				}
 			}
 
 			a {
@@ -49,6 +71,10 @@
 				text-decoration: none;
 				transition: color 0.3s ease;
 				position: relative;
+
+				@media (prefers-color-scheme: dark) {
+					color: $muted-foreground !important;
+				}
 
 				&::after {
 					content: '';
@@ -59,10 +85,18 @@
 					height: 2px;
 					background: $ember;
 					transition: width 0.3s ease;
+
+					@media (prefers-color-scheme: dark) {
+						background: $ember !important;
+					}
 				}
 
 				&:hover {
 					color: $foreground;
+
+					@media (prefers-color-scheme: dark) {
+						color: $foreground !important;
+					}
 
 					&::after {
 						width: 100%;
@@ -77,10 +111,18 @@
 		padding-top: $spacing-lg;
 		text-align: center;
 
+		@media (prefers-color-scheme: dark) {
+			border-top-color: $border !important;
+		}
+
 		p {
 			font-size: 14px;
 			color: $muted-foreground;
 			margin: 0;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 	}
 

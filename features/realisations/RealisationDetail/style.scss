@@ -1,10 +1,18 @@
 .realisation-detail {
 	background: $background;
 
+	@media (prefers-color-scheme: dark) {
+		background: $background !important;
+	}
+
 	&__header {
 		position: relative;
 		overflow: hidden;
 		border-bottom: 1px solid $border;
+
+		@media (prefers-color-scheme: dark) {
+			border-bottom-color: $border !important;
+		}
 	}
 
 	&__grid {
@@ -28,8 +36,16 @@
 		text-decoration: none;
 		transition: color 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
+
 		&:hover {
 			color: $foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $foreground !important;
+			}
 		}
 	}
 
@@ -53,6 +69,10 @@
 		font-size: 18px;
 		line-height: $line-height-relaxed;
 		color: $muted-foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
 	}
 
 	&__cta {
@@ -68,12 +88,20 @@
 		margin: 0;
 		align-self: end;
 
+		@media (prefers-color-scheme: dark) {
+			border-left-color: $ember !important;
+		}
+
 		dt {
 			font-family: $font-family-primary;
 			font-size: 11px;
 			text-transform: uppercase;
 			letter-spacing: 0.14em;
 			color: $muted-foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 
 		dd {
@@ -94,10 +122,18 @@
 		aspect-ratio: 3 / 2;
 		object-fit: cover;
 		border: 1px solid $border;
+
+		@media (prefers-color-scheme: dark) {
+			border-color: $border !important;
+		}
 	}
 
 	&__story {
 		border-bottom: 1px solid $border;
+
+		@media (prefers-color-scheme: dark) {
+			border-bottom-color: $border !important;
+		}
 	}
 
 	&__story-inner {
@@ -118,9 +154,17 @@
 		line-height: $line-height-relaxed;
 		color: $muted-foreground;
 
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
+
 		p {
 			margin-bottom: $spacing-md;
 			color: $muted-foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 
 			&:last-child {
 				margin-bottom: 0;
@@ -138,6 +182,11 @@
 	&__stack {
 		background: $surface;
 		border-bottom: 1px solid $border;
+
+		@media (prefers-color-scheme: dark) {
+			background: $surface !important;
+			border-bottom-color: $border !important;
+		}
 	}
 
 	&__stack-title {
@@ -156,12 +205,20 @@
 		li {
 			padding-top: $spacing-xl;
 			border-top: 1px solid $border;
+
+			@media (prefers-color-scheme: dark) {
+				border-top-color: $border !important;
+			}
 		}
 
 		span {
 			font-family: $font-family-primary;
 			font-size: 11px;
 			color: $ember;
+
+			@media (prefers-color-scheme: dark) {
+				color: $ember !important;
+			}
 		}
 
 		h3 {
@@ -174,6 +231,10 @@
 			font-size: 14px;
 			line-height: $line-height-relaxed;
 			color: $muted-foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 	}
 
@@ -196,6 +257,10 @@
 				padding-left: $spacing-2xl;
 				border-top: none;
 				border-left: 1px solid $border;
+
+				@media (prefers-color-scheme: dark) {
+					border-left-color: $border !important;
+				}
 			}
 		}
 	}
@@ -205,6 +270,12 @@
 	border-top: 1px solid $border;
 	background: $foreground;
 	color: $background;
+
+	@media (prefers-color-scheme: dark) {
+		border-top-color: $border !important;
+		background: $foreground !important;
+		color: $background !important;
+	}
 
 	&__inner {
 		display: flex;
@@ -221,6 +292,10 @@
 		letter-spacing: 0.2em;
 		color: $ember;
 		margin: 0;
+
+		@media (prefers-color-scheme: dark) {
+			color: $ember !important;
+		}
 	}
 
 	&__title {
@@ -229,6 +304,10 @@
 		font-size: clamp(28px, 5vw, 48px);
 		line-height: 1.1;
 		color: $background;
+
+		@media (prefers-color-scheme: dark) {
+			color: $background !important;
+		}
 	}
 
 	.button-primary {

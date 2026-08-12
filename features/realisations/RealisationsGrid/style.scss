@@ -34,5 +34,9 @@
 	&__text {
 		color: $muted-foreground;
 		margin-bottom: $spacing-xl;
+
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
 	}
 }

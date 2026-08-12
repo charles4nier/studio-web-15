@@ -25,12 +25,22 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			line-height: 1.2;
+
+			@media (prefers-color-scheme: dark) {
+				color: $white !important;
+				background: $gradient-tarifs !important;
+				-webkit-text-fill-color: transparent !important;
+			}
 		}
 
 		p {
 			font-size: 18px;
 			color: color-mix(in oklab, $white 80%, transparent);
 			line-height: 1.6;
+
+			@media (prefers-color-scheme: dark) {
+				color: color-mix(in oklab, $white 80%, transparent) !important;
+			}
 		}
 	}
 
@@ -44,10 +54,19 @@
 		border: 1px solid color-mix(in oklab, $white 10%, transparent);
 		border-radius: 12px;
 
+		@media (prefers-color-scheme: dark) {
+			background: color-mix(in oklab, $white 5%, transparent) !important;
+			border-color: color-mix(in oklab, $white 10%, transparent) !important;
+		}
+
 		&-name {
 			font-size: 18px;
 			font-weight: 600;
 			color: $white;
+
+			@media (prefers-color-scheme: dark) {
+				color: $white !important;
+			}
 		}
 
 		&-price {
@@ -58,6 +77,11 @@
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
+
+			@media (prefers-color-scheme: dark) {
+				background: $gradient-tarifs !important;
+				-webkit-text-fill-color: transparent !important;
+			}
 
 			&::after {
 				content: ' €';
@@ -80,6 +104,10 @@
 			font-size: 14px;
 			font-weight: 500;
 			color: color-mix(in oklab, $white 90%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				color: color-mix(in oklab, $white 90%, transparent) !important;
+			}
 		}
 
 		input {
@@ -93,14 +121,29 @@
 			border-radius: 8px;
 			transition: all 0.3s ease;
 
+			@media (prefers-color-scheme: dark) {
+				color: $white !important;
+				background: color-mix(in oklab, $white 5%, transparent) !important;
+				border-color: color-mix(in oklab, $white 10%, transparent) !important;
+			}
+
 			&:focus {
 				outline: none;
 				border-color: color-mix(in oklab, $accent-orange 50%, transparent);
 				background: color-mix(in oklab, $white 8%, transparent);
+
+				@media (prefers-color-scheme: dark) {
+					border-color: color-mix(in oklab, $accent-orange 50%, transparent) !important;
+					background: color-mix(in oklab, $white 8%, transparent) !important;
+				}
 			}
 
 			&::placeholder {
 				color: color-mix(in oklab, $white 40%, transparent);
+
+				@media (prefers-color-scheme: dark) {
+					color: color-mix(in oklab, $white 40%, transparent) !important;
+				}
 			}
 		}
 	}
@@ -115,6 +158,10 @@
 		font-weight: 500;
 		color: color-mix(in oklab, $white 90%, transparent);
 		margin-bottom: $spacing-md;
+
+		@media (prefers-color-scheme: dark) {
+			color: color-mix(in oklab, $white 90%, transparent) !important;
+		}
 	}
 
 	&__maintenance-options {
@@ -134,15 +181,31 @@
 		cursor: pointer;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			background: color-mix(in oklab, $white 5%, transparent) !important;
+			border-color: color-mix(in oklab, $white 10%, transparent) !important;
+		}
+
 		&:hover {
 			background: color-mix(in oklab, $white 8%, transparent);
 			border-color: color-mix(in oklab, $accent-pink 30%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				background: color-mix(in oklab, $white 8%, transparent) !important;
+				border-color: color-mix(in oklab, $accent-pink 30%, transparent) !important;
+			}
 		}
 
 		&.active {
 			background: color-mix(in oklab, $accent-pink 10%, transparent);
 			border-color: $accent-pink;
 			box-shadow: 0 0 0 2px color-mix(in oklab, $accent-pink 20%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				background: color-mix(in oklab, $accent-pink 10%, transparent) !important;
+				border-color: $accent-pink !important;
+				box-shadow: 0 0 0 2px color-mix(in oklab, $accent-pink 20%, transparent) !important;
+			}
 		}
 
 		&:focus {
@@ -152,6 +215,10 @@
 		&:focus-visible {
 			outline: 2px solid $white;
 			outline-offset: 2px;
+
+			@media (prefers-color-scheme: dark) {
+				outline-color: $white !important;
+			}
 		}
 	}
 
@@ -160,6 +227,10 @@
 		font-weight: 500;
 		color: $white;
 		text-align: center;
+
+		@media (prefers-color-scheme: dark) {
+			color: $white !important;
+		}
 	}
 
 	&__maintenance-option-price {
@@ -167,6 +238,10 @@
 		font-weight: 600;
 		color: $accent-pink;
 		text-align: center;
+
+		@media (prefers-color-scheme: dark) {
+			color: $accent-pink !important;
+		}
 	}
 
 	.button-primary {
@@ -183,9 +258,18 @@
 		cursor: pointer;
 		transition: all 0.3s ease;
 
+		@media (prefers-color-scheme: dark) {
+			color: $white !important;
+			background: $gradient-tarifs !important;
+		}
+
 		&:hover:not(:disabled) {
 			transform: translateY(-2px);
 			box-shadow: 0 8px 24px color-mix(in oklab, $accent-orange 30%, transparent);
+
+			@media (prefers-color-scheme: dark) {
+				box-shadow: 0 8px 24px color-mix(in oklab, $accent-orange 30%, transparent) !important;
+			}
 		}
 
 		&:disabled {
@@ -209,6 +293,11 @@
 			color: $white;
 			background: $gradient-tarifs;
 			border-radius: 50%;
+
+			@media (prefers-color-scheme: dark) {
+				color: $white !important;
+				background: $gradient-tarifs !important;
+			}
 		}
 
 		h2 {
@@ -217,12 +306,20 @@
 			font-size: 32px;
 			font-weight: 700;
 			color: $white;
+
+			@media (prefers-color-scheme: dark) {
+				color: $white !important;
+			}
 		}
 
 		p {
 			font-size: 18px;
 			color: color-mix(in oklab, $white 80%, transparent);
 			line-height: 1.6;
+
+			@media (prefers-color-scheme: dark) {
+				color: color-mix(in oklab, $white 80%, transparent) !important;
+			}
 		}
 	}
 

@@ -4,6 +4,11 @@
 	border-bottom: 1px solid $border;
 	background: $background;
 
+	@media (prefers-color-scheme: dark) {
+		border-bottom-color: $border !important;
+		background: $background !important;
+	}
+
 	&__grid {
 		position: absolute;
 		inset: 0;
@@ -35,11 +40,19 @@
 		border-left: 2px solid $ember;
 		padding-left: $spacing-lg;
 
+		@media (prefers-color-scheme: dark) {
+			border-left-color: $ember !important;
+		}
+
 		p {
 			font-size: 14px;
 			line-height: $line-height-relaxed;
 			color: $muted-foreground;
 			margin: 0;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
 		}
 	}
 
@@ -51,6 +64,10 @@
 		text-transform: uppercase;
 		letter-spacing: 0.18em;
 		color: $foreground !important;
+
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+		}
 	}
 
 	@media (min-width: $breakpoint-md) {
