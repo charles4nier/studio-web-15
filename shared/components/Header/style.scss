@@ -22,6 +22,9 @@
 	}
 
 	&__logo {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 		font-family: $font-family-primary;
 		font-weight: 700;
 		font-size: 18px;
@@ -33,6 +36,11 @@
 		&:hover {
 			opacity: 0.75;
 		}
+	}
+
+	&__logo-icon {
+		width: 24px;
+		height: 24px;
 	}
 
 	&__logo-accent {
@@ -231,6 +239,9 @@
 	}
 
 	&__mobile-logo {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 		font-family: $font-family-primary;
 		font-weight: 700;
 		font-size: 20px;

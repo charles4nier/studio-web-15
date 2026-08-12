@@ -7,6 +7,7 @@ interface PricingCardProps {
 	features: string[];
 	recommended?: boolean;
 	unit?: string;
+	prefix?: string;
 	clientCost?: string;
 	onSelect?: () => void;
 	onMaintenanceClick?: () => void;
@@ -19,6 +20,7 @@ export default function PricingCard({
 	features,
 	recommended = false,
 	unit = '€',
+	prefix,
 	clientCost,
 	onSelect,
 	onMaintenanceClick
@@ -32,6 +34,7 @@ export default function PricingCard({
 				<div className="pricing-card__price">
 					{price !== 'Sur devis' ? (
 						<>
+							{prefix && <span className="pricing-card__prefix">{prefix} </span>}
 							<span className="pricing-card__amount">{price}</span>
 							<span className="pricing-card__unit">{unit}</span>
 						</>

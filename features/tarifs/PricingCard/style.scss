@@ -57,6 +57,13 @@
 		margin-bottom: $spacing-md;
 	}
 
+	&__prefix {
+		font-size: clamp(16px, 1.8vw, 20px);
+		font-weight: 500;
+		color: $black-secondary;
+		margin-right: $spacing-xs;
+	}
+
 	&__amount {
 		font-size: clamp(36px, 4vw, 48px);
 		font-weight: 700;

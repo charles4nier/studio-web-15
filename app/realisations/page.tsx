@@ -6,7 +6,7 @@ import Realisations from '@features/realisations';
 export const metadata: Metadata = generatePageMetadata({
 	title: 'Réalisations - Sites internet créés à Aurillac, Cantal',
 	description:
-		'Découvrez mes réalisations : sites vitrines et e-commerce Next.js, Sanity CMS, Shopify. Projets pour des clients du Cantal, de l’Aveyron et au-delà.',
+		'Découvrez mes réalisations : sites vitrines et e-commerce. Projets pour des clients du Cantal, de l’Aveyron et au-delà.',
 	path: '/realisations'
 });
 

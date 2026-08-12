@@ -50,7 +50,7 @@ export default function Contact() {
 						<motion.h1 className="contact-hero__title" variants={itemVariants}>
 							Démarrons
 							<span className="acid-text contact-hero__title-accent">
-								votre projet.
+								votre projet à Aurillac.
 							</span>
 						</motion.h1>
 					</div>

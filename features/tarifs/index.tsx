@@ -53,37 +53,30 @@ export default function Tarifs() {
 			description: 'Idéal pour démarrer',
 			features: [
 				'5 pages',
-				'Sanity CMS (gestion contenu facile)',
-				'Design moderne adapté',
+				'Back office',
 				'100% Responsive',
 				'Accessibilité (WCAG 2.1)',
 				'SEO optimisé',
 				'Formulaire de contact',
 				'Google Maps',
-				'Formation Sanity 1h',
-				'Hébergement Vercel gratuit',
+				'Formation 1h',
 				'SSL + CDN inclus'
 			],
 			recommended: false
 		},
 		{
 			name: 'Pro',
-			price: '2 000',
+			price: '2 900',
 			description: 'Le plus populaire',
 			features: [
 				'10 pages',
-				'Sanity CMS',
-				'Design 100% sur mesure',
+				'Back office',
 				'100% Responsive',
 				'Accessibilité (WCAG 2.1)',
-				'SEO optimisé avancé',
+				'SEO optimisé',
 				'Formulaire de contact',
 				'Google Maps',
-				'Animations fluides',
-				'Blog/Actualités',
-				'Formation Sanity 2h',
-				'Staging pour validation',
-				'Hébergement Vercel gratuit',
+				'Formation 2h',
 				'SSL + CDN inclus'
 			],
 			recommended: true
@@ -113,6 +106,7 @@ export default function Tarifs() {
 		{
 			name: 'Pro',
 			price: '2 000',
+			prefix: 'Dès',
 			description: 'Shopify personnalisé',
 			features: [
 				'Solution 100% Shopify (thème Liquid)',
@@ -127,26 +121,6 @@ export default function Tarifs() {
 				'Automatisations emails',
 				'Formation complète 2h',
 			],
-			recommended: false,
-			clientCost: '29€/mois à Shopify'
-		},
-		{
-			name: 'Headless',
-			price: '2 500',
-			description: 'Next.js + Shopify',
-			features: [
-				'Frontend Next.js performant',
-				'Backend Shopify (gestion complète)',
-				'Design 100% sur mesure',
-				'Accessibilité (WCAG 2.1 AA)',
-				'Performance 95+ Google',
-				'SEO optimisé',
-				'Animations fluides',
-				'Produits illimités',
-				'Interface admin Shopify',
-				'Formation 2h',,
-				'Hébergement Vercel gratuit'
-			],
 			recommended: true,
 			clientCost: '29€/mois à Shopify'
 		},
@@ -155,7 +129,7 @@ export default function Tarifs() {
 			price: 'Sur devis',
 			description: 'Expérience immersive',
 			features: [
-				'Tout du Headless +',
+				'Tout du Pro +',
 				'Animations sophistiquées (Framer Motion avancé)',
 				'Effets visuels Canvas/SVG poussés',
 				'Configurateur produit interactif',
@@ -231,9 +205,9 @@ export default function Tarifs() {
 			>
 				<div className="container offer-highlight__inner">
 					<div className="offer-highlight__info">
-						<span className="offer-highlight__badge">Landing page</span>
+						<span className="offer-highlight__badge">Site one-page</span>
 						<h2 className="offer-highlight__title">
-							Une landing page dès 500&nbsp;€
+							Un site one-page dès 500&nbsp;€
 						</h2>
 						<p className="offer-highlight__text">
 							Une page unique, claire et efficace, pour présenter votre
@@ -264,7 +238,7 @@ export default function Tarifs() {
 						<div className="pricing-section__header">
 							<h2 className="pricing-section__title">Sites vitrines</h2>
 							<p className="pricing-section__subtitle">
-								Next.js + Sanity CMS · Hébergement gratuit · Design moderne
+								Hébergement gratuit · Design moderne
 							</p>
 						</div>
 						<div className="pricing-grid">
@@ -294,16 +268,6 @@ export default function Tarifs() {
 							<p className="pricing-section__subtitle">
 								Shopify Standard (dès 29/mois) · Solutions professionnelles uniquement
 							</p>
-							<div className="ecommerce-explanation">
-								<p className="ecommerce-explanation__text">
-									<strong>Pro</strong> : Shopify classique avec thème 100% custom. Interface admin
-									Shopify complète pour tout gérer facilement.
-								</p>
-								<p className="ecommerce-explanation__text">
-									<strong>Headless</strong> : Frontend Next.js ultra-performant + Backend Shopify.
-									Performance maximale, SEO optimisé, même facilité de gestion via l'admin Shopify.
-								</p>
-							</div>
 						</div>
 						<div className="pricing-grid">
 							{ecommercePackages.map((pkg, index) => (
@@ -349,25 +313,8 @@ export default function Tarifs() {
 							<motion.p 
 								initial={{ opacity: 0, y: 10 }}
 								animate={{ opacity: 1, y: 0 }}>
-								{ mobileCategory === 'vitrine' ? 'Next.js + Sanity CMS · Hébergement gratuit · Design moderne' : 'Shopify Standard (29€/mois) · Solutions professionnelles uniquement'}
+								{ mobileCategory === 'vitrine' ? 'Hébergement gratuit · Design moderne' : 'Shopify Standard (29€/mois) · Solutions professionnelles uniquement'}
 							</motion.p>
-							{
-								mobileCategory !== 'vitrine' && (
-									<motion.div 
-										className="ecommerce-explanation"
-										initial={{ opacity: 0, y: 10 }}
-										animate={{ opacity: 1, y: 0 }}>
-										<p className="ecommerce-explanation__text">
-											<strong>Pro</strong> : Shopify classique avec thème 100% custom. Interface admin
-											Shopify complète pour tout gérer facilement.
-										</p>
-										<p className="ecommerce-explanation__text">
-											<strong>Headless</strong> : Frontend Next.js ultra-performant + Backend Shopify.
-											Performance maximale, SEO optimisé, même facilité de gestion via l'admin Shopify.
-										</p>
-									</motion.div>
-								)
-							}
 							{currentPackages.map((pkg, index) => {
 								const isExpanded = expandedCards.includes(index);
 								const categoryName = mobileCategory === 'vitrine' ? 'Site vitrine' : 'E-commerce';
@@ -389,6 +336,9 @@ export default function Tarifs() {
 												<div className="pricing-card__price">
 													{pkg.price !== 'Sur devis' ? (
 														<>
+															{'prefix' in pkg && pkg.prefix && (
+																<span className="pricing-card__prefix">{pkg.prefix} </span>
+															)}
 															<span className="pricing-card__amount">{pkg.price}</span>
 															<span className="pricing-card__unit">€</span>
 														</>

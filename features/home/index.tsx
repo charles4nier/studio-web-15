@@ -76,7 +76,7 @@ const methode = [
 
 const offres = [
 	{
-		name: 'Landing page',
+		name: 'Site one-page',
 		price: 'à partir de 500 €',
 		items: [
 			'Page unique',

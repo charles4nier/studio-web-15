@@ -219,11 +219,11 @@ export default function ContactWizard() {
 										recommended
 									/>
 									<OptionCard
-										icon="⚡"
-										title="Headless"
-										description="2 500€ · Next.js + Shopify"
-										isSelected={formData.budget === 'headless'}
-										onClick={() => handleOptionSelect('budget', 'headless')}
+										icon="⭐"
+										title="Premium"
+										description="Sur mesure · Projet complexe"
+										isSelected={formData.budget === 'premium'}
+										onClick={() => handleOptionSelect('budget', 'premium')}
 									/>
 								</>
 							) : (

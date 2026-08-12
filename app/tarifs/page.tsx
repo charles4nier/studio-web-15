@@ -4,9 +4,9 @@ import StructuredData from '@shared/components/StructuredData';
 import Tarifs from '@features/tarifs';
 
 export const metadata: Metadata = generatePageMetadata({
-	title: 'Tarifs - Création Site Web Cantal & Aveyron',
+	title: 'Tarifs création de site internet à Aurillac, Cantal',
 	description:
-		'Tarifs transparents : création de site internet dès 500€, e-commerce Shopify. Intervention Cantal, Aveyron, Creuse. Hébergement gratuit, technologie moderne.',
+		'Création de site internet à Aurillac avec tarifs transparents : site one-page dès 500€, site vitrine dès 1 500€, boutique en ligne Shopify dès 2 000€.',
 	path: '/tarifs'
 });
 
@@ -18,7 +18,7 @@ export default function TarifsPage() {
 				data={{
 					name: 'Tarifs - Studio Web 15',
 					description:
-						'Tarifs création de sites internet et boutiques en ligne. Technologie moderne, performance optimale.'
+						'Site one-page dès 500€, site vitrine dès 1 500€, boutique en ligne Shopify dès 2 000€. Développeur web freelance à Aurillac, Cantal.'
 				}}
 			/>
 			<Tarifs />

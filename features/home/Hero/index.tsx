@@ -59,12 +59,12 @@ export default function Hero({ title, subtitle, ctaLabel }: HeroProps) {
 					initial="hidden"
 					animate="visible"
 				>
-					<motion.p className="eyebrow" variants={itemVariants}>
-						Aurillac, Cantal · Création de sites internet
-					</motion.p>
+					<motion.h1 className="eyebrow" variants={itemVariants}>
+						Création de sites internet à Aurillac, Cantal
+					</motion.h1>
 
 					<div className="hero__text-reveal">
-						<motion.h1
+						<motion.p
 							className="hero__title"
 							variants={itemVariants}
 						>
@@ -74,7 +74,7 @@ export default function Hero({ title, subtitle, ctaLabel }: HeroProps) {
 									{titleAccent}
 								</span>
 							)}
-						</motion.h1>
+						</motion.p>
 					</div>
 
 					{subtitle && (

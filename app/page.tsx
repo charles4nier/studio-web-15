@@ -6,7 +6,7 @@ import HomePage from '@features/home';
 export const metadata: Metadata = generatePageMetadata({
 	title: 'Création de site internet à Aurillac, Cantal',
 	description:
-		'Développeur web freelance à Aurillac, dans le Cantal (15). Création de sites internet dès 500€, e-commerce Shopify. Intervention Aurillac, Rodez, Creuse.',
+		'Création de sites internet à Aurillac, sur mesure, performants et esthétiques. Développeur web freelance dans le Cantal (15), dès 500€. Intervention Aurillac, Rodez, Creuse.',
 	path: '/'
 });
 
