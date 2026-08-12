@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import StudioModal from '@shared/components/StudioModal';
 import { motion } from 'framer-motion';
@@ -45,13 +44,6 @@ export default function Header() {
 			<div className="container">
 				<div className={`${CLASS_NAME}__inner`}>
 					<Link href="/" className={`${CLASS_NAME}__logo`}>
-						<Image
-							src="/favicon.svg"
-							alt=""
-							width={24}
-							height={24}
-							className={`${CLASS_NAME}__logo-icon`}
-						/>
 						Studio Web <span className={`${CLASS_NAME}__logo-accent`}>15</span>
 					</Link>
 
@@ -116,14 +108,7 @@ export default function Header() {
 							<span></span>
 						</button>
 						<Link href="/" className={`${CLASS_NAME}__mobile-logo`}>
-							<Image
-							src="/favicon.svg"
-							alt=""
-							width={24}
-							height={24}
-							className={`${CLASS_NAME}__logo-icon`}
-						/>
-						Studio Web <span className={`${CLASS_NAME}__logo-accent`}>15</span>
+							Studio Web <span className={`${CLASS_NAME}__logo-accent`}>15</span>
 						</Link>
 					</div>
 					<nav className={`${CLASS_NAME}__mobile-nav`}>
