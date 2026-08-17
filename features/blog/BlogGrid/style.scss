@@ -8,6 +8,10 @@
 		margin: 0;
 	}
 
+	&__featured {
+		max-width: 640px;
+	}
+
 	&__rest {
 		display: grid;
 		gap: $spacing-2xl;

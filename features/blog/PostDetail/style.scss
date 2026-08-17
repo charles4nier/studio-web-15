@@ -114,10 +114,13 @@
 
 	&__cover-image {
 		width: 100%;
+		max-width: 900px;
 		height: auto;
-		aspect-ratio: 3 / 2;
+		aspect-ratio: 16 / 9;
 		object-fit: cover;
 		border: 1px solid $border;
+		margin: 0 auto;
+		display: block;
 
 		@media (prefers-color-scheme: dark) {
 			border-color: $border !important;
@@ -134,8 +137,8 @@
 	}
 
 	&__body {
-		max-width: 48rem;
-		font-size: 16px;
+		max-width: 58rem;
+		font-size: 18px;
 		line-height: $line-height-relaxed;
 		color: $muted-foreground;
 
@@ -146,6 +149,7 @@
 		h2,
 		h3 {
 			margin: $spacing-2xl 0 $spacing-md;
+			font-size: 1.5em;
 			color: $foreground;
 
 			@media (prefers-color-scheme: dark) {
