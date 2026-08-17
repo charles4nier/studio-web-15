@@ -11,7 +11,8 @@ const CLASS_NAME = 'header';
 
 const navLinks = [
 	{ name: 'Réalisations', path: '/realisations' },
-	{ name: 'Tarifs', path: '/tarifs' }
+	{ name: 'Tarifs', path: '/tarifs' },
+	{ name: 'Blog', path: '/blog' }
 ];
 
 export default function Header() {

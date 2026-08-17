@@ -1,7 +1,7 @@
 import { siteConfig } from '@shared/config/seo';
 
 interface StructuredDataProps {
-	type: 'Organization' | 'WebSite' | 'WebPage' | 'LocalBusiness';
+	type: 'Organization' | 'WebSite' | 'WebPage' | 'LocalBusiness' | 'Article';
 	data?: any;
 }
 
@@ -44,6 +44,29 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
 					name: data.name,
 					description: data.description,
 					url: data.url || baseUrl
+				};
+
+			case 'Article':
+				if (!data) return null;
+				return {
+					'@context': 'https://schema.org',
+					'@type': 'Article',
+					headline: data.title,
+					description: data.description,
+					datePublished: data.publishedAt,
+					url: `${baseUrl}${data.url || ''}`,
+					author: {
+						'@type': 'Organization',
+						name: siteConfig.name
+					},
+					publisher: {
+						'@type': 'Organization',
+						name: siteConfig.name,
+						logo: {
+							'@type': 'ImageObject',
+							url: `${baseUrl}/logo.png`
+						}
+					}
 				};
 
 			case 'LocalBusiness':

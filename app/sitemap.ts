@@ -16,6 +16,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		priority: 0.7
 	}));
 
+	const postSlugs: { slug: string; publishedAt: string }[] =
+		await client.fetch(
+			`*[_type == "post" && defined(slug.current)]{"slug": slug.current, publishedAt}`
+		);
+
+	const postEntries: MetadataRoute.Sitemap = postSlugs.map((post) => ({
+		url: `${baseUrl}/blog/${post.slug}`,
+		lastModified: post.publishedAt ? new Date(post.publishedAt) : new Date(),
+		changeFrequency: 'monthly',
+		priority: 0.6
+	}));
+
 	return [
 		{
 			url: baseUrl,
@@ -36,6 +48,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: 'monthly',
 			priority: 0.9
 		},
+		{
+			url: `${baseUrl}/blog`,
+			lastModified: new Date(),
+			changeFrequency: 'weekly',
+			priority: 0.8
+		},
+		...postEntries,
 		{
 			url: `${baseUrl}/contact`,
 			lastModified: new Date(),

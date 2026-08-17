@@ -136,7 +136,9 @@ export function generatePageMetadata({
 	const ogImage = image || siteConfig.ogImage;
 
 	return {
-		title: fullTitle,
+		// title.absolute évite que Next.js réapplique le template "%s | Studio Web 15"
+		// du layout racine par-dessus un titre qui l'inclut déjà (balise <title> en double).
+		title: { absolute: fullTitle },
 		description,
 		alternates: {
 			canonical: url

@@ -1,0 +1,42 @@
+.blog-grid {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-4xl;
+
+	&__title {
+		font-size: clamp(28px, 4vw, 40px);
+		margin: 0;
+	}
+
+	&__rest {
+		display: grid;
+		gap: $spacing-2xl;
+	}
+
+	@media (min-width: $breakpoint-md) {
+		&__rest {
+			grid-template-columns: repeat(2, 1fr);
+			gap: $spacing-2xl $spacing-xl;
+		}
+	}
+}
+
+.blog-empty {
+	padding: $spacing-4xl 0;
+	text-align: center;
+
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: $spacing-sm;
+	}
+
+	&__text {
+		color: $muted-foreground;
+		margin-bottom: $spacing-xl;
+
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
+	}
+}
