@@ -211,8 +211,9 @@ export default function Tarifs() {
 						</h2>
 						<p className="offer-highlight__text">
 							Une page unique, claire et efficace, pour présenter votre
-							activité. Ajoutez un backoffice pour gérer vos contenus
-							vous-même, dès que vous en avez besoin.
+							activité — avec un backoffice inclus pour modifier vos
+							contenus vous-même (menu, tarifs, horaires...) à tout
+							moment.
 						</p>
 					</div>
 					<button
