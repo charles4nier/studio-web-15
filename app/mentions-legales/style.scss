@@ -1,0 +1,55 @@
+.legal {
+	max-width: 42rem;
+	padding-block: $spacing-5xl $spacing-4xl;
+
+	h1 {
+		font-family: $font-family-primary;
+		font-weight: $font-weight-bold;
+		font-size: 32px;
+		color: $foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+		}
+	}
+
+	h2 {
+		margin-top: $spacing-2xl;
+		font-family: $font-family-primary;
+		font-weight: $font-weight-bold;
+		font-size: 20px;
+		color: $foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+		}
+	}
+
+	p {
+		margin-top: $spacing-md;
+		line-height: $line-height-relaxed;
+		color: $muted-foreground;
+
+		@media (prefers-color-scheme: dark) {
+			color: $muted-foreground !important;
+		}
+	}
+
+	a {
+		color: $foreground;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+
+		@media (prefers-color-scheme: dark) {
+			color: $foreground !important;
+		}
+
+		&:hover {
+			color: $muted-foreground;
+
+			@media (prefers-color-scheme: dark) {
+				color: $muted-foreground !important;
+			}
+		}
+	}
+}

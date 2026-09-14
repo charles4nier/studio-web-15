@@ -59,7 +59,10 @@ export default function Footer() {
 				</div>
 
 				<div className={`${CLASS_NAME}__bottom`}>
-					<p>© {currentYear} Studio Web 15. Tous droits réservés.</p>
+					<p>
+						© {currentYear} Studio Web 15. Tous droits réservés. —{' '}
+						<Link href="/mentions-legales">Mentions légales</Link>
+					</p>
 				</div>
 			</div>
 		</footer>

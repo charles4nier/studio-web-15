@@ -123,6 +123,24 @@
 			@media (prefers-color-scheme: dark) {
 				color: $muted-foreground !important;
 			}
+
+			a {
+				color: $muted-foreground;
+				text-decoration: underline;
+				text-underline-offset: 2px;
+
+				@media (prefers-color-scheme: dark) {
+					color: $muted-foreground !important;
+				}
+
+				&:hover {
+					color: $foreground;
+
+					@media (prefers-color-scheme: dark) {
+						color: $foreground !important;
+					}
+				}
+			}
 		}
 	}
 
